@@ -24,6 +24,7 @@ body {
   color: #fff;
   padding: 10px 15px;
   border: none;
+  cursor: pointer;
 }
 .button:hover {
   background-color: red;
