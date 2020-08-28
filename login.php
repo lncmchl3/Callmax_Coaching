@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('connection.php');
-
+  
 
 	if(isset($_POST['Login'])){
 		if(empty($_POST['uname']) || empty($_POST['pass'])){
@@ -34,7 +34,7 @@ require_once('connection.php');
 				}
 				else if ($_SESSION['demerits'] == "SUPERADMIN") {
 					header("location:ADMIN/admin.php");
-				}
+				}  
 			}		  	
 		}
 	}
