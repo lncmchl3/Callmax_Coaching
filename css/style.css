@@ -1,11 +1,11 @@
-.container {
-  width: 80%;
-  margin: auto;
-}
+
 .center {
   font-size: 32px;
   font-weight: bold;
 }
+
+
+
 a {
   text-decoration: none;
   color: cornflowerblue;
@@ -16,8 +16,9 @@ a:hover {
 body {
   background-color: #f4f4f4;
   columns: #55555f;
-  font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif,
-    Geneva, Tahoma, sans-serif;
+  font-family: verdana;
+  font-size: 18px;
+
 }
 .button {
   background-color: #333;
@@ -25,40 +26,68 @@ body {
   padding: 10px 15px;
   border: none;
   cursor: pointer;
+  width: 100px;
+}
+.button1 {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 70%;
 }
 .button:hover {
-  background-color: red;
+  background-color: blue;
   color: #fff;
 }
-.box-1 {
-  background-color: #fff;
-  border-right: 1px black solid;
-  border-left: 1px black solid;
-  border-top: 1px black solid;
-  border-bottom: 1px black solid;
-  padding: 20px;
-  margin-right: 669px;
-  margin-left: 669px;
-  margin-bottom: 250px;
-  margin-top: 250px;
-  border-radius: 0.5em;
-  box-shadow: 50%;
-}
-.form-group h4 {
-  padding: 0px;
-}
+
 
 .my-form .form-group {
   padding-bottom: 10px;
 }
-.my-form label {
-  display: inline;
-}
 .my-form {
+  align-self: center;
+  width:300px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px black solid;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  border-radius: 0.5em;
   text-align: center;
+  
+  margin-left: auto;;
+  margin-right: auto;
+  margin-top: 250px;
+  font-size: 18px;
 }
+
+
+.my-form h1{
+  padding-bottom: 15px;
+
+}
+
 .my-form input[type="text"],
 .my-form input[type="password"] {
   padding: 7px;
-  width: 50%;
+  width: 70%;
+  font-size: 16px;
+  text-align: center;
+  
+
 }
+.footer{
+
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+text-align: center;
+
+}
+
+
