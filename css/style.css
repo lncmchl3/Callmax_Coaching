@@ -1,0 +1,58 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+.center {
+  font-size: 32px;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+a:hover {
+}
+body {
+  background-color: #f4f4f4;
+  columns: #55555f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif,
+    Geneva, Tahoma, sans-serif;
+}
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+.box-1 {
+  background-color: #fff;
+  border-right: 1px black solid;
+  border-left: 1px black solid;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  padding: 20px;
+  margin-right: 669px;
+  margin-left: 669px;
+  margin-bottom: 250px;
+  margin-top: 250px;
+  border-radius: 0.5em;
+  box-shadow: 50%;
+}
+.form-group h4 {
+  padding: 0px;
+}
+
+.my-form .form-group {
+  padding-bottom: 10px;
+}
+.my-form label {
+  display: inline;
+}
+.my-form {
+  text-align: center;
+}
+.my-form input[type="text"],
+.my-form input[type="password"] {
+  padding: 7px;
+  width: 50%;
+}
