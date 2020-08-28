@@ -11,6 +11,7 @@ a {
   color: cornflowerblue;
 }
 a:hover {
+  color: red;
 }
 body {
   background-color: #f4f4f4;
@@ -23,6 +24,10 @@ body {
   color: #fff;
   padding: 10px 15px;
   border: none;
+}
+.button:hover {
+  background-color: red;
+  color: #fff;
 }
 .box-1 {
   background-color: #fff;

@@ -13,6 +13,7 @@
             if (@is_null($_SESSION['demerits'])) {
         ?>
         <link rel="icon" href="searchicon.png">
+        <div class="containter">
 		<div class="box-1">
         <form class="my-form" "method="post" action="login.php" autocomplete="off">
         <!--
@@ -70,6 +71,7 @@
              
         </form>
         </div>
+                        </div>
         <?php
             }else if (@$_SESSION['demerits'] == "TL") {
                     header("location:agentSearch/AgentSearch.php");
