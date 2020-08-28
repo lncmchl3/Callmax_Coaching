@@ -35,7 +35,7 @@ require_once('connection.php');
 				else if ($_SESSION['demerits'] == "SUPERADMIN") {
 					header("location:ADMIN/admin.php");
 				}
-			}		 	
+			}		  	
 		}
 	}
 	else{
