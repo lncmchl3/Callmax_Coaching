@@ -3,7 +3,7 @@
     .center {
         font-size: 32px;
 		font-weight: bold;
-      }
+      } 
       a{
         text-decoration: none;
         color: cornflowerblue; 
