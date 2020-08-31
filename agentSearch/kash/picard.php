@@ -11,7 +11,7 @@
 	//composed sentence
 	$picard['k_level_one'] = 'Agent is only aware of '.$row['Questions'].'. TL should facilitate coaching and mentoring session to help the agent transition from only being aware to being able to '.$row['equivalent_word'].' the '.$row['Questions'].'.'; //1
 	$picard['k_level_two'] = 'Agent is aware of '.$row['Questions'].' but is only able to understand. TL should facilitate coaching and mentoring sessions to help the agent be able to '.$row['equivalent_word'].' the '.$row['Questions'].'.'; //2
-	$picard['k_level_three'] = 'Agent is able to do '.$row['Questions'].'. TL should facilitate coaching and mentoring session to help agent to be able to '.$row['equivalent_word'].' the '.$row['Questions'].'.'; //3
+	$picard['k_level_three'] = 'Agent is able to do The '.$row['Questions'].'. TL should facilitate coaching and mentoring session to help agent to be able to '.$row['equivalent_word'].' the '.$row['Questions'].'.'; //3
 	$picard['k_level_four'] = 'Agent is able to analyze and justify '.$row['Questions'].'. TL should facilitate coaching and mentoring session to help agent to be able to evaluate '.$row['Questions'].'. '; //4
 	$picard['k_level_five'] = 'Good job! The agent is aware, able to understand, can execute,  analyze, and evaluate '.$row['Questions'].'.'; //5
 

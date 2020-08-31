@@ -1,6 +1,7 @@
 <?php
 	include 'picard.php';
 	if ($row['kash_requirement'] == 'Knowledge') {
+		if ($row['scores'] < $row['standard_score']) {
 		if ($row['scores'] == '1') { ?>
 			<td style=" height: 100px; text-align: center;">
                 <?php echo $picard['k_level_one']; ?>
@@ -29,25 +30,14 @@
         	<td style=" height: 100px; text-align: center;">
                 <?php echo $picard['k_level_five']; ?>
             </td>
-	<?php }
+	<?php 	}
+		}
 	}
 ?>
 <?php
 	if ($row['kash_requirement'] == 'Attitude') {
-		if ($row['scores'] == '1') { ?>
+		if ($row['scores'] < 3) { ?>
 			<td style=" height: 100px; text-align: center;">
-                <?php echo $picard['a_level_one']; ?>
-            </td>
-        <?php }
-        if ($row['scores'] == '2') { 
-        ?>
-        	<td style=" height: 100px; text-align: center;">
-                <?php echo $picard['a_level_one']; ?>
-            </td>
-        <?php }
-        if ($row['scores'] == '3') { 
-        ?>
-        	<td style=" height: 100px; text-align: center;">
                 <?php echo $picard['a_level_one']; ?>
             </td>
 	<?php }

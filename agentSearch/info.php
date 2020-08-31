@@ -191,13 +191,29 @@
             <?php
                 $query = "SELECT * FROM picard_dump WHERE report_id = ".$n;
                         $result = mysqli_query($connection, $query);
+                        $array = array();
                     if (mysqli_num_rows($result) > 0) {
                         while ( $row = mysqli_fetch_assoc($result)) {
+                        	if ($row['kash_requirement'] == 'Attitude') {
+                        		if ($row['scores'] < $row['standard_score']) {
+									array_push($array, $row['Questions']);
+                        	}
+                		} else{
                          ?>
                     <tr>
                     	<?php include 'kash/logic.php'; ?>
                     </tr>
                     <?php }
+                     } 
+                } ?>
+                <?php if (!empty($array)) {
+                	?>
+                		<tr>
+                			<td style=" height: 100px; text-align: center;">
+				                Agent recognizes the importance of being <?php echo implode(", ", $array); ?>. However, TL should be able to impart the importance of being <?php echo implode(", ", $array); ?> to both the agent and the TL, through coaching and mentoring sessions.
+				            </td>
+                		</tr>
+                	<?php
                 } ?>
                 </tbody>
             </table>

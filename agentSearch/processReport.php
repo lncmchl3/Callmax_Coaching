@@ -44,8 +44,7 @@
                     //query to insert data to database
             $query = "INSERT INTO picard_dump (report_id, name, account, kash_requirement, questions, scores, standard_score, equivalent_word) VALUES('".$last_id."','".$agentname."','".$account."', '".$kash_requirement."', '".$KnowledgeQuestions[$j]."', '".$Kanswers[$i]."','".$kash_standard_score[$j]."', 'propose')";
             mysqli_query($connection, $query);
-                }
-                
+                }                
         }
         }
         if (isset($_REQUEST['AttitudeAnswer'])) {

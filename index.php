@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-
-  
+<style>
+    .center {
+        font-size: 32px;
+		font-weight: bold;
+      }
+      a{
+        text-decoration: none;
+        color: cornflowerblue; 
+    }
+</style>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Coaching System - Callmax Solutions</title>
     </head>
@@ -13,10 +20,8 @@
             if (@is_null($_SESSION['demerits'])) {
         ?>
         <link rel="icon" href="searchicon.png">
-        <div class="containter">
-		<div class="box-1">
-        <form class="my-form" "method="post" action="login.php" autocomplete="off">
-        <!--
+		
+        <form method="post" action="login.php" autocomplete="off">
             <center>	
 			<span class="center">Login</span>			
                 <table border="1" width="30%" cellpadding="3">
@@ -41,37 +46,32 @@
                            
                         </tr>
                     </thead>
-                    -->
-                        <div class="form-group">
-                            <h4>LOGIN</h4>
-                        </div>
-                        <div class="form-group">
-                            <label>Username: </label>
-                            <input type="text" name="uname" value="" placeholder="Enter your username" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Password: </label>
-                            <input type="password" name="pass" value="" placeholder="Enter your username" />
-                        </div>
-                        
-                        <div class="form-group">
-                            <input class="button" type="reset" value="RESET" />
-                        </div>
-                        
-                        <div class="form-group">
-							<button class= "button "name="Login"/>LOGIN</button>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Not registered?</label>
-                            <a href="reg.php">Register Here</a>
-                        </div>
+                    <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td><input type="text" name="uname" value="" /></td>
                     
-             
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="pass" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="reset" value="Reset" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+							<td><button name="Login"/>Login</button></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">Not registered? <a href="reg.php">Register Here</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
         </form>
-        </div>
-                        </div>
         <?php
             }else if (@$_SESSION['demerits'] == "TL") {
                     header("location:agentSearch/AgentSearch.php");
