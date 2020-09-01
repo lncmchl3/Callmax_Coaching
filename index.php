@@ -74,11 +74,11 @@
 
 
 
-<!-- <div class="foot-margin"> -->
+
     <footer>
         <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
     </footer>
-<!-- </div> -->
+
 
         <?php
             }else if (@$_SESSION['demerits'] == "TL") {

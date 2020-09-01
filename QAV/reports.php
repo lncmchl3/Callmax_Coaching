@@ -9,12 +9,14 @@
 <?php
 session_start();
 if (isset($_SESSION['name'])) {
-    if ($_SESSION['demerits']=='QAV') {   
+    if ($_SESSION['demerits']=='QAV') {
 	?>
 
 
 <!-- code for content here -->
 Welcome <?php echo $_SESSION['name']." position ".$_SESSION['demerits']; ?>. <a href="../logout.php?logout">Logout</a>
+
+
 
 
 

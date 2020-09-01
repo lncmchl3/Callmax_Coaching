@@ -222,6 +222,44 @@ select:invalid {
 
 
 
+.search-formbox{
+  /* min-height: calc(99.2vh - 85.19px - 89.88px); */
+  margin-top: 50px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  border-bottom: #115584 solid 5px;
+  padding-bottom: 5px;
+}
+.searchForm select, .searchForm input[type="date"], .searchForm input[type="text"]{
+
+  padding-right: 15px;
+  margin-right: 10px;
+}
+
+.searchForm input[type="date"], .searchForm input[type="text"], .searchForm select{
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border: #333 solid 1px;
+  margin-bottom: 8px;
+  font-size:16px;
+}
+.searchForm label{
+  font-size:16px;
+}
+.searchForm button{
+  padding: 15px 10px 15px 10px;
+}
+
+
+
+
+
+
+
 /* footer */
 footer{
   padding-bottom: 20px;
