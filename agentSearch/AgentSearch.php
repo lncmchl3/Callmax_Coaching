@@ -28,7 +28,7 @@
         </div>
         <nav>
             <ul>
-              <li><a href='../logout.php?logout'>Log out</a></li>
+              <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
               <li><a href='sendReport.php'>Send Report</a></li>
               <li class="current"><a href='AgentSearch.php'>Dashboard</a></li>
               <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
