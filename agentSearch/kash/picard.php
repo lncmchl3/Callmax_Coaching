@@ -48,4 +48,41 @@
 	$picard['h_level_one'] = 'Agent is thinking before being '.$row['Questions'].'. TL should provide coaching and mentoring sessions to help the agent transition from thinking before doing to thinking while doing.';
 	$picard['h_level_two'] = 'Agent is thinking while doing while being '.$row['Questions'].'. TL should provide coaching and mentoring sessions to help the agent transition from thinking while doing, to only doing.';
 	
+//```````````````````````````````````````````````````````````````````````````````````//
+
+// actual
+
+// knowledge*
+$picard['actual_knowledge'] = "the agent is aware to the knowledge."
+$picard['actual_comprehension'] = "the agent understand the knowledge. "
+$picard['actual_application'] = "the agent is kaya gawin."
+$picard['actual_analysis'] = "the agent can justify the knowledge."
+$picard['actual_evaluate'] = "the agent can propose."
+// Attitude*
+$picard['actual_recieve'] = "Ask the agent what is important to him/her."
+$picard['actual_respond'] = "tell the agent what is important to you."
+$picard['actual_value'] = "you know what is important to agent that is important to you."
+// Skill*
+// Exposure = the agent is exposed to skill
+// Aquisition = 
+// Usage = 
+
+// standard
+
+// knowledge*
+$picard['actual_knowledge'] = "the agent is not aware of knowledge."
+$picard['actual_comprehension'] = "the agent do not understand."
+$picard['actual_application'] = "the agent is kaya gawin."
+$picard['actual_analysis'] = "the agent cannot justify the knowledge."
+$picard['actual_evaluate'] = "the agent cannot propose."
+// Attitude*
+$picard['actual_recieve'] = "you do not know what is important to agent."
+$picard['actual_respond'] = "maybe the agent do not know whats important to you."
+$picard['actual_value'] = "you can dare the agent to develop the attitude."
+// Skill*
+// Exposure = the agent is not exposed to skill.
+// Aquisition = the 
+// Usage = 
+
 ?>
+
