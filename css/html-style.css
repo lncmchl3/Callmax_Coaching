@@ -18,107 +18,7 @@ a:hover{
   margin: auto;
   overflow: hidden;
 }
-
-/*
-.container {
-  display: flex;
-  justify-content: center;
-}
-*/
-
-.dark{
-  padding:15px;
-  background-color: #115584;
-  color: #ffffff;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-}
-
-header{
-	background-color: #333;
-  color:#ffffff;
-  border-bottom: #115584 solid 8px;
-}
-header #branding{
-  text-transform: uppercase;
-  float: left;
-}
-
-
-header a{
-  color:#ffffff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 17px;
-}
-
-header ul{
-  margin: 0;
-  padding: 0;
-}
-
-header li{
-  float:right;
-  display: inline;
-  padding: 0 20px 0 20px;
-  margin-top: 25px;
-}
-
-header .current a{
-  color: #115584;
-  font-weight:bold;
-}
-header a:hover{
-  color: #115584;
-  font-weight:bold;
-}
-
-.my-form{
-
-  text-align: center;
-  font-weight: bold;
-  padding: 20px;
-  margin-top: 150px;
-  font-size: 15px;
-
-/*  width: 90vw;*/
-/*  margin: 0 auto;*/
-/*  padding: 30px 20px;*/
-  min-height: calc(78.9vh - 85.19px - 89.88px);
-}
-
-#main{
-  width: 90vw;
-  margin: 0 auto;
-  padding: 30px 20px;
-  min-height: calc(92.7vh - 85.19px - 89.88px);
-
-
-
-}
-.my-form input[type="text"], .my-form input[type="password"]{
-
-  width: 250px;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  border: #333 solid 1px;
-  margin-bottom: 8px;
-  font-size:16px;
-
-}
-
-.my-form img{
-  padding-top: 10px;
-  padding-right: 10px;
-  width:30px;
-
-}
-
-
-.button
-{
-
+.button{
   border: none;
   color: #ffffff;
   background-color: #333;
@@ -128,13 +28,116 @@ header a:hover{
   text-transform: uppercase;
 }
 .button:hover{
-
   color:#ffffff;
   cursor: pointer;
   font-weight: bold;
   background-color: #115584;
 }
 
+/*
+.container {
+  display: flex;
+  justify-content: center;
+}
+*/
+
+/* Dark background */
+.dark{
+  padding:15px;
+  background-color: #115584;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* header */
+header{
+	background-color: #333;
+  color:#ffffff;
+  border-bottom: #115584 solid 8px;
+}
+header #branding{
+  text-transform: uppercase;
+  float: left;
+}
+header a{
+  color:#ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+header ul{
+  margin: 0;
+  padding: 0;
+}
+header li{
+  float:right;
+  display: inline;
+  padding: 0 20px 0 20px;
+  margin-top: 25px;
+}
+header .current a{
+  color: #115584;
+  font-weight:bold;
+}
+header a:hover{
+  color: #115584;
+  font-weight:bold;
+}
+
+
+  /* #main{
+  width: 90vw;
+  margin: 0 auto;
+  padding: 30px 20px;
+  min-height: calc(92.7vh - 85.19px - 89.88px);
+} */
+
+ /* Login form */
+
+
+ .loginbox{
+   height: 80.5vh;
+   width:100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+ }
+ .login-header{
+   text-align: center;
+ }
+
+ .btn{
+   text-align:center;
+   margin-bottom: 10px;
+ }
+
+ .my-form .forgot{
+   text-align: center;
+ }
+
+
+.my-form input[type="text"], .my-form input[type="password"]{
+
+  width: 250px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  border: #333 solid 1px;
+  margin-bottom: 8px;
+  font-size:16px;
+}
+
+.my-form img{
+  padding-top: 10px;
+  padding-right: 10px;
+  width:30px;
+}
+
+
+
+/* about us page */
 /*side bar*/
 aside#sidebar{
   float:right;
@@ -148,133 +151,100 @@ article#main-col{
   margin-top: 10px;
 }
 
+/* New Registration form css */
 
-.reg-form{
+.regbox{
+  /* height: 80.5vh; */
+  min-height: calc(99.2vh - 85.19px - 89.88px);
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+
+}
+
+.regbox h1{
   text-align: center;
-  font-weight: bold;
-  padding: 20px;
-  margin-top: 10px;
-  font-size: 15px;
-  display: block;
-  /*
-  margin-left: 40%
-  height: 100px;
-  width: 200px;
-  */
-  min-height: calc(93.8vh - 85.19px - 89.88px);
 }
-.reg-form h1{
+
+.regbox .regform-button{
   text-align: center;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 20px;
 }
-
-.reg-form .withAccount{
-
-  display: inline;
+.regbox .regform-button label{
+  padding-top: 15px;
 
 }
 
-.reg-form input[type="text"], .reg-form input[type="password"], .reg-form input[type="email"]{
-
-  width: 250px;
+.regbox input[type="text"], .regbox input[type="password"], .regbox input[type="email"], .regbox select {
+  width: 400px;
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
-  border: #115584 solid 1px;
+  border: #333 solid 1px;
   margin-bottom: 8px;
   font-size:16px;
-  text-align: center;
-
-}
-.reg-form .button{
-  margin-top: 15px;
-  text-align: center;
-  margin-bottom: 5px;
-
-
 }
 
-.reg-form label{
-    display: block;
-}
-.reg-form .posOption input[type="text"]{
-  display: block;
-  text-align: center;
+.regbox select{
+  width: 420px;
 }
 
-.reg-form .posOption #addmore{
-  width: 40px;
-  display: none;
-  display: inline;
+.regbox label{
+  font-size:14px;
+  text-transform:uppercase;
+  display:block;
 }
-
-.reg-form .posOption #removebutton{
-  width: 40px;
-  display: inline;
-}
-
-.reg-form .posOption{
-
-/*display: inline;
-*/ text-align: center;
-}
-#accountinputtitle{
-  text-align: center;
-}
-.accountinput{
-   text-align: center;
-   margin-top: 10px;
-   margin-left: 605px;
-}
-
 
 select:invalid {
   color: gray;
 }
 
-.reg-form select{
-  width: 270px;
-  padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  border: #115584 solid 1px;
-  margin-bottom: 8px;
-  font-size:16px;
-
-}
-
-.reg-form #accountinputtitle{
+.posOption .optBtn button{
+  margin-top: 15px;
+  width: 35px;
   display: none;
 }
-/*footer*/
-/*
+
+.posOption #accountinputtitle{
+  display: block;
+  display:none;
+}
+
+.posOption input[type="text"]{
+  display:block;
+}
+
+.regform div{
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+
+
+
+/* footer */
 footer{
-position:fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-text-align: center;
-border-top: #115584 solid 8px;
-background-color: #333;
-color:#ffffff;
-}
-
-.foot-margin{
-  margin-top: 230px;
-}
-.foot-margin_1{
-  margin-top: 60px;
-}
-
-.foot-margin_2{
-  margin-top: 452px;
-}
-*/
-footer{
-
   padding-bottom: 20px;
   text-align: center;
   border-top: #115584 solid 8px;
   background-color: #333;
   color:#ffffff;
+}
+
+
+@media(max-width: 1205px){
+  header #branding{
+    text-transform: uppercase;
+    float: none;
+    text-align: center;
+  }
+
+  header li{
+    float:none;
+    display: inline;
+    padding: 0 20px 0 20px;
+    margin-top: 25px;
+    margin-left: 100px;
+  }
+
 }

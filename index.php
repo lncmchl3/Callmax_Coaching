@@ -32,10 +32,16 @@
             if (@is_null($_SESSION['demerits'])) {
         ?>
 
-        <div class="container">
+      <div class="container">
+
+        <div class="loginbox">
             <form class="my-form" method="post" action="login.php" autocomplete="off">
-                <h1>Welcome!</h1>
-                    <div>
+
+
+                        <div class="login-header">
+                            <h1>Welcome!</h1>
+                        </div>
+
                         <div>
                             <img src="images/user.png">
                             <input type="text" name="uname" value="" placeholder="Username" required />
@@ -47,10 +53,12 @@
                             <input type="password" name="pass" value="" placeholder="Password" required />
                         </div><br>
 
+                        <div class="btn">
+                          <button class="button" type="submit" name="Login"/>Login</button>
+                        </div>
 
-    					<button class="button" type="submit" name="Login"/>Login</button>
 
-                        <div> <br>
+                        <div>
                             <a href="#">Forgot password?</a>
                         </div>
 
@@ -58,10 +66,12 @@
                             <label>Don't have an account?</label>
                             <a href="reg.php">Sign up</a>
                         </div>
-                    </div>
+
             </form>
+</div>
 
 </div>
+
 
 
 <!-- <div class="foot-margin"> -->
