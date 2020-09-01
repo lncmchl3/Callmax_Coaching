@@ -2,13 +2,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="searchicon.png">
-        <link href="sendreportv4.css" rel="stylesheet" type="text/css">
+        <!-- <link href="sendreportv4.css" rel="stylesheet" type="text/css"> -->
+        <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
             var $row = $('<tr>'+
                   '<td>awawaww</td>'+
-                  '<td>adsdsdsd</td>');    
+                  '<td>adsdsdsd</td>');
             $('table> tbody:last').append($row);
         </script>
         <title>Coaching System - Agents</title>
@@ -19,17 +20,29 @@
 
     session_start();
     if (isset($_SESSION['name'])) {
-        if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {  
+        if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {
 
             $account = @$_GET['account'];
             $kash = @$_GET['kash'];
             $agentname = @$_GET['agentname'];
     ?>
-<div class="header">Name: <?php echo $_SESSION['name']; ?> / <a class="ab" href='../logout.php?logout'>Log out</a> 
-</div>        
-<form  method="post" action="AgentSearch.php" autocomplete="off" class="active">
-    <button type="submit">Back</button>
-</form>
+    <header>
+        <div class="container">
+
+            <div id="branding">
+
+                <h1>Callmax Solutions Coaching System</h1>
+            </div>
+            <nav>
+                <ul>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
+                  <li class="current"><a href='sendReport.php'>Send Report</a></li>
+                  <li ><a href='AgentSearch.php'>Dashboard</a></li>
+                  <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <!-- content here -->
 <div class="main-content">
     <center>
@@ -81,7 +94,7 @@
                                     <?php }
                                     } ?>
                                 </select>
-                                
+
                             </td>
                         </tr>
                         </form>
@@ -117,7 +130,7 @@
                                     }
                                 ?>
                             </td>
-                        
+
                     </tr>
                     <tr>
                         <td colspan="10">
@@ -129,7 +142,7 @@
                     </tr>
                     </tbody>
                 </table>
-                
+
             </center>
 </div>
 <!-- ----- -->
@@ -143,8 +156,8 @@
         header("location:index.php?e=Please Log in");
     }
 ?>
-    <footer>
-        <p>Coaching System © Callmax Solutions. All rights reserved.</p>
-    </footer>
+<footer>
+    <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+</footer>
 </body>
 </html>
