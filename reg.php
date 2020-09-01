@@ -1,38 +1,8 @@
 
 <!DOCTYPE html>
 
-<!--
-<style>
-    a{
-        text-decoration: none;
-        color: cornflowerblue;
-    }
-    .accountinput{
-        box-sizing: border-box;
-    }
-    td input[type=text]{
-        width: 100%;
-        box-sizing: border-box;
-        display: block;
-    }
-    td input[type=password]{
-        width: 100%;
-        box-sizing: border-box;
-        display: block;
-    }
-    td input[type=email]{
-        width: 100%;
-        box-sizing: border-box;
-        display: block;
-    }
-    #removebutton{
-        float: right;
-    }
-</style>
--->
-
 <script type="text/javascript">
-    var value = 0;
+    var value = 1;
     $(document).ready(function () {
         $('#uname').blur(function () {
             var username = $this.val();
@@ -54,16 +24,25 @@
         var addmore = document.getElementById('addmore');
         var r = document.getElementById('removebutton');
         var s = document.getElementById("accountinput");
+
         if (val === 'TL' || val === 'AM') {
+            createFunction();
             r.style.display = 'inline';
             accountinputtitle.style.display = 'block';
             addmore.style.display = 'inline';
         } else {
-//            accountinput.style.display = 'none';
+//           accountinput.style.display = 'none';
+          $(document).ready(function () {
+              while (value !== 0) {
+                $("input").remove("#accountinput" + (value - 1));
+                  value--;
+                  document.getElementById("accountCounts").value = value;
+              }
+          });
             accountinputtitle.style.display = 'none';
             addmore.style.display = 'none';
             r.style.display = 'none';
-            s.style.visibility = 'hidden';
+            s.style.visibility = 'none';
         }
     }
 
@@ -115,128 +94,146 @@
             </div>
         </header>
 
-    <div class="container">
-        <form class="reg-form" method="post" action="registration.php" autocomplete="off" onsubmit="return confirmPass()">
+        <div class="container">
+          <div class="regbox">
+
+
+          <form class="regform" method="post" action="registration.php" autocomplete="off" onsubmit="return confirmPass()">
+
             <input type="hidden" id="accountCounts" name="accountCounts" value="0">
 
+              <div>
+                <h1>Registration</h1>
+              </div>
 
-                            <h1>Registration</h1>
+              <div class="firstName">
+                <label>First Name:</label>
+                <input type="text" name="firstname" value="" placeholder="First Name" required>
+              </div>
 
+              <div class="lastName">
+                <label>Last Name:</label>
+                <input type="text" name="lastname" value="" placeholder="Last Name" required>
+              </div>
 
-                                <label>First Name:</label>
-                                <input type="text" name="firstname" value="" placeholder="First Name" required>
-
-
-
-                                <label>Last Name:</label>
-                                <input type="text" name="lastname" value="" placeholder="Last Name" required>
-
-
-
-                            <div class="posOption">
-                            <label>Position:</label>
-
-                                <select required name="position" onchange='CheckPos(this.value);'>
-                                    <option value="" disabled selected hidden>Choose Position</option>
-                                    <option value="QAV">Quality Analyst - Voice</option>
-                                    <option value="QAN">Quality Analyst - Non-Voice</option>
-                                    <option value="HR">Human Resources</option>
-                                    <option value="TL">Team Leader</option>
-                                    <option value="AM">Account Manager</option>
-                                    <!--<option value="MIS">MIS</option>-->
-                                    <option value="KPI">KPI</option>
-                                </select>
-                                <span id='accountinputtitle'>Accounts:</span>
-                                <button class="button" type="button" id='removebutton'/>-</button>
-                                <button class="button" type="button" id='addmore' onclick="createFunction(this.value)">+</button>
+              <div class="posOption">
+                <label>Position:</label>
+                  <select required name="position" onchange='CheckPos(this.value);'>
+                    <option value="" disabled selected hidden>Choose Position</option>
+                    <option value="QAV">Quality Analyst - Voice</option>
+                    <option value="QAN">Quality Analyst - Non-Voice</option>
+                    <option value="HR">Human Resources</option>
+                    <option value="TL">Team Leader</option>
+                    <option value="AM">Account Manager</option>
+                    <!--<option value="MIS">MIS</option>-->
+                    <option value="KPI">KPI</option>
+                  </select>
 
 
-                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                                <script>
-
-//                                    var a = document.getElementById("accountCounts").value;
-
-                                    function createFunction() {
-
-                                        var x = document.createElement("INPUT");
-                                        var y = document.createElement("input");
-                                        var z = document.createElement("br");
-                                        x.setAttribute("type", "text");
-                                        x.setAttribute("id", "accountinput" + value);
-                                        x.setAttribute("name", "accountinput" + value);
-                                        x.setAttribute("class", "accountinput");
-                                        x.setAttribute("placeholder", "Add Account");
-//                                        y.setAttribute("type", "button");
-//                                        y.setAttribute("id", "removebutton");
-//                                        y.setAttribute("name", "removebutton");
-//                                        y.setAttribute("value", "remove");
-//                                        y.setAttribute("onClick", "removeFunction()");
-//                                        document.getElementById("postd").appendChild(x);
-//                                        document.getElementById("postd").appendChild(y);
-//                                        document.getElementById("postd").appendChild(z);
-                                        document.getElementById("addmore").parentNode.insertBefore(x, document.getElementById("removebutton"));
-//                                        document.getElementById("addmore").parentNode.insertBefore(y, document.getElementById("addmore"));
-//                                        document.getElementById("addmore").parentNode.insertBefore(z, document.getElementById("removebutton"));
-                                        value++;
-                                        document.getElementById("accountCounts").value = value;
-                                        }
-
-
-//                                    function removeFunction() {
-//                                        // Removes an element from the document
-//                                        var element = document.getElementById(removebutton);
-//                                        element.parentNode.removeChild(element);
-//                                    }
-                                    $(document).ready(function () {
-                                        $("#removebutton").click(function () {
-                                            if (value !== 0) {
-                                                $("input").remove("#accountinput" + (value - 1));
-                                                value--;
-                                                document.getElementById("accountCounts").value = value;
-                                            }
-                                        });
-                                    });
-
-                                </script>
+                    <label id='accountinputtitle'>Accounts:</label>
+                    <div class="optBtn">
+                      <button class="button" type="button" id='removebutton'/>-</button>
+                      <button class="button" type="button" id='addmore' onclick="createFunction(this.value)">+</button>
+                    </div>
 
 
 
-                            </div>
+
+                  <!-- Script -->
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                  <script>
+
+                  var a = document.getElementById("accountCounts").value;
+
+                  function createFunction() {
+                    var x = document.createElement("INPUT");
+                    var y = document.createElement("input");
+                    var z = document.createElement("br");
+                    x.setAttribute("type", "text");
+                    x.setAttribute("id", "accountinput" + value);
+                    x.setAttribute("name", "accountinput" + value);
+                    x.setAttribute("class", "accountinput");
+                    x.setAttribute("placeholder", "Add Account");
+                    // y.setAttribute("type", "button");
+                    // y.setAttribute("id", "removebutton");
+                    // y.setAttribute("name", "removebutton");
+                    // y.setAttribute("value", "remove");
+                    // y.setAttribute("onClick", "removeFunction()");
+                    // document.getElementById("postd").appendChild(x);
+                    // document.getElementById("postd").appendChild(z);
+
+                    document.getElementById("addmore").parentNode.insertBefore(x, document.getElementById("removebutton"));
+                    // document.getElementById("addmore").parentNode.insertBefore(y, document.getElementById("addmore"));
+                    // document.getElementById("addmore").parentNode.insertBefore(z, document.getElementById("removebutton"));
+                    value++;
+                    document.getElementById("accountCounts").value = value;
+                  }
+
+                  // function removeFunction() {
+                  //   // Removes an element from the document
+                  //   var element = document.getElementById(removebutton);
+                  //   element.parentNode.removeChild(element);
+                  // }
+
+                  $(document).ready(function () {
+                    $("#removebutton").click(function () {
+                      if (value !== 0) {
+                        $("input").remove("#accountinput" + (value - 1));
+                          value--;
+                          document.getElementById("accountCounts").value = value;
+                      }
+                    });
+                  });
+
+                </script>
+                <!-- End of script -->
+              </div>
+              <!-- end of posOption -->
+
+              <div class="userName">
+                <label>Username:</label>
+                <input type="text" name="username" value="" placeholder="Username" required>
+                <span id="availability"></span>
+              </div>
+
+              <div class="emailAdd">
+                <label class="email-input">Email:</label>
+                <input type="email" name="email" value="" placeholder="Email Address" required>
+              </div>
+
+              <div class="passWord">
+                <label>Password:</label>
+                <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="Password" required>
+              </div>
+
+              <div class="cPassword">
+                <label>Confirm Password:</label>
+                <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="Confirm Password"required/>
+              </div>
+
+              <div class="regform-button">
+                <button class="button" type="submit" name="Login"/>Submit</button>
+                <label>Already have an account?</label>
+                <a href="index.php">Log in here</a>
+              </div>
 
 
-                                <label>Username:</label>
-                                <input type="text" name="username" value="" placeholder="Username" required>
-                                <span id="availability"></span>
 
 
-                                <label class="email-input">Email:</label>
-                                <input type="email" name="email" value="" placeholder="Email Address" required>
+          </form>
+          <!-- end of regform -->
+          </div>
+          <!-- end of regbox -->
 
-
-
-                                <label>Password:</label>
-                                <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="Password" required>
+          </div>
+          <!-- end of container -->
 
 
 
-                                <label>Confirm Password:</label>
-                                <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="Confirm Password"required/>
 
-                            <div>
-                                <button class="button" type="submit" name="Login"/>Submit</button>
-                            </div>
-                            <div>
-                                <label class="withAccount">Already have an account?</label>
-                                <a href="index.php">Log in here</a>
-                            </div>
-
-        </form>
-    </div>
-
-<!--     <div class="foot-margin_1"> -->
         <footer>
              <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
         </footer>
-<!--     </div>  -->
+
 </body>
 </html>
