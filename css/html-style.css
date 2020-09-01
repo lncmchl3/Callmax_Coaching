@@ -86,17 +86,7 @@ header a:hover{
   font-weight:bold;
 }
 
-
-  /* #main{
-  width: 90vw;
-  margin: 0 auto;
-  padding: 30px 20px;
-  min-height: calc(92.7vh - 85.19px - 89.88px);
-} */
-
  /* Login form */
-
-
  .loginbox{
    height: 80.5vh;
    width:100%;
@@ -105,6 +95,7 @@ header a:hover{
    align-items: center;
    text-align: center;
  }
+
  .login-header{
    text-align: center;
  }
@@ -117,7 +108,6 @@ header a:hover{
  .my-form .forgot{
    text-align: center;
  }
-
 
 .my-form input[type="text"], .my-form input[type="password"]{
 
@@ -138,6 +128,7 @@ header a:hover{
 
 
 /* about us page */
+
 /*side bar*/
 aside#sidebar{
   float:right;
@@ -173,6 +164,7 @@ article#main-col{
 }
 .regbox .regform-button label{
   padding-top: 15px;
+  text-transform: capitalize;
 
 }
 
@@ -203,6 +195,14 @@ select:invalid {
   margin-top: 15px;
   width: 35px;
   display: none;
+}
+
+.optBtn{
+  width:100%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .posOption #accountinputtitle{

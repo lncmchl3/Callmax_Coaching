@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <script type="text/javascript">
-    var value = 1;
+    var value = 0;
     $(document).ready(function () {
         $('#uname').blur(function () {
             var username = $this.val();
@@ -25,12 +25,30 @@
         var r = document.getElementById('removebutton');
         var s = document.getElementById("accountinput");
 
+
         if (val === 'TL' || val === 'AM') {
-            createFunction();
+
+            if (value === 0) {
+              // add input box if value if zero
+              createFunction();
+              }
+            else if (value > 1) {
+              // deletes input boxes if value is greater than one until one input box left
+              $(document).ready(function () {
+                while (value !== 1) {
+                  $("input").remove("#accountinput" + (value - 1));
+                  value--;
+                  document.getElementById("accountCounts").value = value;
+                  }
+              });
+            }
+
             r.style.display = 'inline';
             accountinputtitle.style.display = 'block';
             addmore.style.display = 'inline';
-        } else {
+          }
+
+        else {
 //           accountinput.style.display = 'none';
           $(document).ready(function () {
               while (value !== 0) {
@@ -44,6 +62,8 @@
             r.style.display = 'none';
             s.style.visibility = 'none';
         }
+
+
     }
 
     function confirmPass() {
@@ -186,6 +206,10 @@
                   });
 
                 </script>
+
+
+
+
                 <!-- End of script -->
               </div>
               <!-- end of posOption -->
