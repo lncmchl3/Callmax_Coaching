@@ -2,7 +2,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="searchicon.png">
-        <!-- <link href="sendreportv4.css" rel="stylesheet" type="text/css"> -->
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

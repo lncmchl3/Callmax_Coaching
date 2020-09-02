@@ -23,9 +23,9 @@ echo "<label>• <b>5</b><a style='color: gray'>(".$picard['fifth_knowledge'].")
 </p>
 <input type="hidden"  name="KnowledgeQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
 <input type="hidden"  name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
-<label for="KnowledgeAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label><input type="number" min="1" max="<?php echo $row['kash_standard_score']; ?>" name="KnowledgeAnswer[]"  maxlength="1" required> 
+<label for="KnowledgeAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label><input type="number" min="1" max="<?php echo $row['kash_standard_score']; ?>" name="KnowledgeAnswer[]"  maxlength="1" required>
 <!-- <?php
- for ($i=1; $i <= $row['kash_standard_score'] ; $i++) { 
+ for ($i=1; $i <= $row['kash_standard_score'] ; $i++) {
 	if ($i == 1) {
 		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['first_knowledge'];
 	}
