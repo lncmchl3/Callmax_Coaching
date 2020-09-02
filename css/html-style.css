@@ -95,7 +95,7 @@ header a:hover{
    justify-content: center;
    align-items: center;
    text-align: center;
-   /* background: url(../img/background.png) no-repeat center; */
+   background: url(../img/bg.png) no-repeat center;
  }
 
  .login-header{
@@ -110,6 +110,19 @@ header a:hover{
  .my-form .forgot{
    text-align: center;
  }
+
+.errorMessage .error{
+  color:red;
+}
+
+.my-form{
+  background: #f3f3f3;
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 50px 100px 0px rgba(0, 0, 0, 0.5);
+}
+
 
 .my-form input[type="text"], .my-form input[type="password"]{
 
