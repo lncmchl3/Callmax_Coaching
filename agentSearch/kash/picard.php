@@ -52,37 +52,47 @@
 
 // actual
 
-// knowledge*
-$picard['actual_knowledge'] = "the agent is aware to the knowledge."
-$picard['actual_comprehension'] = "the agent understand the knowledge. "
-$picard['actual_application'] = "the agent is kaya gawin."
-$picard['actual_analysis'] = "the agent can justify the knowledge."
-$picard['actual_evaluate'] = "the agent can propose."
-// Attitude*
-$picard['actual_recieve'] = "Ask the agent what is important to him/her."
-$picard['actual_respond'] = "tell the agent what is important to you."
-$picard['actual_value'] = "you know what is important to agent that is important to you."
-// Skill*
+// knowledge****
+$picard['actual_knowledge'] = "but the agent is aware to this knowledge.";
+$picard['actual_comprehension'] = "but the agent understand the knowledge. ";
+$picard['actual_application'] = "but the agent is kaya gawin.";
+$picard['actual_analysis'] = "but the agent can justify the knowledge.";
+$picard['actual_evaluate'] = "The agent can propose.";
+// Attitude****
+$picard['actual_recieve'] = "Ask the agent what is important to him/her.";
+$picard['actual_respond'] = "Tell the agent what is important to you.";
+$picard['actual_value'] = "You know what is important to agent that is important to you.";
+// Skill****
 // Exposure = the agent is exposed to skill
 // Aquisition = 
 // Usage = 
 
 // standard
 
-// knowledge*
-$picard['actual_knowledge'] = "the agent is not aware of knowledge."
-$picard['actual_comprehension'] = "the agent do not understand."
-$picard['actual_application'] = "the agent is kaya gawin."
-$picard['actual_analysis'] = "the agent cannot justify the knowledge."
-$picard['actual_evaluate'] = "the agent cannot propose."
-// Attitude*
-$picard['actual_recieve'] = "you do not know what is important to agent."
-$picard['actual_respond'] = "maybe the agent do not know whats important to you."
-$picard['actual_value'] = "you can dare the agent to develop the attitude."
-// Skill*
+// knowledge****
+$picard['standard_knowledge'] = "The agent is not aware of knowledge.";
+$picard['standard_comprehension'] = "The agent do not understand the ".$row['Questions'].",";
+$picard['standard_application'] = "The agent is kaya gawin.";
+$picard['standard_analysis'] = "The agent cannot justify the knowledge.";
+$picard['standard_evaluate'] = "The agent cannot propose.";
+// Attitude****
+$picard['standard_recieve'] = "You do not know what is important to agent.";
+$picard['standard_respond'] = "Maybe the agent do not know whats important to you.";
+$picard['standard_value'] = "You can dare the agent to develop the attitude.";
+// Skill****
 // Exposure = the agent is not exposed to skill.
 // Aquisition = the 
 // Usage = 
 
+
+
+//concatenation
+
+//knowledge****
+$picard['knowledge_con'] = "Inform the agent about the said knowledge.";
+$picard['comprehension_con'] = "Inform the agent until the said knowledge is fully understand.";
+$picard['application_con'] = "";
+$picard['analysis_con'] = "";
+$picard['evaluate_con'] = "";
 ?>
 

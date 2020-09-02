@@ -2,11 +2,17 @@
 	include 'picard.php';
 	if ($row['kash_requirement'] == 'Knowledge') {
 		if ($row['scores'] < $row['standard_score']) {
-		if ($row['scores'] == '1') { ?>
+		if ($row['scores'] == '1' && $row['standard_score'] == '2') { ?>
 			<td style=" height: 100px; text-align: center;">
-                <?php echo $picard['k_level_one']; ?>
+                <?php echo $picard['standard_comprehension']." ".$picard['actual_knowledge']." ".$picard['comprehension_con']  ?>
             </td>
         <?php }
+        if ($row['scores'] == '1' && $row['standard_score'] == '3') { 
+            ?>
+                <td style=" height: 100px; text-align: center;">
+                    <?php echo $picard['k_level_two']; ?>
+                </td>
+            <?php }
         if ($row['scores'] == '2') { 
         ?>
         	<td style=" height: 100px; text-align: center;">
