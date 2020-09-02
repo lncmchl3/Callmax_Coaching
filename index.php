@@ -43,13 +43,13 @@
                         </div>
 
                         <div>
-                            <img class="userlogo" src="images/user.png">
+                            <img src="img/user.png">
                             <input type="text" name="uname" value="" placeholder="Username" required />
                         </div>
 
                         <div>
 
-                            <img src="images/pass.png" >
+                            <img src="img/pass.png" >
                             <input type="password" name="pass" value="" placeholder="Password" required />
                         </div><br>
 
