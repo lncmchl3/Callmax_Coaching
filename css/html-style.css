@@ -108,6 +108,7 @@ header a:hover{
    justify-content: center;
    align-items: center;
    text-align: center;
+
    background: url(../img/bg.png) no-repeat center;
  }
 
@@ -133,6 +134,7 @@ header a:hover{
   width: 400px;
   border-radius: 10px;
   padding: 25px 8px 35px 8px;
+  border-bottom: #115584 solid 7px;
   box-shadow: 0px 0px 100px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -245,6 +247,7 @@ article p{
   padding-left: 120px;
   padding-right: 120px;
   background: #f3f3f3;
+  border-bottom: #115584 solid 7px;
   box-shadow: 0px 0px 100px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -294,7 +297,7 @@ select:invalid {
   justify-content: center;
   align-items: center;
   text-align: start;
-  border-bottom: #115584 solid 5px;
+  border-bottom: #115584 solid 7px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -352,7 +355,7 @@ select:invalid {
   border-left: none;
   border-right: none;
   margin-bottom: 20px;
-  border-bottom: #115584 solid 5px;
+  border-bottom: #115584 solid 7px;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -382,6 +385,8 @@ select:invalid {
   align-items: center;
   text-align: start;
 }
+
+
 
 
 

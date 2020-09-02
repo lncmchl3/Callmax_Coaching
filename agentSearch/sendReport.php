@@ -49,6 +49,7 @@
       <div class="subcontainer">
         <div class="sendReport-box">
 
+
           <form class"sendReportform">
             <div>
               <h1>Coaching Form</h1>
@@ -79,7 +80,7 @@
 
             <div class="accountSelect">
               <label>Account:</label>
-                <select class="select" name="account" required  onchange="this.form.submit()">
+                <select class="select" name="account" required  >
                     <?php if ($account == "" || $account == null) { ?>
                   <option value="">Select Account</option>
                     <?php }else{ ?>
@@ -95,30 +96,34 @@
                     <?php }
                     } ?>
                 </select>
+
+                <label><?php echo $kash." Issue:"; ?></label>
+
+                  <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                  <input type="hidden" name="account" value="<?php echo $account; ?>">
+
+                  <select name="kash" onchange="this.form.submit()" required>
+                      <option>Select Issue</option>
+                      <option value="Knowledge">Knowledge</option>
+                      <option value="Attitude">Attitude</option>
+                      <option value="Skill">Skill</option>
+                      <option value="Habit">Habit</option>
+                  </select>
+
+
             </div>
             <!-- end of accountSelect -->
           </form>
           <!-- end of sendReportform -->
 
 
-            <div class="issueSelect">
-              <form class="selectIssue">
+            <!-- <div class="issueSelect">
+              <form class="selectIssue"> -->
 
-                  <label><?php echo $kash." Issue:"; ?></label>
 
-                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                    <input type="hidden" name="account" value="<?php echo $account; ?>">
+              <!-- </form>
 
-                    <select name="kash" onchange="this.form.submit()" required>
-                        <option>Select Issue</option>
-                        <option value="Knowledge">Knowledge</option>
-                        <option value="Attitude">Attitude</option>
-                        <option value="Skill">Skill</option>
-                        <option value="Habit">Habit</option>
-                    </select>
-              </form>
-
-            </div>
+            </div> -->
             <!-- end of issueSelect -->
 
 
