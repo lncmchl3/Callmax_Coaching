@@ -3,6 +3,7 @@ body {
   margin: 0;
   background-color: #f4f4f4;
   font: 15px/1.5 Arial, Helvetica, sans-serif;
+
 }
 a{
   text-decoration: none;
@@ -94,6 +95,7 @@ header a:hover{
    justify-content: center;
    align-items: center;
    text-align: center;
+
  }
 
  .login-header{
