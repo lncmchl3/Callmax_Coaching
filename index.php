@@ -42,7 +42,25 @@
                         <div class="login-header">
                             <h1>Welcome!</h1>
                         </div>
+                        <div>
+                        <?php
+							if(@$_GET['e']==true){
+						?>
+                            <span style="color: red"><?php echo $_GET['e'] ?></span>
+                            <?php
+							}else if (@$_GET['i']==true) {
+                                ?>
+                                <span style="color: red"><?php echo $_GET['i'] ?></span>
 
+                                <?php
+                            }
+							else{
+						?>
+						<span></span>
+							<?php
+							}
+							?>
+                        </div>
                         <div>
                             <img src="img/user.png">
                             <input type="text" name="uname" value="" placeholder="Username" required />
