@@ -114,6 +114,7 @@
             </div>
         </header>
 
+      <div class="reg-container">
         <div class="container">
           <div class="regbox">
 
@@ -249,12 +250,16 @@
           </div>
           <!-- end of regbox -->
 
+
+
+          </div>
+          <!-- end of container -->
           <div id="freepik">
               <a href="https://stories.freepik.com/work">Designed by Freepik</a>
           </div>
 
-          </div>
-          <!-- end of container -->
+      </div>
+      <!-- end of reg-container -->
 
 
 

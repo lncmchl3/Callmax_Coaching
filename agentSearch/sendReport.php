@@ -49,6 +49,7 @@
       <div class="subcontainer">
         <div class="sendReport-box">
 
+
           <form class"sendReportform">
             <div>
               <h1>Coaching Form</h1>
@@ -79,7 +80,7 @@
 
             <div class="accountSelect">
               <label>Account:</label>
-                <select class="select" name="account" required  onchange="this.form.submit()">
+                <select class="select" name="account" required  >
                     <?php if ($account == "" || $account == null) { ?>
                   <option value="">Select Account</option>
                     <?php }else{ ?>
@@ -95,30 +96,38 @@
                     <?php }
                     } ?>
                 </select>
+
+                <label>Issue:</label>
+
+
+                  <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                  <input type="hidden" name="account" value="<?php echo $account; ?>">
+
+                  <select name="kash" onchange="this.form.submit()" required>
+                      <option value="" disabled selected hidden>Choose Issue</option>
+                      <option value="Knowledge">Knowledge</option>
+                      <option value="Attitude">Attitude</option>
+                      <option value="Skill">Skill</option>
+                      <option value="Habit">Habit</option>
+                  </select>
+
+
             </div>
             <!-- end of accountSelect -->
-
-
-
-            <div class="issueSelect">
-              <label><?php echo $kash." Issue:"; ?></label>
-
-                <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                <input type="hidden" name="account" value="<?php echo $account; ?>">
-
-                <select name="kash" onchange="this.form.submit()" required>
-                    <option>Select Issue</option>
-                    <option value="Knowledge">Knowledge</option>
-                    <option value="Attitude">Attitude</option>
-                    <option value="Skill">Skill</option>
-                    <option value="Habit">Habit</option>
-                </select>
-
-            </div>
-            <!-- end of issueSelect -->
-
           </form>
           <!-- end of sendReportform -->
+
+
+            <!-- <div class="issueSelect">
+              <form class="selectIssue"> -->
+
+
+              <!-- </form>
+
+            </div> -->
+            <!-- end of issueSelect -->
+
+
         </div>
         <!-- end of sendReport-box -->
 
