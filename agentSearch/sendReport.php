@@ -97,13 +97,14 @@
                     } ?>
                 </select>
 
-                <label><?php echo $kash." Issue:"; ?></label>
+                <label>Issue:</label>
+
 
                   <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
                   <input type="hidden" name="account" value="<?php echo $account; ?>">
 
                   <select name="kash" onchange="this.form.submit()" required>
-                      <option>Select Issue</option>
+                      <option value="" disabled selected hidden>Choose Issue</option>
                       <option value="Knowledge">Knowledge</option>
                       <option value="Attitude">Attitude</option>
                       <option value="Skill">Skill</option>
