@@ -26,8 +26,27 @@ a:hover{
 }
 .main-container{
   min-height: calc(99.2vh - 85.19px - 89.88px);
-
 }
+.reg-container{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background: url(../img/adduser.png) no-repeat center;
+}
+.login-container{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background: url(../img/bg.png) no-repeat center;
+}
+.about-container{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background: url(../img/aboutus.png) no-repeat center;
+}
+
+
 .button{
   border: none;
   color: #ffffff;
@@ -64,6 +83,8 @@ a:hover{
 
 /* header */
 header{
+  position:sticky;
+  top: 0px;
 	background-color: #333;
   color:#ffffff;
   border-bottom: #115584 solid 8px;
@@ -95,6 +116,7 @@ header .current a{
 header a:hover{
   color: #115584;
   font-weight:bold;
+
 }
 #freepik a{
   text-align: center;
@@ -158,12 +180,16 @@ header a:hover{
   border: black 1px solid;
 }
 
+#freepik {
+  padding-left: 5px;
+}
+
 
 
 /* about us page */
 
 section#main{
-  min-height: calc(99.2vh - 85.19px - 89.88px);
+  min-height: calc(96.8vh - 85.19px - 89.88px);
 }
 
 /*side bar*/
@@ -206,7 +232,7 @@ article p{
   justify-content: center;
   align-items: center;
   text-align: start;
-  background: url(../img/adduser.png) no-repeat center;
+  /* background: url(../img/adduser.png) no-repeat center; */
 
 }
 

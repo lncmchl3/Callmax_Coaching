@@ -27,6 +27,7 @@
         </header>
 
 
+      <div class="about-container">
         <section id="main">
             <div class="container">
                 <article id="main-col">
@@ -80,6 +81,12 @@
                 </aside>
             </div>
         </section>
+
+        <div id="freepik">
+            <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+        </div>
+      </div>
+
 
 
 

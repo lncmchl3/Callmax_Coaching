@@ -32,72 +32,77 @@
             if (@is_null($_SESSION['demerits'])) {
         ?>
 
-      <div class="container">
+      <div class="login-container">
+        <div class="container">
 
 
-        <div class="loginbox">
-            <form class="my-form" method="post" action="login.php" autocomplete="off">
+          <div class="loginbox">
+              <form class="my-form" method="post" action="login.php" autocomplete="off">
 
 
-                        <div class="login-header">
-                            <h1>Welcome!</h1>
-                        </div>
+                          <div class="login-header">
+                              <h1>Welcome!</h1>
+                          </div>
 
-                        <div class="errorMessage">
-                          <?php
-  							                 if(@$_GET['e']==true){
-  						            ?>
+                          <div class="errorMessage">
+                            <?php
+    							                 if(@$_GET['e']==true){
+    						            ?>
 
-                                <h3 class="error"><?php echo $_GET['e'] ?></h3>
+                                  <h3 class="error"><?php echo $_GET['e'] ?></h3>
 
-                          <?php
-							                   }else if (@$_GET['i']==true) {
-                          ?>
-                                <h3 class="error"><?php echo $_GET['i'] ?></h3>
+                            <?php
+  							                   }else if (@$_GET['i']==true) {
+                            ?>
+                                  <h3 class="error"><?php echo $_GET['i'] ?></h3>
 
-                          <?php
-                          }
-							                   else{
-						              ?>
-                          <?php
-                          }
-                          ?>
-                        </div>
+                            <?php
+                            }
+  							                   else{
+  						              ?>
+                            <?php
+                            }
+                            ?>
+                          </div>
 
-                        <div>
-                            <img src="img/user.png">
-                            <input type="text" name="uname" value="" placeholder="Username" required />
-                        </div>
+                          <div>
+                              <img src="img/user.png">
+                              <input type="text" name="uname" value="" placeholder="Username" required />
+                          </div>
 
-                        <div>
+                          <div>
 
-                            <img src="img/pass.png" >
-                            <input type="password" name="pass" value="" placeholder="Password" required />
-                        </div><br>
+                              <img src="img/pass.png" >
+                              <input type="password" name="pass" value="" placeholder="Password" required />
+                          </div><br>
 
-                        <div class="btn">
-                          <button class="button" type="submit" name="Login"/>Login</button>
-                        </div>
+                          <div class="btn">
+                            <button class="button" type="submit" name="Login"/>Login</button>
+                          </div>
 
 
-                        <div>
-                            <a href="#">Forgot password?</a>
-                        </div>
+                          <div>
+                              <a href="#">Forgot password?</a>
+                          </div>
 
-                        <div>
-                            <label>Don't have an account?</label>
-                            <a href="reg.php">Sign up</a>
-                        </div>
+                          <div>
+                              <label>Don't have an account?</label>
+                              <a href="reg.php">Sign up</a>
+                          </div>
 
-            </form>
+              </form>
+
+            </div>
+            <!-- end of loginbox -->
 
           </div>
-          <!-- end of loginbox -->
+          <!-- end of container -->
+
           <div id="freepik">
               <a href="https://stories.freepik.com/work">Designed by Freepik</a>
           </div>
-        </div>
-        <!-- end of container -->
+      </div>
+      <!-- end of login-container -->
 
 
 
