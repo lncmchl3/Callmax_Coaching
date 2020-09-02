@@ -25,8 +25,9 @@ a:hover{
   background-color: #333;
   width: 250px;
   padding: 10px 10px 10px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-transform: uppercase;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 .button:hover{
   color:#ffffff;
@@ -49,7 +50,7 @@ a:hover{
   color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* header */
@@ -86,16 +87,19 @@ header a:hover{
   color: #115584;
   font-weight:bold;
 }
+#freepik a{
+  text-align: center;
+}
 
  /* Login form */
  .loginbox{
-   height: 80.5vh;
+   height: 78.1vh;
    width:100%;
    display: flex;
    justify-content: center;
    align-items: center;
    text-align: center;
-
+   background: url(../img/bg.png) no-repeat center;
  }
 
  .login-header{
@@ -111,14 +115,30 @@ header a:hover{
    text-align: center;
  }
 
+.errorMessage .error{
+  color:red;
+}
+
+.my-form{
+  background: #f3f3f3;
+  width: 400px;
+  border-radius: 10px;
+  padding: 25px 8px 35px 8px;
+  box-shadow: 0px 0px 100px 15px rgba(0, 0, 0, 0.5);
+}
+
+
 .my-form input[type="text"], .my-form input[type="password"]{
 
   width: 250px;
   padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  border: #333 solid 1px;
+  border-radius: 5px;
+  /* border: #333 solid 1px; */
+  border: none;
   margin-bottom: 8px;
   font-size:16px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+
 }
 
 .my-form .userlogo{
@@ -131,6 +151,10 @@ header a:hover{
 
 /* about us page */
 
+section#main{
+  min-height: calc(99.2vh - 85.19px - 89.88px);
+}
+
 /*side bar*/
 aside#sidebar{
   float:right;
@@ -141,8 +165,25 @@ aside#sidebar{
 article#main-col{
   float:left;
   width:65%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
+
+article h1{
+  padding: 10px;
+}
+
+article p{
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  border:none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
 
 /* New Registration form css */
 
@@ -154,6 +195,7 @@ article#main-col{
   justify-content: center;
   align-items: center;
   text-align: start;
+  background: url(../img/adduser.png) no-repeat center;
 
 }
 
@@ -173,10 +215,11 @@ article#main-col{
 .regbox input[type="text"], .regbox input[type="password"], .regbox input[type="email"], .regbox select {
   width: 400px;
   padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  border: #333 solid 1px;
+  border-radius: 5px;
+  border:none;
   margin-bottom: 8px;
   font-size:16px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .regbox select{
@@ -187,6 +230,14 @@ article#main-col{
   font-size:14px;
   text-transform:uppercase;
   display:block;
+}
+.regform{
+  margin-top:10px;
+  border-radius: 5px;
+  padding-left: 120px;
+  padding-right: 120px;
+  background: #f3f3f3;
+  box-shadow: 0px 0px 100px 15px rgba(0, 0, 0, 0.5);
 }
 
 select:invalid {
@@ -226,35 +277,54 @@ select:invalid {
 
 .search-formbox{
   /* min-height: calc(99.2vh - 85.19px - 89.88px); */
-  margin-top: 50px;
-  width:100%;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left:10%;
+  margin-right:10%;
+  width:80%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: start;
   border-bottom: #115584 solid 5px;
-  padding-bottom: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+
 }
+
 .searchForm select, .searchForm input[type="date"], .searchForm input[type="text"]{
 
   padding-right: 15px;
   margin-right: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .searchForm input[type="date"], .searchForm input[type="text"], .searchForm select{
   width: 200px;
   padding: 10px 10px 10px 10px;
-  border-radius: 10px;
-  border: #333 solid 1px;
+  border-radius: 5px;
+  border:none;
   margin-bottom: 8px;
   font-size:16px;
 }
+
+.searchForm input[type="date"]{
+  height: 18px;
+}
+
 .searchForm label{
   font-size:16px;
 }
 .searchForm button{
   padding: 15px 10px 15px 10px;
 }
+
 
 
 

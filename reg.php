@@ -249,6 +249,10 @@
           </div>
           <!-- end of regbox -->
 
+          <div id="freepik">
+              <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+          </div>
+
           </div>
           <!-- end of container -->
 

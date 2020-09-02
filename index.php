@@ -34,6 +34,7 @@
 
       <div class="container">
 
+
         <div class="loginbox">
             <form class="my-form" method="post" action="login.php" autocomplete="off">
 
@@ -41,25 +42,28 @@
                         <div class="login-header">
                             <h1>Welcome!</h1>
                         </div>
-                        <div>
-                        <?php
-							if(@$_GET['e']==true){
-						?>
-                            <span style="color: red"><?php echo $_GET['e'] ?></span>
-                            <?php
-							}else if (@$_GET['i']==true) {
-                                ?>
-                                <span style="color: red"><?php echo $_GET['i'] ?></span>
 
-                                <?php
-                            }
-							else{
-						?>
-						<span></span>
-							<?php
-							}
-							?>
+                        <div class="errorMessage">
+                          <?php
+  							                 if(@$_GET['e']==true){
+  						            ?>
+
+                                <h3 class="error"><?php echo $_GET['e'] ?></h3>
+
+                          <?php
+							                   }else if (@$_GET['i']==true) {
+                          ?>
+                                <h3 class="error"><?php echo $_GET['i'] ?></h3>
+
+                          <?php
+                          }
+							                   else{
+						              ?>
+                          <?php
+                          }
+                          ?>
                         </div>
+
                         <div>
                             <img src="img/user.png">
                             <input type="text" name="uname" value="" placeholder="Username" required />
@@ -86,9 +90,15 @@
                         </div>
 
             </form>
-</div>
 
-</div>
+          </div>
+          <!-- end of loginbox -->
+          <div id="freepik">
+              <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+          </div>
+        </div>
+        <!-- end of container -->
+
 
 
 
