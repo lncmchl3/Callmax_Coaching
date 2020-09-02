@@ -88,11 +88,17 @@
                             <label>Don't have an account?</label>
                             <a href="reg.php">Sign up</a>
                         </div>
-                        <!-- <a href="https://stories.freepik.com/work">Illustration by Freepik Stories</a> -->
-            </form>
-</div>
 
-</div>
+            </form>
+
+          </div>
+          <!-- end of loginbox -->
+          <div id="freepik">
+              <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+          </div>
+        </div>
+        <!-- end of container -->
+
 
 
 
