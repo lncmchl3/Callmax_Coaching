@@ -55,7 +55,7 @@
 // knowledge****
 $picard['actual_knowledge'] = "but the agent is aware to this knowledge.";
 $picard['actual_comprehension'] = "but the agent understand the knowledge. ";
-$picard['actual_application'] = "but the agent is kaya gawin.";
+$picard['actual_application'] = "but the agent can apply the said knowledge.";
 $picard['actual_analysis'] = "but the agent can justify the knowledge.";
 $picard['actual_evaluate'] = "The agent can propose.";
 // Attitude****
@@ -72,9 +72,9 @@ $picard['actual_value'] = "You know what is important to agent that is important
 // knowledge****
 $picard['standard_knowledge'] = "The agent is not aware of knowledge.";
 $picard['standard_comprehension'] = "The agent do not understand the ".$row['Questions'].",";
-$picard['standard_application'] = "The agent is kaya gawin.";
-$picard['standard_analysis'] = "The agent cannot justify the knowledge.";
-$picard['standard_evaluate'] = "The agent cannot propose.";
+$picard['standard_application'] = "The agent cant apply the ".$row['Questions'].",";
+$picard['standard_analysis'] = "The agent cannot justify the ".$row['Questions'].",";
+$picard['standard_evaluate'] = "The agent cannot propose the ".$row['Questions'].",";
 // Attitude****
 $picard['standard_recieve'] = "You do not know what is important to agent.";
 $picard['standard_respond'] = "Maybe the agent do not know whats important to you.";
@@ -91,8 +91,8 @@ $picard['standard_value'] = "You can dare the agent to develop the attitude.";
 //knowledge****
 $picard['knowledge_con'] = "Inform the agent about the said knowledge.";
 $picard['comprehension_con'] = "Inform the agent until the said knowledge is fully understand.";
-$picard['application_con'] = "";
-$picard['analysis_con'] = "";
-$picard['evaluate_con'] = "";
+$picard['application_con'] = "Correct and coach the agent until they can apply the said knowledge.";
+$picard['analysis_con'] = "Coach the agent until the agent can justify the knowledge.";
+$picard['evaluate_con'] = "Coach the agent until the agent can evaluate the said knowledge.";
 ?>
 
