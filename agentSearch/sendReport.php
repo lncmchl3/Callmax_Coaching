@@ -97,28 +97,31 @@
                 </select>
             </div>
             <!-- end of accountSelect -->
-
+          </form>
+          <!-- end of sendReportform -->
 
 
             <div class="issueSelect">
-              <label><?php echo $kash." Issue:"; ?></label>
+              <form class="selectIssue">
 
-                <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                <input type="hidden" name="account" value="<?php echo $account; ?>">
+                  <label><?php echo $kash." Issue:"; ?></label>
 
-                <select name="kash" onchange="this.form.submit()" required>
-                    <option>Select Issue</option>
-                    <option value="Knowledge">Knowledge</option>
-                    <option value="Attitude">Attitude</option>
-                    <option value="Skill">Skill</option>
-                    <option value="Habit">Habit</option>
-                </select>
+                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                    <input type="hidden" name="account" value="<?php echo $account; ?>">
+
+                    <select name="kash" onchange="this.form.submit()" required>
+                        <option>Select Issue</option>
+                        <option value="Knowledge">Knowledge</option>
+                        <option value="Attitude">Attitude</option>
+                        <option value="Skill">Skill</option>
+                        <option value="Habit">Habit</option>
+                    </select>
+              </form>
 
             </div>
             <!-- end of issueSelect -->
 
-          </form>
-          <!-- end of sendReportform -->
+
         </div>
         <!-- end of sendReport-box -->
 
