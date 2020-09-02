@@ -43,7 +43,7 @@
                         </div>
 
                         <div>
-                            <img src="images/user.png">
+                            <img class="userlogo" src="images/user.png">
                             <input type="text" name="uname" value="" placeholder="Username" required />
                         </div>
 

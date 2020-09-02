@@ -119,10 +119,10 @@ header a:hover{
   font-size:16px;
 }
 
-.my-form img{
+.my-form .userlogo{
   padding-top: 10px;
   padding-right: 10px;
-  width:30px;
+  border: black 1px solid;
 }
 
 
