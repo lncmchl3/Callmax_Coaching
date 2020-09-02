@@ -2,8 +2,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="searchicon.png">
-        <link href="infov4.css" rel="stylesheet" type="text/css">
-        <title>Coaching System</title>
+        <title>Callmax Solutions Coaching System | Info </title>
+        <link rel="stylesheet" type="text/css" href="../css/html-style.css">
     </head>
     <body>
     	<?php
@@ -11,23 +11,42 @@
 
     session_start();
     if (isset($_SESSION['name'])) {
-        if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') { 
+        if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {
         	$sessionUser = $_SESSION['name'];
         	$report_type = $_GET['type'];
         	$status = $_GET['status'];
         	$report_id = $_GET['string'];
         	$n = $_GET['n'];
     ?>
-    <div class="header">Name: <?php echo $_SESSION['name']; ?> / <a class="ab" href='../logout.php?logout'>Log out</a> 
-</div>
+
+
+
+    <header>
+        <div class="container">
+
+            <div id="branding">
+
+                <h1>Callmax Solutions Coaching System</h1>
+            </div>
+            <nav>
+                <ul>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
+                  <li><a href='sendReport.php'>Send Report</a></li>
+                  <li class="current"><a href='AgentSearch.php'>Info</a></li>
+                  <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
 <form style="float: right;"  method="post" action="AgentSearch.php" autocomplete="off" class="active">
 	<button type="submit">Back</button>
 </form>
+
 <div class="main-content">
 
 <?php
-		if ($status == "Pending") { 
+		if ($status == "Pending") {
 ?>
 <center>
         <div class="table_div">
@@ -35,7 +54,7 @@
 
                 <tr>
                     <th width='15%'>
-                        Team Leader: 
+                        Team Leader:
                     </th>
                     <td>
                         <?php echo $sessionUser; ?>
@@ -67,7 +86,7 @@
                         <td style=" text-align: left;"><?php echo $row['account']; ?></td>
                     </tr>
                     <?php
-                		} 
+                		}
                 	}
                 	?>
                 </tbody>
@@ -112,7 +131,7 @@
                     </tr>
                 </tbody>
             </table><br/>
-            <form  method="post" action="coachingAdding.php" autocomplete="off" class="active">   
+            <form  method="post" action="coachingAdding.php" autocomplete="off" class="active">
                 <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
                 <table border='1' width='100%'>
                     <thead>
@@ -144,7 +163,7 @@
 
                 <tr>
                     <th width='15%'>
-                        Team Leader: 
+                        Team Leader:
                     </th>
                     <td>
                         <?php echo $sessionUser; ?>
@@ -179,10 +198,10 @@
                     <?php }
                 } ?>
                 </tbody>
-            </table><br/> 
+            </table><br/>
             <table border='1' width='100%'>
                 <thead>
-                    <tr> 
+                    <tr>
                     	<th>Action Plan</th>
                     </tr>
                 </thead>
@@ -204,7 +223,7 @@
                     	<?php include 'kash/logic.php'; ?>
                     </tr>
                     <?php }
-                     } 
+                     }
                 } ?>
                 <?php if (!empty($array)) {
                 	?>

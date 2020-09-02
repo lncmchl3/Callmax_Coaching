@@ -11,7 +11,8 @@
                   '<td>adsdsdsd</td>');
             $('table> tbody:last').append($row);
         </script>
-        <title>Coaching System - Agents</title>
+        <title>Callmax Solutions Coaching System | Send Report</title>
+
     </head>
     <body  onload="disableBackButton()" onunload="disableBackButton()">
         <?php

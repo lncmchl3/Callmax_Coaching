@@ -41,103 +41,114 @@
 <!-- Welcome <?php echo $_SESSION['name']." position ".$_SESSION['demerits']; ?>. <a href="logout.php?logout">Logout</a> -->
 
 
+<div class="main-container">
+  <div class="container">
+    <div class="subcontainer">
+        <div class="search-formbox">
+              <form class="searchForm" name="searchForm" method="post" autocomplete="off" class="active">
 
 
-            <div class="container">
-              <div class="search-formbox">
-                    <form class="searchForm" name="searchForm" method="post" autocomplete="off" class="active">
+                <label>Fiter By:</label>
+                <select name="item">
+                    <option value="agent">Name</option>
+                    <option value="account">Account</option>
+                    <option value="status">Status</option>
+                </select>
+
+                <input type="text" name="search" placeholder="Search.." >
+                <input type="date" name="date">
+                <button class="button" type="submit" name="searchForm">Search</button>
+          </form>
+
+          </div>
+          <!-- end of search-formbox -->
+
+      </div>
+      <!-- end of subcontainer of search-formbox -->
 
 
-                      <label>Fiter By:</label>
-                      <select name="item">
-                          <option value="agent">Name</option>
-                          <option value="account">Account</option>
-                          <option value="status">Status</option>
-                      </select>
+      <!-- start of table -->
+      <div class="subcontainer">
+        <div class="tablebox">
 
-                      <input type="text" name="search" placeholder="Search.." >
-                      <input type="date" name="date">
-                      <button class="button" type="submit" name="searchForm">Search</button>
-                </form>
-
-                </div>
-                <!-- end of search-formbox -->
-
-            </div>
-            <!-- end of container -->
+        <?php include('search.php'); ?>
+        <?php
+        if ($choices == null) {
+        ?>
+        <br/>
+        <?php
+        }
+        else {
+        ?>
+        <?php
+        include('../connection.php');
 
 
-            <!-- start of table -->
-            <div class="container">
-              <div>
+                                    for($i = 0; $i < count($data); $i++){
+                                    $query1 = "SELECT * FROM agent_reports WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND UPPER(account) LIKE UPPER('".$data[$i]."') AND date_issued LIKE '".$date."%' ORDER BY id DESC,date_issued ASC limit 50";
+                                    $result1 = mysqli_query($connection, $query1);
+                                    if (mysqli_num_rows($result1) > 0) {
+                        ?>
+                        <div class="table_div">
+                        <table border = "1" width="100%">
+                            <thead>
+                            <tr>
+                                <th colspan="30"><?php echo $data[$i]; ?></th>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th>Agent's Name</th>
+                                <th>Type of Report</th>
+                                <th>Date Issued</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                    while ($row1 = mysqli_fetch_assoc($result1)) {
+                            ?>
 
-              <?php include('search.php'); ?>
-              <?php
-              if ($choices == null) {
-              ?>
-              <br/>
-              <?php
-              }
-              else {
-              ?>
-              <?php
-              include('../connection.php');
+                                <tr onclick="window.location='info.php?n=<?php echo $row1['id']; ?>&type=<?php echo $row1['report_type']; ?>&string=<?php echo $row1['report_id']; ?>&status=<?php echo $row1['status']; ?>'" class="only">
+                                <td><?php echo $row1['agent']; ?></td>
+                                <td style="width: 15%; text-align: center;"> <?php echo $row1['report_type']; ?></td>
+                                <td style="width: 15%; text-align: center;"> <?php echo $row1['date_issued']; ?></td>
+                                <?php
+                                    if($row1['status']=="Pending"){
+                                ?>
+                                <td style="width: 15%; text-align: center; color: black; background-color: #ff6f5c;"><?php echo $row1['status']; ?></td>
+                                <?php }else if($row1['status']=="Submitted"){ ?>
+                                <td style="width: 15%; text-align: center; color: black; background-color: #ffcb5c;"><?php echo $row1['status']; ?></td>
+                                <?php }else{ ?>
+                                <td style="width: 15%; text-align: center; color: black; background-color: #92ff5c;"><?php echo $row1['status']; ?></td>
+                                <?php
+                                    }
+                                }
+                                ?>
+                        </tr>
+                        </tbody>
+                        </table>
+                        </div>
+                            <?php
+                                    }
+                                }
+                            ?>
+                        <?php } ?>
+
+        </div>
+        <!-- end of tablebox -->
+
+    </div>
+    <!-- end of subcontainer of tablebox-->
 
 
-                                          for($i = 0; $i < count($data); $i++){
-                                          $query1 = "SELECT * FROM agent_reports WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND UPPER(account) LIKE UPPER('".$data[$i]."') AND date_issued LIKE '".$date."%' ORDER BY id DESC,date_issued ASC limit 50";
-                                          $result1 = mysqli_query($connection, $query1);
-                                          if (mysqli_num_rows($result1) > 0) {
-                              ?>
-                              <div class="table_div">
-                              <table border = "1" width="100%">
-                                  <thead>
-                                  <tr>
-                                      <th colspan="30"><?php echo $data[$i]; ?></th>
-                                  </tr>
-                              </thead>
-                              <thead>
-                                  <tr>
-                                      <th>Agent's Name</th>
-                                      <th>Type of Report</th>
-                                      <th>Date Issued</th>
-                                      <th>Status</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <?php
-                                          while ($row1 = mysqli_fetch_assoc($result1)) {
-                                  ?>
+  </div>
+  <!-- end of container -->
 
-                                      <tr onclick="window.location='info.php?n=<?php echo $row1['id']; ?>&type=<?php echo $row1['report_type']; ?>&string=<?php echo $row1['report_id']; ?>&status=<?php echo $row1['status']; ?>'" class="only">
-                                      <td><?php echo $row1['agent']; ?></td>
-                                      <td style="width: 15%; text-align: center;"> <?php echo $row1['report_type']; ?></td>
-                                      <td style="width: 15%; text-align: center;"> <?php echo $row1['date_issued']; ?></td>
-                                      <?php
-                                          if($row1['status']=="Pending"){
-                                      ?>
-                                      <td style="width: 15%; text-align: center; color: black; background-color: #ff6f5c;"><?php echo $row1['status']; ?></td>
-                                      <?php }else if($row1['status']=="Submitted"){ ?>
-                                      <td style="width: 15%; text-align: center; color: black; background-color: #ffcb5c;"><?php echo $row1['status']; ?></td>
-                                      <?php }else{ ?>
-                                      <td style="width: 15%; text-align: center; color: black; background-color: #92ff5c;"><?php echo $row1['status']; ?></td>
-                                      <?php
-                                          }
-                                      }
-                                      ?>
-                              </tr>
-                              </tbody>
-                              </table>
-                              </div>
-                                  <?php
-                                          }
-                                      }
-                                  ?>
-                              <?php } ?>
+</div>
+<!-- end of main-container -->
 
-              </div>
 
-            </div>
 
 
 <?php

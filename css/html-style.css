@@ -19,6 +19,15 @@ a:hover{
   margin: auto;
   overflow: hidden;
 }
+.subcontainer{
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.main-container{
+  min-height: calc(99.2vh - 85.19px - 89.88px);
+
+}
 .button{
   border: none;
   color: #ffffff;
