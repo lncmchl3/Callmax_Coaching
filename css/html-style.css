@@ -95,7 +95,7 @@ header a:hover{
    justify-content: center;
    align-items: center;
    text-align: center;
-
+   /* background: url(../img/background.png) no-repeat center; */
  }
 
  .login-header{
