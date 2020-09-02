@@ -58,7 +58,7 @@
         if ($row['scores'] == '4' && $row['standard_score'] == '5') { 
             ?>
                 <td style=" height: 100px; text-align: center;">
-                    <?php echo $picard['standard_evaluate']." ".$picard['actual_analysis    ']." ".$picard['evaluate_con']; ?>
+                    <?php echo $picard['standard_evaluate']." ".$picard['actual_analysis']." ".$picard['evaluate_con']; ?>
                 </td>     
 	<?php 	}
 		}
