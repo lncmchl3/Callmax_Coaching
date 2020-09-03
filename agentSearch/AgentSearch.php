@@ -52,8 +52,8 @@
 <div class="main-container">
   <div class="container">
     <div class="subcontainer">
-        <div class="search-formbox">
-              <form class="searchForm" name="searchForm" method="post" autocomplete="off" class="active">
+        <!-- <div class="search-formbox"> -->
+              <form class="searchForm" name="searchForm" method="post" autocomplete="off">
 
 
                 <label>Fiter By:</label>
@@ -74,7 +74,7 @@
 
           </form>
 
-          </div>
+          <!-- </div> -->
           <!-- end of search-formbox -->
 
 

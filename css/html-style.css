@@ -329,29 +329,23 @@ select:invalid {
 
 
 
-.search-formbox{
+/* .search-formbox{
   /* min-height: calc(99.2vh - 85.19px - 89.88px); */
-  margin-top: 20px;
-  margin-bottom: 15px;
-  margin-left:10%;
-  margin-right:10%;
+  margin: auto;
   width:80%;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: start;
-  border-bottom: #115584 solid 7px;
+
   border-top: none;
   border-left: none;
   border-right: none;
   padding-bottom: 10px;
   padding-top: 10px;
 
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  background: #f3f3f3;
-
-}
+} */
 
 .searchForm select, .searchForm input[type="date"], .searchForm input[type="text"]{
 
@@ -359,14 +353,32 @@ select:invalid {
   margin-right: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
+.searchForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  border-bottom: #115584 solid 7px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  background: #f3f3f3;
+  overflow: hidden;
+}
 
 .searchForm input[type="date"], .searchForm input[type="text"], .searchForm select{
-  width: 200px;
+  width:20%;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
   border:none;
   margin-bottom: 8px;
   font-size:16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-right: 10px;
 }
 
 .searchForm input[type="date"]{
