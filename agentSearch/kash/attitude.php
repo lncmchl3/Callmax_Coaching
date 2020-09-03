@@ -15,7 +15,6 @@ echo "<label>• <b>3</b><a style='color: gray'>(".$picard['third_attitude'].")<
       object.value = object.value.slice(0, object.maxLength)
   }
 </script>
-
 <p>
 	<br/><b><?php echo $row['kash_requirement']; ?></b>
 </p>
