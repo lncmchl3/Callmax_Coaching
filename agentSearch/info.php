@@ -31,8 +31,9 @@
             <nav>
                 <ul>
                   <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
+                  <li class="current"><a href='#'>Info</a></li>
                   <li><a href='sendReport.php'>Send Report</a></li>
-                  <li class="current"><a href='AgentSearch.php'>Info</a></li>
+                  <li><a href='AgentSearch.php'>Dashboard</a></li>
                   <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
                 </ul>
             </nav>
@@ -40,159 +41,166 @@
     </header>
 
 
-  <form style="float: right;"  method="post" action="AgentSearch.php" autocomplete="off" class="active">
+  <!-- <form  method="post" action="AgentSearch.php" autocomplete="off" class="active">
   	<button class="button "type="submit">Back to dashboard</button>
-  </form>
+  </form> -->
 
   <div class="container">
 
   <?php
   		if ($status == "Pending") {
   ?>
+  <div class="agentInfobox">
+    <table class="agentInfo">
+      <thead>
+        <tr>
+          <th colspan="2">Agent Information</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <?php
+        $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
+        $result1 = mysqli_query($connection, $query1);
+        if (mysqli_num_rows($result1) > 0) {
+          while ( $row = mysqli_fetch_assoc($result1)) {
+            ?>
+            <tr>
+              <th>Name: </th>
+              <td><?php echo $row['agent']; ?></td>
+            </tr>
+            <tr>
+              <th>Account: </th>
+              <td><?php echo $row['account']; ?></td>
+            </tr>
+            <?php
+          }
+        }
+        ?>
+      </tbody>
+    </table>
+    <!-- end of agentInfo -->
+  </div>
+  <!-- end of agentinfobox -->
 
 
-<table>
-<thead>
-<tr>
-<th colspan="2">Agent's Information</th>
-</tr>
-</thead>
-<tbody>
 
-                    <?php
-                        $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
-                        $result1 = mysqli_query($connection, $query1);
-                        if (mysqli_num_rows($result1) > 0) {
-                        while ( $row = mysqli_fetch_assoc($result1)) {
-                    ?>
+<div class="subcontainer">
+<div class="resultBox">
+  <h2>QA Non-Voice Result</h2>
+  <table class="resultTable">
 
-                    <tr>
-                        <th style=" text-align: left; width: 10%;">Name: </th>
-                        <td style=" text-align: left;"><?php echo $row['agent']; ?></td>
-                    </tr>
-                    <tr>
-                        <th style=" text-align:left; width: 10%;">Account: </th>
-                        <td style=" text-align: left;"><?php echo $row['account']; ?></td>
-                    </tr>
-                    <?php
-                		}
-                	}
-                	?>
-                </tbody>
-            </table>
+            <?php
+                $query = "SELECT * FROM qan_data where id = ".$report_id;
+                $result = mysqli_query($connection, $query);
+            ?>
 
-          <!-- end of table 2 -->
+            <thead>
+              <tr>
+                  <th>Potential Cause of Failures</th>
+                  <th>Severity</th>
+                  <th>Occurrence</th>
+                  <th>Detection</th>
+                  <th>RPN</th>
+                  <th>QA Score</th>
+                  <th>Recommended Action</th>
+              </tr>
+            </thead>
 
 
-
-            <table border = "1" style="width: 100%;">
-
-                <?php
-                    $query = "SELECT * FROM qan_data where id = ".$report_id;
-                    $result = mysqli_query($connection, $query);
-                ?>
-
-                <thead>
-                    <tr>
-                        <th colspan="7">QA - Non-Voice Result</th>
-                    </tr>
-                </thead>
+            <tbody>
                 <tr>
-                    <th>Potential Cause of Failures</th>
-                    <th>Severity</th>
-                    <th>Occurrence</th>
-                    <th>Detection</th>
-                    <th>RPN</th>
-                    <th>QA Score</th>
-                    <th>Recommended Action</th>
-                </tr>
-
-                <tbody>
-                    <tr>
-                        <?php
-                        if (mysqli_num_rows($result) > 0) {
-                        	while ( $row = mysqli_fetch_assoc($result)) {
-                        ?>
-                        <td style='width: 40%'><?php echo str_replace(",", "<br/>",$row['potential_cause_of_failure']); ?></td>
-                        <td style='text-align: center; width: 6%;'><?php echo $row['severity']; ?></td>
-                        <td style='text-align: center; width: 6%;'><?php echo $row['occurence']; ?></td>
-                        <td style='text-align: center; width: 6%;'><?php echo $row['detection']; ?></td>
-                        <td style='text-align: center; width: 6%;'><?php echo $row['rpn']; ?></td>
-                        <td style='text-align: center; width: 6%;'><?php echo number_format($row['qascore'],2); ?>%</td>
-                        <td style='width: 30%'><?php echo $row['recommended_action']; ?></td>
-                        <?php }
-                    } ?>
-                    </tr>
-                </tbody>
-            </table><br/>
-            <form  method="post" action="coachingAdding.php" autocomplete="off" class="active">
-                <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
-                <table border='1' width='100%'>
-                    <thead>
-                        <tr>
-                            <th>Root Cause</th>
-                            <th>Action Plan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <textarea id="rootCause" name="rootCause" rows="7" placeholder='Type Root Cause here' required></textarea>
-                            </td>
-                            <td>
-                                <textarea id="actionPlan" name="actionPlan" rows="7" placeholder='Type Action Plan here' required></textarea>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <button type="submit" onclick="return confirm('Are you sure you want to Submit?')">Submit</button>
-            </form>
-
-    </center>
-    <?php } else { ?>
-    <center>
-        <div class="table_div">
-            <table border='1' width='50%'>
-
-                <tr>
-                    <th width='15%'>
-                        Team Leader:
-                    </th>
-                    <td>
-                        <?php echo $sessionUser; ?>
-                    </td>
-                </tr>
-
-            </table>
-            <table border = "1" style="width: 50%;">
-
-
-                <thead>
-                    <tr>
-                        <th colspan="2">Agent's Information</th>
-                    </tr>
-                </thead>
-                <tbody>
-                	<?php
-
-                        $query1 = "SELECT * FROM agent_reports WHERE id = ".$n;
-                        $result1 = mysqli_query($connection, $query1);
-                        if (mysqli_num_rows($result1) > 0) {
-                        while ( $row = mysqli_fetch_assoc($result1)) {
+                    <?php
+                    if (mysqli_num_rows($result1) > 0) {
+                      while ( $row = mysqli_fetch_assoc($result1)) {
                     ?>
-                    <tr>
-                        <th style=" text-align: left; width: 10%;">Name: </th>
-                        <td style=" text-align: left;"><?php echo $row['agent']; ?></td>
-                    </tr>
-                    <tr>
-                        <th style=" text-align:left; width: 10%;">Account: </th>
-                        <td style=" text-align: left;"><?php echo $row['account']; ?></td>
-                    </tr>
+                    <td style='width: 40%'><?php echo str_replace(",", "<br/>",$row['potential_cause_of_failure']); ?></td>
+                    <td style='text-align: center; width: 6%;'><?php echo $row['severity']; ?></td>
+                    <td style='text-align: center; width: 6%;'><?php echo $row['occurence']; ?></td>
+                    <td style='text-align: center; width: 6%;'><?php echo $row['detection']; ?></td>
+                    <td style='text-align: center; width: 6%;'><?php echo $row['rpn']; ?></td>
+                    <td style='text-align: center; width: 6%;'><?php echo number_format($row['qascore'],2); ?>%</td>
+                    <td style='width: 30%'><?php echo $row['recommended_action']; ?></td>
                     <?php }
                 } ?>
+                </tr>
+            </tbody>
+        </table>
+
+</div>
+<!-- end of resultBox -->
+
+</div>
+<!-- end of subcontainer -->
+
+
+  <div class="subcontainer">
+
+    <div class="root-action-box">
+      <form class="root-action-form" method="post" action="coachingAdding.php" autocomplete="off">
+
+        <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
+
+        <div class="root-cause">
+          <label>Root Cause</label>
+          <textarea id="rootCause" name="rootCause" placeholder='Type Root Cause here' required></textarea>
+        </div>
+
+        <div class="action-plan">
+          <label>Action Plan</label>
+          <textarea id="actionPlan" name="actionPlan" placeholder='Type Action Plan here' required></textarea>
+        </div>
+
+        <div class="rootBtn">
+          <button class="button" type="submit" onclick="return confirm('Are you sure you want to Submit?')">Submit</button>
+        </div>
+
+      </form>
+    </div>
+
+
+  </div>
+
+
+
+    <?php } else { ?>
+
+            <div class="agentInfobox">
+              <table class="agentInfo">
+                <thead>
+                  <tr>
+                    <th colspan="2">Agent Information</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <?php
+                  $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
+                  $result1 = mysqli_query($connection, $query1);
+                  if (mysqli_num_rows($result1) > 0) {
+                    while ( $row = mysqli_fetch_assoc($result1)) {
+                      ?>
+                      <tr>
+                        <th>Name: </th>
+                        <td><?php echo $row['agent']; ?></td>
+                      </tr>
+                      <tr>
+                        <th>Account: </th>
+                        <td><?php echo $row['account']; ?></td>
+                      </tr>
+                      <?php
+                    }
+                  }
+                  ?>
                 </tbody>
-            </table><br/>
+              </table>
+              <!-- end of t -->
+            </div>
+            <!-- end of agentinfobox -->
+
+
+
+            <br/>
             <table border='1' width='100%'>
                 <thead>
                     <tr>
@@ -232,7 +240,7 @@
             </table>
             <a href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>">Click here for the Acknowledgement Link</a>
         </div>
-    </center>
+
     <?php } ?>
 
 
@@ -246,9 +254,9 @@
         header("location:index.php?e=Please Log in");
     }
 ?>
-<br/><br/>
+
 <footer>
-        <p>Coaching System © Callmax Solutions. All rights reserved.</p>
+     <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
 </footer>
 </body>
 </html>

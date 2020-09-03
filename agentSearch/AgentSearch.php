@@ -109,7 +109,7 @@
             <table class="dashboard-table">
               <thead>
                 <tr>
-                  <th>Agent's Name</th>
+                  <th>Agent Name</th>
                   <th>Type of Report</th>
                   <th>Date Issued</th>
                   <th>Status</th>
