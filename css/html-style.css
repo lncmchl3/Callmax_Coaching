@@ -26,6 +26,10 @@ a:hover{
 }
 .main-container{
   min-height: calc(99.2vh - 85.19px - 89.88px);
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  /* background: url(../img/dashboard.png) no-repeat center; */
 }
 .reg-container{
   width: 100%;
@@ -33,6 +37,7 @@ a:hover{
   overflow: hidden;
   background: url(../img/adduser.png) no-repeat center;
 }
+
 .login-container{
   width: 100%;
   margin: auto;
@@ -62,6 +67,9 @@ a:hover{
   cursor: pointer;
   font-weight: bold;
   background-color: #115584;
+}
+.button:focus{
+  outline: none;
 }
 
 
@@ -340,7 +348,8 @@ select:invalid {
   padding-top: 10px;
 
   border-radius: 5px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  background: #f3f3f3;
 
 }
 
@@ -348,7 +357,7 @@ select:invalid {
 
   padding-right: 15px;
   margin-right: 10px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .searchForm input[type="date"], .searchForm input[type="text"], .searchForm select{
@@ -373,10 +382,64 @@ select:invalid {
 
 /* dashboard table */
 .dashboard-table{
+  width: 80%;
   text-align: left;
+  border-collapse: collapse;
+  margin: auto;
+  /* margin-top: 25px; */
+  margin-bottom: 25px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  /* overflow-y: scroll; */
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
-.table-heading h3{
+.dashboard-table thead{
+  position: sticky;
+  top: 0;
+  background-color: #115584;
+  color: #ffffff;
+  /* text-align: center; */
+  text-transform: uppercase;
+
+}
+
+.table_div h3{
+  width: 70%;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
   text-align: center;
+  border-bottom: #115584 solid 7px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+}
+
+.dashboard-table th, .dashboard-table td{
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.dashboard-table tbody tr{
+  border-bottom: #dddddd 1px solid;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+.dashboard-table tbody tr:hover{
+  background-color: #c2c2c2;
+}
+
+.dashboard-table tbody tr:nth-of-type(even){
+  background-color: #dadada;
+}
+.dashboard-table tbody tr:nth-of-type(even):hover{
+  background-color: #c2c2c2;
+}
+
+.dashboard-table tbody tr:last-of-type{
+  border-bottom: #115584 7px solid;
 }
 
 
@@ -387,17 +450,21 @@ select:invalid {
 
 .tablebox .tableStatusOrange{
   /* width: 15%; */
+  text-align: center;
   background-color: #f56101;
-  color: #ffffff;
 }
 
 .tablebox .tableStatusGreen{
   /* width: 15%; */
+  text-align: center;
   background-color: #00aa00;
 }
 
 .tablebox .tableStatusYellow{
-  width: 15%;
+  width: 10%;
+  text-align: center;
+  /* color: #ffc530; */
+  text-shadow: 0 0 20px rgba(0,0,0,0.5);
   background-color: #ffc530;
 }
 
@@ -421,12 +488,12 @@ select:invalid {
   border-right: none;
   margin-bottom: 20px;
   border-bottom: #115584 solid 7px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .sendReport-box select{
   cursor: pointer;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
 .sendReport-box label{

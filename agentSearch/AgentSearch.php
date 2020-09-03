@@ -103,13 +103,10 @@
             if (mysqli_num_rows($result1) > 0) {
         ?>
           <div class="table_div">
-            <table class="dashboard-table">
-              <thead class="table-heading">
-                <tr>
-                  <th colspan="30"><h3><?php echo $data[$i]; ?></h3></th>
-                </tr>
-              </thead>
 
+            <h3><?php echo $data[$i]; ?></h3>
+
+            <table class="dashboard-table">
               <thead>
                 <tr>
                   <th>Agent's Name</th>
