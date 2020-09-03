@@ -64,6 +64,8 @@ a:hover{
   background-color: #115584;
 }
 
+
+
 /*
 .container {
   display: flex;
@@ -367,6 +369,36 @@ select:invalid {
 }
 .searchForm button{
   padding: 15px 10px 15px 10px;
+}
+
+/* dashboard table */
+.dashboard-table{
+  text-align: left;
+}
+.table-heading h3{
+  text-align: center;
+}
+
+
+
+
+
+
+
+.tablebox .tableStatusOrange{
+  /* width: 15%; */
+  background-color: #f56101;
+  color: #ffffff;
+}
+
+.tablebox .tableStatusGreen{
+  /* width: 15%; */
+  background-color: #00aa00;
+}
+
+.tablebox .tableStatusYellow{
+  width: 15%;
+  background-color: #ffc530;
 }
 
 
