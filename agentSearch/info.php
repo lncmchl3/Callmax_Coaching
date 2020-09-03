@@ -39,37 +39,26 @@
         </div>
     </header>
 
-<form style="float: right;"  method="post" action="AgentSearch.php" autocomplete="off" class="active">
-	<button type="submit">Back</button>
-</form>
 
-<div class="main-content">
+  <form style="float: right;"  method="post" action="AgentSearch.php" autocomplete="off" class="active">
+  	<button class="button "type="submit">Back to dashboard</button>
+  </form>
 
-<?php
-		if ($status == "Pending") {
-?>
-<center>
-        <div class="table_div">
-            <table border='1' width='50%'>
+  <div class="container">
 
-                <tr>
-                    <th width='15%'>
-                        Team Leader:
-                    </th>
-                    <td>
-                        <?php echo $sessionUser; ?>
-                    </td>
-                </tr>
+  <?php
+  		if ($status == "Pending") {
+  ?>
 
-            </table>
-            <table border = "1" style="width: 50%;">
 
-                <thead>
-                    <tr>
-                        <th colspan="2">Agent's Information</th>
-                    </tr>
-                </thead>
-                <tbody>
+<table>
+<thead>
+<tr>
+<th colspan="2">Agent's Information</th>
+</tr>
+</thead>
+<tbody>
+
                     <?php
                         $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
                         $result1 = mysqli_query($connection, $query1);
@@ -91,6 +80,11 @@
                 	?>
                 </tbody>
             </table>
+
+          <!-- end of table 2 -->
+
+
+
             <table border = "1" style="width: 100%;">
 
                 <?php
@@ -154,7 +148,7 @@
 
                 <button type="submit" onclick="return confirm('Are you sure you want to Submit?')">Submit</button>
             </form>
-        </div>
+
     </center>
     <?php } else { ?>
     <center>
