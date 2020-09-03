@@ -18,8 +18,8 @@ echo "<label>• <b>3</b><a style='color: gray'>(".$picard['third_habit'].")</a>
 <p>
 	<br/><b><?php echo $row['kash_requirement']; ?></b>
 </p>
-<input type="hidden"  name="HabitQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
-<input type="hidden"  name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
+<input type="hidden" name="HabitQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
+<input type="hidden" name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
 <label for="HabitAnswer">Rate from 1 - <?php echo $row['kash_standard_score'] ?>:</label><input type="number" min="1" max="<?php echo $row['kash_standard_score'] ?>" name="HabitAnswer[]" oninput="maxLengthCheck(this)" maxlength="1" required>
 <?php
 	}

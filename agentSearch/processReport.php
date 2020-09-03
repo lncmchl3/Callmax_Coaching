@@ -11,10 +11,10 @@
         $last_id = mysqli_insert_id($connection);
 
         if (isset($_REQUEST['KnowledgeAnswer'])) {
-        $kash_requirement = 'Knowledge';
-        $Kanswers = $_REQUEST['KnowledgeAnswer'];
-        $kash_standard_score = $_REQUEST['kash_standard_score'];
-        $KnowledgeQuestions = $_REQUEST['KnowledgeQuestions'];
+            $kash_requirement = 'Knowledge';
+            $Kanswers = $_REQUEST['KnowledgeAnswer'];
+            $kash_standard_score = $_REQUEST['kash_standard_score'];
+            $KnowledgeQuestions = $_REQUEST['KnowledgeQuestions'];
             for ($i=0, $j=0; $i < count($Kanswers) && $j < count($KnowledgeQuestions); $i++, $j++) {
                 if ($kash_standard_score[$j]==1) {
                     $equivalent_word = "aware";
@@ -48,9 +48,10 @@
         }
         }
         if (isset($_REQUEST['AttitudeAnswer'])) {
-        $kash_requirement = 'Attitude';
-        $Aanswers = $_REQUEST['AttitudeAnswer'];
-        $AttitudeQuestions = $_REQUEST['AttitudeQuestions'];
+            $kash_standard_score = $_REQUEST['kash_standard_score'];
+            $kash_requirement = 'Attitude';
+            $Aanswers = $_REQUEST['AttitudeAnswer'];
+            $AttitudeQuestions = $_REQUEST['AttitudeQuestions'];
             for ($i=0, $j=0; $i < count($Aanswers) && $j < count($AttitudeQuestions); $i++, $j++) {
 
                 //query to insert data to database
@@ -61,9 +62,10 @@
         }
         }
         if (isset($_REQUEST['SkillsAnswer'])) {
-        $kash_requirement = 'Skills';
-        $Sanswers = $_REQUEST['SkillsAnswer'];
-        $SkillsQuestions = $_REQUEST['SkillsQuestions'];
+            $kash_standard_score = $_REQUEST['kash_standard_score'];
+            $kash_requirement = 'Skills';
+            $Sanswers = $_REQUEST['SkillsAnswer'];
+            $SkillsQuestions = $_REQUEST['SkillsQuestions'];
             for ($i=0, $j=0; $i < count($Sanswers) && $j < count($SkillsQuestions); $i++, $j++) {
                 //query to insert data to database
             $query = "INSERT INTO picard_dump (report_id, name, account, kash_requirement, questions, scores, standard_score) VALUES('".$last_id."','".$agentname."','".$account."', '".$kash_requirement."', '".$SkillsQuestions[$j]."', '".$Sanswers[$i]."','".$kash_standard_score[$j]."')";
@@ -71,9 +73,10 @@
         }
         }
         if (isset($_REQUEST['HabitAnswer'])) {
-        $kash_requirement = 'Habit';    
-        $Hanswers = $_REQUEST['HabitAnswer'];
-        $HabitQuestions = $_REQUEST['HabitQuestions'];
+            $kash_standard_score = $_REQUEST['kash_standard_score'];
+            $kash_requirement = 'Habit';    
+            $Hanswers = $_REQUEST['HabitAnswer'];
+            $HabitQuestions = $_REQUEST['HabitQuestions'];
             for ($i=0, $j=0; $i < count($Hanswers) && $j < count($HabitQuestions); $i++, $j++) {
                 //query to insert data to database
             $query = "INSERT INTO picard_dump (report_id, name, account, kash_requirement, questions, scores, standard_score) VALUES('".$last_id."','".$agentname."','".$account."', '".$kash_requirement."', '".$HabitQuestions[$j]."', '".$Hanswers[$i]."','".$kash_standard_score[$j]."')";
