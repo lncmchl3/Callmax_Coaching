@@ -45,149 +45,148 @@
         </div>
     </header>
 
-    <div class="container">
-      <div class="subcontainer">
-        <div class="sendReport-box">
 
 
-          <form class"sendReportform">
-            <div>
-              <h1>Coaching Form</h1>
+
+
+          <div class="container">
+            <div class="subcontainer">
+              <div class="sendReport-box">
+
+
+                <form class"sendReportform">
+                  <div>
+                    <h1>Coaching Form</h1>
+                  </div>
+
+                  <div class="agentName">
+                      <label>Agent's Name:</label>
+                    <select name="agentname"  class="select" required>
+                        <?php if ($agentname == "" || $agentname == null) { ?>
+                      <option value="">Select Name</option>
+                        <?php } else { ?>
+                      <option value=""><?php echo $agentname; ?></option>
+                        <?php } ?>
+                        <?php
+                          $query = "SELECT * FROM agents";
+                  $result = mysqli_query($connection, $query);
+                  if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                          ?>
+                      <option value='<?php echo $row['fullname']; ?>'><?php echo $row['fullname']; ?></option>
+                        <?php
+                      }
+                  } ?>
+                    </select>
+                  </div>
+                  <!-- end of agentName -->
+
+
+                  <div class="accountSelect">
+                    <label>Account:</label>
+                      <select name="account" required  >
+                          <?php if ($account == "" || $account == null) { ?>
+                        <option value="" disabled selected hidden>Select Account</option>
+                          <?php } else { ?>
+                        <option value=""><?php echo strtoupper($account); ?></option>
+                          <?php } ?>
+                          <?php
+                          $query = "SELECT * FROM accounts";
+                  $result = mysqli_query($connection, $query);
+                  if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                          ?>
+                        <option value='<?php echo $row['name']; ?>'><?php echo strtoupper($row['name']); ?></option>
+                          <?php
+                      }
+                  } ?>
+                      </select>
+
+
+
+                      <label>Issue:</label>
+
+
+                          <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                          <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
+
+                        <select id="issueSel"name="kash" onchange="this.form.submit()" required>
+                            <option value="" disabled selected hidden>Choose Issue</option>
+                            <option value="Knowledge">Knowledge</option>
+                            <option value="Attitude">Attitude</option>
+                            <option value="Skill">Skill</option>
+                            <option value="Habit">Habit</option>
+                        </select>
+                        <script type="text/javascript">
+                          document.getElementById('issueSel').value = "<?php echo $_GET['kash'];?>";
+                        </script>
+
+
+
+                  </div>
+                  <!-- end of accountSelect -->
+                </form>
+                <!-- end of sendReportform -->
+
+
+                  <!-- <div class="issueSelect">
+                    <form class="selectIssue"> -->
+
+
+                    <!-- </form>
+
+                  </div> -->
+                  <!-- end of issueSelect -->
+
+
+              </div>
+              <!-- end of sendReport-box -->
+
             </div>
 
-            <div class="agentName">
-                <label>Agent's Name:</label>
-              <select name="agentname"  class="select" required>
-                  <?php if ($agentname == "" || $agentname == null) { ?>
-                <option value="">Select Name</option>
-                  <?php } else { ?>
-                <option value=""><?php echo $agentname; ?></option>
-                  <?php } ?>
+
+
+
+
+
+              <!-- statement for checking the issue -->
+              <div class="selectedIssue-box">
+                <form class="selectedIssue" method="post" action="processReport.php">
+                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                    <input type="hidden" name="account" value="<?php echo $account; ?>">
+
                   <?php
-                    $query = "SELECT * FROM agents";
-            $result = mysqli_query($connection, $query);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                <option value='<?php echo $row['fullname']; ?>'><?php echo $row['fullname']; ?></option>
-                  <?php
-                }
-            } ?>
-              </select>
+                      if (@$_GET['kash'] == "Knowledge") {
+                          include('kash/knowledge.php');
+                      } elseif (@$_GET['kash'] == "Attitude") {
+                          include('kash/attitude.php');
+                      } elseif (@$_GET['kash'] == "Skill") {
+                          include('kash/skill.php');
+                      } elseif (@$_GET['kash'] == "Habit") {
+                          include('kash/habit.php');
+                      } else {
+                        echo "<label>Please Select Issue</label>";
+
+                      } ?>
+
+                  <div class="issueBtn">
+                    <input type="hidden" value="TL" name="submittedby">
+                    <button class="button" type="submit" name="submit">Submit</button>
+                  </div>
+
+              </form>
+            <!-- end of selectedIssue -->
+
+            <!-- <button name="add" style="float: right">+</button>   -->
             </div>
-            <!-- end of agentName -->
-
-
-            <div class="accountSelect">
-              <label>Account:</label>
-                <select name="account" required  >
-                    <?php if ($account == "" || $account == null) { ?>
-                  <option value="" disabled selected hidden>Select Account</option>
-                    <?php } else { ?>
-                  <option value=""><?php echo strtoupper($account); ?></option>
-                    <?php } ?>
-                    <?php
-                    $query = "SELECT * FROM accounts";
-            $result = mysqli_query($connection, $query);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                  <option value='<?php echo $row['name']; ?>'><?php echo strtoupper($row['name']); ?></option>
-                    <?php
-                }
-            } ?>
-                </select>
-
-
-
-                <label>Issue:</label>
-
-
-                    <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                    <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
-
-                  <select id="issueSel"name="kash" onchange="this.form.submit()" required>
-                      <option value="" disabled selected hidden>Choose Issue</option>
-                      <option value="Knowledge">Knowledge</option>
-                      <option value="Attitude">Attitude</option>
-                      <option value="Skill">Skill</option>
-                      <option value="Habit">Habit</option>
-                  </select>
-                  <script type="text/javascript">
-                    document.getElementById('issueSel').value = "<?php echo $_GET['kash'];?>";
-                  </script>
-
-
-
-            </div>
-            <!-- end of accountSelect -->
-          </form>
-          <!-- end of sendReportform -->
-
-
-            <!-- <div class="issueSelect">
-              <form class="selectIssue"> -->
-
-
-              <!-- </form>
-
-            </div> -->
-            <!-- end of issueSelect -->
-
-
-        </div>
-        <!-- end of sendReport-box -->
-
-      </div>
+            <!-- end selectedIssue-box -->
 
 
 
 
 
-
-        <!-- statement for checking the issue -->
-        <div class="selectedIssue-box">
-          <form class="selectedIssue" method="post" action="processReport.php">
-              <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-              <input type="hidden" name="account" value="<?php echo $account; ?>">
-
-            <?php
-                if (@$_GET['kash'] == "Knowledge") {
-                    include('kash/knowledge.php');
-                } elseif (@$_GET['kash'] == "Attitude") {
-                    include('kash/attitude.php');
-                } elseif (@$_GET['kash'] == "Skill") {
-                    include('kash/skill.php');
-                } elseif (@$_GET['kash'] == "Habit") {
-                    include('kash/habit.php');
-                } else {
-                  echo "<label>Please Select Issue</label>";
-
-                } ?>
-
-            <div class="issueBtn">
-              <input type="hidden" value="TL" name="submittedby">
-              <button class="button" type="submit" name="submit">Submit</button>
-            </div>
-
-        </form>
-      <!-- end of selectedIssue -->
-
-      <!-- <button name="add" style="float: right">+</button>   -->
-      </div>
-      <!-- end selectedIssue-box -->
-
-
-
-
-
-    </div>
-    <!-- end of container -->
-
-
-
-
-
+          </div>
+          <!-- end of container -->
 
 
 

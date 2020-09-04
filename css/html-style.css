@@ -81,6 +81,12 @@ a:hover {
   background: url(../img/welcome.png) no-repeat center;
 }
 
+.sentreportcontainer {
+  width: 100%;
+  /* height: 80.5vh; */
+  margin: auto;
+}
+
 .button {
   border: none;
   color: #ffffff;
@@ -586,6 +592,7 @@ article p {
 .selectedIssue-box {
   /* border: black 1px solid; */
   width: 100%;
+  min-height: 37.6vh;
   display: flex;
   justify-content: center;
   align-items: center;
