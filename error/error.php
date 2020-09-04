@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Callmax Coaching System</title>
+	<title>Callmax Solutions Coaching System | Page Not Found</title>
+	<link rel="stylesheet" type="text/css" href="css/html-style.css">
 </head>
-<style>
-    .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-      }
-      a{
-        text-decoration: none;
-        color: cornflowerblue; 
-    }
-</style>
+
+
 <body>
-    <h1>You Are not Authorized!</h1>
-    <a href="../index.php">Go Back</a>
+
+		<div class="errorBody">
+				<!-- <h1>you are not authorized to access this webpage</h1> -->
+				<a class="button" href="index.php">Go Back</a>
+		</div>
+
+
+
 </body>
 </html>

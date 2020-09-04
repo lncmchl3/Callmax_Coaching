@@ -80,9 +80,9 @@
 
             <div class="accountSelect">
               <label>Account:</label>
-                <select class="select" name="account" required  >
+                <select name="account" required  >
                     <?php if ($account == "" || $account == null) { ?>
-                  <option value="">Select Account</option>
+                  <option value="" disabled selected hidden>Select Account</option>
                     <?php } else { ?>
                   <option value=""><?php echo strtoupper($account); ?></option>
                     <?php } ?>
@@ -98,19 +98,25 @@
             } ?>
                 </select>
 
+
+
                 <label>Issue:</label>
 
 
                     <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
                     <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
 
-                  <select name="kash" onchange="this.form.submit()" required>
+                  <select id="issueSel"name="kash" onchange="this.form.submit()" required>
                       <option value="" disabled selected hidden>Choose Issue</option>
                       <option value="Knowledge">Knowledge</option>
                       <option value="Attitude">Attitude</option>
                       <option value="Skill">Skill</option>
                       <option value="Habit">Habit</option>
                   </select>
+                  <script type="text/javascript">
+                    document.getElementById('issueSel').value = "<?php echo $_GET['kash'];?>";
+                  </script>
+
 
 
             </div>
@@ -155,7 +161,8 @@
                 } elseif (@$_GET['kash'] == "Habit") {
                     include('kash/habit.php');
                 } else {
-                    echo "Please Select Issue.";
+                  echo "<label>Please Select Issue</label>";
+
                 } ?>
 
             <div class="issueBtn">

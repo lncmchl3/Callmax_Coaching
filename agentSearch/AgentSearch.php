@@ -168,7 +168,7 @@
 
 <?php
         }else{
-            header("location:error/error.php");
+            header("location:../error/error.php");
         }
     }else{
         header("location:index.php?e=Please Log in");
