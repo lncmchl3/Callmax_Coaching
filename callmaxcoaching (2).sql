@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2020 at 06:23 PM
+-- Generation Time: Sep 04, 2020 at 04:20 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -996,7 +996,18 @@ INSERT INTO `agent_reports` (`id`, `report_id`, `agent`, `account`, `report_type
 (41, NULL, 'Paulino Ducat', 'MBH Services', 'TL Report', '2020-08-27', NULL, NULL, 'Submitted', NULL, NULL, NULL),
 (43, NULL, 'Rioniña V. Ocampo', 'MBH Services', 'TL Report', '2020-08-27', NULL, NULL, 'Submitted', NULL, NULL, NULL),
 (44, NULL, 'Myleen Ancheta', 'MBH Services', 'TL Report', '2020-08-27', NULL, NULL, 'Submitted', NULL, NULL, NULL),
-(45, NULL, 'Kyle Wilvin H. Yu', 'MBH Services', 'TL Report', '2020-08-28', NULL, NULL, 'Submitted', NULL, NULL, NULL);
+(45, NULL, 'Kyle Wilvin H. Yu', 'MBH Services', 'TL Report', '2020-08-28', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(46, NULL, 'Kyle Wilvin H. Yu', 'MBH Services', 'TL Report', '2020-09-02', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(47, NULL, 'Jay Sol Cruz', 'MBH Services', 'TL Report', '2020-09-02', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(48, NULL, 'Glocel Grace Lectura', 'MBH Services', 'TL Report', '2020-09-02', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(49, NULL, 'Mike Karlo M. Macatangay', 'MBH Services', 'TL Report', '2020-09-02', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(50, NULL, 'Kyle Wilvin H. Yu', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(51, NULL, 'Kyle Wilvin H. Yu', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(52, NULL, 'Myleen Ancheta', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(53, NULL, 'Maria Cristina Santillan', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(54, NULL, 'Maria Cristina Santillan', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(55, NULL, 'Maria Cristina Santillan', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL),
+(56, NULL, 'Irish Joy C. Salanguit', 'MBH Services', 'TL Report', '2020-09-03', NULL, NULL, 'Submitted', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1435,7 +1446,48 @@ INSERT INTO `picard_dump` (`id`, `report_id`, `name`, `account`, `kash_requireme
 (90, 45, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Ability to communicate and resolve issues', 3, 4, 'justify'),
 (91, 45, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Familiarity with ICD-10 and CPT coding', 2, 2, 'understand'),
 (92, 45, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Computer Literate', 4, 5, 'propose'),
-(93, 45, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'English Language Proficient', 5, 5, 'propose');
+(93, 45, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'English Language Proficient', 5, 5, 'propose'),
+(94, 46, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Understanding of medical terminology that commonly appears on medical claims', 4, 4, 'justify'),
+(95, 46, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Ability to communicate and resolve issues', 4, 4, 'justify'),
+(96, 46, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Familiarity with ICD-10 and CPT coding', 1, 2, 'understand'),
+(97, 46, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'Computer Literate', 5, 5, 'propose'),
+(98, 46, 'Kyle Wilvin H. Yu', 'MBH Services', 'Knowledge', 'English Language Proficient', 5, 5, 'propose'),
+(99, 47, 'Jay Sol Cruz', 'MBH Services', 'Knowledge', 'Understanding of medical terminology that commonly appears on medical claims', 1, 4, 'justify'),
+(100, 47, 'Jay Sol Cruz', 'MBH Services', 'Knowledge', 'Ability to communicate and resolve issues', 1, 4, 'justify'),
+(101, 47, 'Jay Sol Cruz', 'MBH Services', 'Knowledge', 'Familiarity with ICD-10 and CPT coding', 1, 2, 'understand'),
+(102, 47, 'Jay Sol Cruz', 'MBH Services', 'Knowledge', 'Computer Literate', 1, 5, 'propose'),
+(103, 47, 'Jay Sol Cruz', 'MBH Services', 'Knowledge', 'English Language Proficient', 1, 5, 'propose'),
+(104, 48, 'Glocel Grace Lectura', 'MBH Services', 'Knowledge', 'Understanding of medical terminology that commonly appears on medical claims', 1, 4, 'justify'),
+(105, 48, 'Glocel Grace Lectura', 'MBH Services', 'Knowledge', 'Ability to communicate and resolve issues', 1, 4, 'justify'),
+(106, 48, 'Glocel Grace Lectura', 'MBH Services', 'Knowledge', 'Familiarity with ICD-10 and CPT coding', 1, 2, 'understand'),
+(107, 48, 'Glocel Grace Lectura', 'MBH Services', 'Knowledge', 'Computer Literate', 1, 5, 'propose'),
+(108, 48, 'Glocel Grace Lectura', 'MBH Services', 'Knowledge', 'English Language Proficient', 1, 5, 'propose'),
+(109, 49, 'Mike Karlo M. Macatangay', 'MBH Services', 'Knowledge', 'Understanding of medical terminology that commonly appears on medical claims', 1, 4, 'justify'),
+(110, 49, 'Mike Karlo M. Macatangay', 'MBH Services', 'Knowledge', 'Ability to communicate and resolve issues', 1, 4, 'justify'),
+(111, 49, 'Mike Karlo M. Macatangay', 'MBH Services', 'Knowledge', 'Familiarity with ICD-10 and CPT coding', 1, 2, 'understand'),
+(112, 49, 'Mike Karlo M. Macatangay', 'MBH Services', 'Knowledge', 'Computer Literate', 1, 5, 'propose'),
+(113, 49, 'Mike Karlo M. Macatangay', 'MBH Services', 'Knowledge', 'English Language Proficient', 1, 5, 'propose'),
+(114, 50, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Solid Organizational system', 1, 0, ''),
+(115, 50, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Keen attention to detail', 1, 0, ''),
+(116, 50, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Communicate Clearly', 2, 0, ''),
+(117, 50, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Goal Setter', 3, 0, ''),
+(118, 51, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Solid Organizational system', 1, 0, ''),
+(119, 51, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Keen attention to detail', 3, 0, ''),
+(120, 51, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Communicate Clearly', 2, 0, ''),
+(121, 51, 'Kyle Wilvin H. Yu', 'MBH Services', 'Habit', 'Goal Setter', 2, 0, ''),
+(122, 52, 'Myleen Ancheta', 'MBH Services', 'Habit', 'Solid Organizational system', 1, 0, ''),
+(123, 52, 'Myleen Ancheta', 'MBH Services', 'Habit', 'Keen attention to detail', 1, 0, ''),
+(124, 52, 'Myleen Ancheta', 'MBH Services', 'Habit', 'Communicate Clearly', 3, 0, ''),
+(125, 52, 'Myleen Ancheta', 'MBH Services', 'Habit', 'Goal Setter', 3, 0, ''),
+(126, 55, 'Maria Cristina Santillan', 'MBH Services', 'Skills', 'Communication Skills', 1, 0, ''),
+(127, 55, 'Maria Cristina Santillan', 'MBH Services', 'Skills', 'Multitasking', 1, 0, ''),
+(128, 55, 'Maria Cristina Santillan', 'MBH Services', 'Skills', 'Organizational Skills', 1, 0, ''),
+(129, 55, 'Maria Cristina Santillan', 'MBH Services', 'Skills', 'Intuitive learning', 3, 0, ''),
+(130, 55, 'Maria Cristina Santillan', 'MBH Services', 'Skills', 'Conflict Management Skills', 3, 0, ''),
+(131, 56, 'Irish Joy C. Salanguit', 'MBH Services', 'Habit', 'Solid Organizational system', 3, 3, ''),
+(132, 56, 'Irish Joy C. Salanguit', 'MBH Services', 'Habit', 'Keen attention to detail', 2, 3, ''),
+(133, 56, 'Irish Joy C. Salanguit', 'MBH Services', 'Habit', 'Communicate Clearly', 2, 3, ''),
+(134, 56, 'Irish Joy C. Salanguit', 'MBH Services', 'Habit', 'Goal Setter', 2, 3, '');
 
 -- --------------------------------------------------------
 
@@ -4387,7 +4439,7 @@ ALTER TABLE `agents`
 -- AUTO_INCREMENT for table `agent_reports`
 --
 ALTER TABLE `agent_reports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `counter`
@@ -4423,7 +4475,7 @@ ALTER TABLE `kpi_dump`
 -- AUTO_INCREMENT for table `picard_dump`
 --
 ALTER TABLE `picard_dump`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `picard_table`

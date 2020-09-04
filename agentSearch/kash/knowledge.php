@@ -9,8 +9,8 @@ echo "<label>• <b>5</b><a style='color: gray'>(".$picard['fifth_knowledge'].")
     $query = "SELECT * FROM picard_table WHERE department_account = '".$account."' AND kash_name = 'Knowledge' ";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
-        while ( $row = mysqli_fetch_assoc($result)) {
-?>
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
 <script>
   function maxLengthCheck(object)
   {
@@ -26,24 +26,24 @@ echo "<label>• <b>5</b><a style='color: gray'>(".$picard['fifth_knowledge'].")
 <label for="KnowledgeAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label><input type="number" min="1" max="<?php echo $row['kash_standard_score']; ?>" name="KnowledgeAnswer[]"  maxlength="1" required>
 <!-- <?php
  for ($i=1; $i <= $row['kash_standard_score'] ; $i++) {
-	if ($i == 1) {
-		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['first_knowledge'];
-	}
-	if ($i == 2) {
-		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['second_knowledge'];
-	}
-	if ($i == 3) {
-		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['third_knowledge'];
-	}
-	if ($i == 4) {
-		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['fourth_knowledge'];
-	}
-	if ($i == 5) {
-		echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['fifth_knowledge'];
-	}
-} ?> -->
+     if ($i == 1) {
+         echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['first_knowledge'];
+     }
+     if ($i == 2) {
+         echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['second_knowledge'];
+     }
+     if ($i == 3) {
+         echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['third_knowledge'];
+     }
+     if ($i == 4) {
+         echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['fourth_knowledge'];
+     }
+     if ($i == 5) {
+         echo '<input type="radio" name="KnowledgeAnswer[]">'.$picard['fifth_knowledge'];
+     }
+ } ?> -->
 
 <?php
-	}
-}
+        }
+    }
 ?>

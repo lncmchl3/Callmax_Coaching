@@ -5,12 +5,12 @@
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
+        <!-- <script>
             var $row = $('<tr>'+
                   '<td>awawaww</td>'+
                   '<td>adsdsdsd</td>');
             $('table> tbody:last').append($row);
-        </script>
+        </script> -->
         <title>Callmax Solutions Coaching System | Send Report</title>
 
     </head>
@@ -21,11 +21,11 @@
     session_start();
     if (isset($_SESSION['name'])) {
         if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {
-
             $account = @$_GET['account'];
             $kash = @$_GET['kash'];
-            $agentname = @$_GET['agentname'];
-    ?>
+            $agentname = @$_GET['agentname']; ?>
+
+
     <header>
         <div class="container">
 
@@ -60,19 +60,19 @@
               <select name="agentname"  class="select" required>
                   <?php if ($agentname == "" || $agentname == null) { ?>
                 <option value="">Select Name</option>
-                  <?php }
-                  else{ ?>
+                  <?php } else { ?>
                 <option value=""><?php echo $agentname; ?></option>
                   <?php } ?>
                   <?php
                     $query = "SELECT * FROM agents";
-                    $result = mysqli_query($connection, $query);
-                      if (mysqli_num_rows($result) > 0) {
-                        while ( $row = mysqli_fetch_assoc($result)) {
-                  ?>
+            $result = mysqli_query($connection, $query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
                 <option value='<?php echo $row['fullname']; ?>'><?php echo $row['fullname']; ?></option>
-                  <?php }
-                  } ?>
+                  <?php
+                }
+            } ?>
               </select>
             </div>
             <!-- end of agentName -->
@@ -83,25 +83,26 @@
                 <select class="select" name="account" required  >
                     <?php if ($account == "" || $account == null) { ?>
                   <option value="">Select Account</option>
-                    <?php }else{ ?>
+                    <?php } else { ?>
                   <option value=""><?php echo strtoupper($account); ?></option>
                     <?php } ?>
                     <?php
                     $query = "SELECT * FROM accounts";
-                    $result = mysqli_query($connection, $query);
-                      if (mysqli_num_rows($result) > 0) {
-                        while ( $row = mysqli_fetch_assoc($result)) {
+            $result = mysqli_query($connection, $query);
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                   <option value='<?php echo $row['name']; ?>'><?php echo strtoupper($row['name']); ?></option>
-                    <?php }
-                    } ?>
+                    <?php
+                }
+            } ?>
                 </select>
 
                 <label>Issue:</label>
 
 
-                  <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                  <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
+                    <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
+                    <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
 
                   <select name="kash" onchange="this.form.submit()" required>
                       <option value="" disabled selected hidden>Choose Issue</option>
@@ -145,18 +146,17 @@
               <input type="hidden" name="account" value="<?php echo $account; ?>">
 
             <?php
-                if ( @$_GET['kash'] == "Knowledge") {
+                if (@$_GET['kash'] == "Knowledge") {
                     include('kash/knowledge.php');
-                }else if (@$_GET['kash'] == "Attitude") {
+                } elseif (@$_GET['kash'] == "Attitude") {
                     include('kash/attitude.php');
-                }else if (@$_GET['kash'] == "Skill") {
+                } elseif (@$_GET['kash'] == "Skill") {
                     include('kash/skill.php');
-                }else if (@$_GET['kash'] == "Habit") {
+                } elseif (@$_GET['kash'] == "Habit") {
                     include('kash/habit.php');
-                }else{
+                } else {
                     echo "Please Select Issue.";
-                }
-            ?>
+                } ?>
 
             <div class="issueBtn">
               <input type="hidden" value="TL" name="submittedby">
@@ -187,10 +187,10 @@
 
 
     <?php
-        }else{
+        } else {
             header("location:error/error.php");
         }
-    }else{
+    } else {
         header("location:index.php?e=Please Log in");
     }
 ?>
