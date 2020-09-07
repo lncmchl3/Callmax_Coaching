@@ -33,7 +33,7 @@
         ?>
 
       <div class="login-container">
-        <div class="container">
+
 
 
           <div class="loginbox">
@@ -96,8 +96,6 @@
             </div>
             <!-- end of loginbox -->
 
-          </div>
-          <!-- end of container -->
 
           <div id="freepik">
               <a href="https://stories.freepik.com/work">Designed by Freepik</a>

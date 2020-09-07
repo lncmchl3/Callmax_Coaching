@@ -188,6 +188,7 @@ header a:hover {
 .loginbox {
   height: 78.1vh;
   width: 100%;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1058,13 +1059,42 @@ footer {
     text-transform: uppercase;
     float: none;
     text-align: center;
+    font-size: 12px;
   }
 
   header li {
     float: none;
     display: inline;
     padding: 0 20px 0 20px;
-    margin-top: 25px;
-    margin-left: 100px;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .loginbox {
+    /* height: 78.1vh; */
+    min-height: calc(96.7vh - 85.19px - 89.88px);
+  }
+}
+
+@media(max-width: 1080px) {
+  .grid-box1 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-box2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-box3 {
+    grid-template-columns: 1fr;
+  }
+
+  .regbox select {
+    width: 100%;
   }
 }
