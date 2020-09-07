@@ -118,7 +118,6 @@
         <div class="container">
           <div class="regbox">
 
-
           <form class="regform" method="post" action="registration.php" autocomplete="off" onsubmit="return confirmPass()">
 
             <input type="hidden" id="accountCounts" name="accountCounts" value="0">
@@ -127,19 +126,60 @@
                 <h1>Registration</h1>
               </div>
 
-              <div class="firstName">
-                <label>First Name:</label>
-                <input type="text" name="firstname" value="" placeholder="First Name" required>
-              </div>
+              <div class="regform-content">
+                <div class="grid-box1">
+                  <div class="firstName">
+                    <label>First Name:</label>
+                    <input type="text" name="firstname" value="" placeholder="First Name" required>
+                  </div>
 
-              <div class="lastName">
-                <label>Last Name:</label>
-                <input type="text" name="lastname" value="" placeholder="Last Name" required>
+                  <div class="lastName">
+                    <label>Last Name:</label>
+                    <input type="text" name="lastname" value="" placeholder="Last Name" required>
+                  </div>
+
+
+
+                </div>
+                <!-- end of grid-box1 -->
+
+                <div class="grid-box2">
+                  <div class="userName">
+                    <label>Username:</label>
+                    <input type="text" name="username" value="" placeholder="Username" required>
+                    <span id="availability"></span>
+                  </div>
+
+                  <div class="emailAdd">
+                    <label class="email-input">Email:</label>
+                    <input type="email" name="email" value="" placeholder="Email Address" required>
+                  </div>
+                </div>
+
+
+                <div class="grid-box3">
+
+                  <div class="passWord">
+                    <label>Password:</label>
+                    <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="Password" required>
+                  </div>
+
+                  <div class="cPassword">
+                    <label>Confirm Password:</label>
+                    <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="Confirm Password"required/>
+                  </div>
+
+
+                </div>
+
               </div>
+              <!-- end of regform-content -->
+
+
 
               <div class="posOption">
                 <label>Position:</label>
-                  <select required name="position" onchange='CheckPos(this.value);'>
+                  <select  required name="position" onchange='CheckPos(this.value);'>
                     <option value="" disabled selected hidden>Choose Position</option>
                     <option value="QAV">Quality Analyst - Voice</option>
                     <option value="QAN">Quality Analyst - Non-Voice</option>
@@ -173,8 +213,9 @@
                     x.setAttribute("type", "text");
                     x.setAttribute("id", "accountinput" + value);
                     x.setAttribute("name", "accountinput" + value);
-                    x.setAttribute("class", "accountinput");
-                    x.setAttribute("placeholder", "Add Account");
+                    x.setAttribute("class", "accountInput");
+                    var count = value+1;
+                    x.setAttribute("placeholder", "Add Account " + count);
                     // y.setAttribute("type", "button");
                     // y.setAttribute("id", "removebutton");
                     // y.setAttribute("name", "removebutton");
@@ -215,32 +256,14 @@
               </div>
               <!-- end of posOption -->
 
-              <div class="userName">
-                <label>Username:</label>
-                <input type="text" name="username" value="" placeholder="Username" required>
-                <span id="availability"></span>
-              </div>
 
-              <div class="emailAdd">
-                <label class="email-input">Email:</label>
-                <input type="email" name="email" value="" placeholder="Email Address" required>
-              </div>
-
-              <div class="passWord">
-                <label>Password:</label>
-                <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="Password" required>
-              </div>
-
-              <div class="cPassword">
-                <label>Confirm Password:</label>
-                <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="Confirm Password"required/>
-              </div>
 
               <div class="regform-button">
-                <button class="button" type="submit" name="Login"/>Submit</button>
+                <button  class="button" type="submit" name="Login"/>Submit</button>
                 <label>Already have an account?</label>
                 <a href="index.php">Log in here</a>
               </div>
+
 
 
 

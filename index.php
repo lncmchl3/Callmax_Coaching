@@ -37,44 +37,45 @@
 
 
           <div class="loginbox">
-              <form class="my-form" method="post" action="login.php" autocomplete="off">
+              <form class="loginform" method="post" action="login.php" autocomplete="off">
+
+                      <div class="login-grid-box1">
+                        <div class="login-header">
+                            <h1>Welcome!</h1>
+                        </div>
 
 
-                          <div class="login-header">
-                              <h1>Welcome!</h1>
-                          </div>
+                          <?php
+                                 if(@$_GET['e']==true){
+                          ?>
 
-                          <div class="errorMessage">
-                            <?php
-    							                 if(@$_GET['e']==true){
-    						            ?>
+                                <h3 class="error"><?php echo $_GET['e'] ?></h3>
 
-                                  <h3 class="error"><?php echo $_GET['e'] ?></h3>
+                          <?php
+                                 }else if (@$_GET['i']==true) {
+                          ?>
+                                <h3 class="error"><?php echo $_GET['i'] ?></h3>
 
-                            <?php
-  							                   }else if (@$_GET['i']==true) {
-                            ?>
-                                  <h3 class="error"><?php echo $_GET['i'] ?></h3>
+                          <?php
+                          }
+                                 else{
+                          ?>
+                          <?php
+                          }
+                          ?>
 
-                            <?php
-                            }
-  							                   else{
-  						              ?>
-                            <?php
-                            }
-                            ?>
-                          </div>
+                      </div>
 
-                          <div>
+
+                          <div class="login-grid-box2">
                               <img src="img/user.png">
                               <input type="text" name="uname" value="" placeholder="Username" required />
                           </div>
 
-                          <div>
-
+                          <div class="login-grid-box3">
                               <img src="img/pass.png" >
                               <input type="password" name="pass" value="" placeholder="Password" required />
-                          </div><br>
+                          </div>
 
                           <div class="btn">
                             <button class="button" type="submit" name="Login"/>Login</button>
