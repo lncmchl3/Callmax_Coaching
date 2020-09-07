@@ -99,10 +99,11 @@ a:hover {
 }
 
 .button:hover {
-  color: #ffffff;
+  /* color: #ffffff; */
   cursor: pointer;
-  font-weight: bold;
-  background-color: #115584;
+  /* font-weight: bold; */
+  /* background-color: #115584; */
+  opacity: 0.9;
 }
 
 .button:focus {
@@ -132,6 +133,7 @@ header {
   background-color: #333;
   color: #ffffff;
   border-bottom: #115584 solid 8px;
+  /* box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5); */
 }
 
 header #branding {
@@ -165,7 +167,7 @@ header .current a {
 
 header a:hover {
   color: #115584;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #freepik a {
@@ -410,7 +412,6 @@ article p {
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
   border: none;
-  margin-bottom: 8px;
   font-size: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   margin-right: 10px;
@@ -422,10 +423,11 @@ article p {
 
 .searchForm label {
   font-size: 16px;
+  padding: 15px 20px;
 }
 
 .searchForm button {
-  padding: 15px 10px 15px 10px;
+  padding: 12px 10px;
 }
 
 /* dashboard table */
@@ -469,6 +471,16 @@ article p {
   text-align: center;
 }
 
+.dashboard-table td:first-child {
+  text-align: left;
+  padding-left: 110px;
+}
+
+.dashboard-table th:first-child {
+  text-align: left;
+  padding-left: 130px;
+}
+
 .dashboard-table tbody tr {
   border-bottom: #dddddd 1px solid;
   background: #f3f3f3;
@@ -477,6 +489,7 @@ article p {
 
 .dashboard-table tbody tr:hover {
   background-color: #c2c2c2;
+  opacity: 0.9;
 }
 
 .dashboard-table tbody tr:nth-of-type(even) {
@@ -552,6 +565,67 @@ article p {
 
 .agentInfo tbody tr:last-of-type {
   border-bottom: #115584 7px solid;
+}
+
+.actionplan {
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.actionplan thead tr th {
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background: #115584;
+  padding: 12px 15px;
+}
+
+.actionplan tbody tr {
+  border-bottom: #dddddd 1px solid;
+  background: #f3f3f3;
+}
+
+.actionplan tbody tr:last-of-type {
+  border-bottom: #115584 7px solid;
+}
+
+.actionplan tbody tr td {
+  border-right: #c2c2c2 1px solid;
+  padding: 40px;
+}
+
+.actionplan tbody tr:hover {
+  background-color: #c2c2c2;
+}
+
+.actionplanbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.actionplanbox a.button {
+  padding: 10px 15px;
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.infoContainer {
+  width: 100%;
+  margin: auto;
+  min-height: calc(97vh - 85.19px - 89.88px);
 }
 
 /* send report */
@@ -812,6 +886,70 @@ article p {
 
 .rateDiv label {
   padding: 5px;
+}
+
+/* acknowledgement */
+.ackBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  min-height: calc(99.2vh - 85.19px - 89.88px);
+}
+
+.ackBox h2 {
+  text-transform: uppercase;
+}
+
+.ackBox input[type="text"] {
+  width: 400px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 30px;
+  font-size: 16px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* footer */

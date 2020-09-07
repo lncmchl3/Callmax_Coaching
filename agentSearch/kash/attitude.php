@@ -29,21 +29,24 @@
       }
     </script>
 
-    <div class="rateDiv">
 
-      <h3><?php echo $row['kash_requirement']; ?></h3>
+      <div class="rateDiv">
 
-      <input type="hidden" name="AttitudeQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
-      <input type="hidden" name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
 
-      <label for="AttitudeAnswer">Rate from 1 - <?php echo $row['kash_standard_score'] ?>:</label>
-      <input type="number" min="1" max="<?php echo $row['kash_standard_score'] ?>" name="AttitudeAnswer[]" oninput="maxLengthCheck(this)" maxlength="1" required>
-      <?php
-      }
-      }
-      ?>
-    </div>
-    <!-- end of rateDiv -->
+          <input type="hidden" name="AttitudeQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
+          <input type="hidden" name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
+          <h3><?php echo $row['kash_requirement']; ?></h3>
+          <label for="AttitudeAnswer">Rate from 1 - <?php echo $row['kash_standard_score'] ?>:</label>
+          <input type="number" min="1" max="<?php echo $row['kash_standard_score'] ?>" name="AttitudeAnswer[]" oninput="maxLengthCheck(this)" maxlength="1" required>
+
+        <?php
+        }
+        }
+        ?>
+      </div>
+      <!-- end of rateDiv -->
+
+
   </div>
   <!-- end of kashphp -->
 
