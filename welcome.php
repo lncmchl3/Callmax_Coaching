@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<?php
+include ('text/text.php');
+?>
 <?php
     $n = $_GET['n'];
 ?>
@@ -8,14 +10,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
         <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
-        <title>Callmax Solutions Coaching System</title>
+        <title><?php $text['header']; ?></title>
     </head>
     <body  onload="disableBackButton()" onunload="disableBackButton()">
       <header>
           <div class="container">
 
               <div id="branding">
-                  <h1>Callmax Solutions Coaching System</h1>
+                  <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
               </div>
 
               <nav>
@@ -40,8 +42,8 @@
 
                   <div class="subcontainer">
                     <div class="failSuccess">
-                      <h1>Registration Successful</h1>
-                      <a href="index.php" class="button">Click here to login</a>
+                      <h1><?php echo $text['reg-success']; ?></h1>
+                      <a href="index.php" class="button"><?php echo $text['click-login-here']; ?></a>
                     </div>
                   </div>
 
@@ -56,8 +58,8 @@
 
               <div class="subcontainer">
                 <div class="failSuccess">
-                  <h1>Registration Failed, Please check availability of registration</h1>
-                  <a href="reg.php" class="button">Click here to register again</a>
+                  <h1><?php echo $text['reg-failed']; ?></h1>
+                  <a href="reg.php" class="button"><?php echo $text['reg-again']; ?></a>
                 </div>
               </div>
 
@@ -71,8 +73,8 @@
 
                 <div class="subcontainer">
                   <div class="failSuccess">
-                    <h1>Access Denied</h1>
-                    <a href="reg.php" class="button">Click here</a>
+                    <h1><?php echo $text['acccess-denied']; ?></h1>
+                    <a href="reg.php" class="button"><?php echo $text['click-here']; ?></a>
                   </div>
                 </div>
 
@@ -84,16 +86,16 @@
         <!-- end of container -->
 
         <div id="freepik1">
-          <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+            <a href="https://stories.freepik.com/work"><?php echo $text['freepik']; ?></a>
         </div>
 
       </div>
       <!-- end of greetBox -->
 
 
-    <footer>
-        <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
-    </footer>
+      <footer>
+          <h4><?php echo $text['footer']; ?></h4>
+      </footer>
 
     </body>
 </html>

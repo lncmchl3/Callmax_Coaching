@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
-
+<?php
+include ('text/text.php');
+?>
 <script type="text/javascript">
     var value = 0;
     $(document).ready(function () {
@@ -90,7 +92,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
-        <title>Callmax Solutions Coaching System | Sign Up</title>
+        <title><?php echo $text['reg-title']; ?></title>
     </head>
 
 <body>
@@ -100,14 +102,13 @@
             <div class="container">
 
                 <div id="branding">
-
-                    <h1>Callmax Solutions Coaching System</h1>
+                  <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
                 </div>
                 <nav>
                     <ul>
                         <!-- <li><a href="about.php">About Us</a></li> -->
-                        <li class="current"><a href="reg.php">Sign up</a></li>
-                        <li><a href="index.php">Login</a></li>
+                        <li class="current"><a href="reg.php"><?php echo $text['signup']; ?></a></li>
+                        <li><a href="index.php"><?php echo $text['login']; ?></a></li>
 
                     </ul>
                 </nav>
@@ -123,19 +124,19 @@
             <input type="hidden" id="accountCounts" name="accountCounts" value="0">
 
               <div>
-                <h1>Registration</h1>
+                <h1><?php echo $text['register-head']; ?></h1>
               </div>
 
               <div class="regform-content">
                 <div class="grid-box1">
                   <div class="firstName">
-                    <label>First Name:</label>
-                    <input type="text" name="firstname" value="" placeholder="First Name" required>
+                    <label><?php echo $text['firstname']; ?>:</label>
+                    <input type="text" name="firstname" value="" placeholder="<?php echo $text['firstname']; ?>" required>
                   </div>
 
                   <div class="lastName">
-                    <label>Last Name:</label>
-                    <input type="text" name="lastname" value="" placeholder="Last Name" required>
+                    <label><?php echo $text['lastname']; ?>:</label>
+                    <input type="text" name="lastname" value="" placeholder="<?php echo $text['lastname']; ?>" required>
                   </div>
 
 
@@ -145,14 +146,14 @@
 
                 <div class="grid-box2">
                   <div class="userName">
-                    <label>Username:</label>
-                    <input type="text" name="username" value="" placeholder="Username" required>
+                    <label><?php echo $text['username']; ?>:</label>
+                    <input type="text" name="username" value="" placeholder="<?php echo $text['username']; ?>" required>
                     <span id="availability"></span>
                   </div>
 
                   <div class="emailAdd">
-                    <label class="email-input">Email:</label>
-                    <input type="email" name="email" value="" placeholder="Email Address" required>
+                    <label class="email-input"><?php echo $text['email']; ?>:</label>
+                    <input type="email" name="email" value="" placeholder="<?php echo $text['email-add']; ?>" required>
                   </div>
                 </div>
 
@@ -160,13 +161,13 @@
                 <div class="grid-box3">
 
                   <div class="passWord">
-                    <label>Password:</label>
-                    <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="Password" required>
+                    <label><?php echo $text['password']; ?>:</label>
+                    <input onclick="changeback()" type="password" name="password" id="password" value="" placeholder="<?php echo $text['password']; ?>" required>
                   </div>
 
                   <div class="cPassword">
-                    <label>Confirm Password:</label>
-                    <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="Confirm Password"required/>
+                    <label><?php echo $text['cpassword']; ?>:</label>
+                    <input onclick="changeback()" type="password" name="password2" id="password2" value="" placeholder="<?php echo $text['cpassword']; ?>"required/>
                   </div>
 
 
@@ -178,23 +179,23 @@
 
 
               <div class="posOption">
-                <label>Position:</label>
+                <label><?php echo $text['position']; ?>:</label>
                   <select  required name="position" onchange='CheckPos(this.value);'>
-                    <option value="" disabled selected hidden>Choose Position</option>
-                    <option value="QAV">Quality Analyst - Voice</option>
-                    <option value="QAN">Quality Analyst - Non-Voice</option>
-                    <option value="HR">Human Resources</option>
-                    <option value="TL">Team Leader</option>
-                    <option value="AM">Account Manager</option>
-                    <!--<option value="MIS">MIS</option>-->
-                    <option value="KPI">KPI</option>
+                    <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
+                    <option value="QAV"><?php echo $text['qav']; ?></option>
+                    <option value="QAN"><?php echo $text['qan']; ?></option>
+                    <option value="HR"><?php echo $text['hr']; ?></option>
+                    <option value="TL"><?php echo $text['tl']; ?></option>
+                    <option value="AM"><?php echo $text['am']; ?></option>
+                    <!--<option value="MIS"><?php echo $text['mis']; ?></option>-->
+                    <option value="KPI"><?php echo $text['kpi']; ?></option>
                   </select>
 
 
-                    <label id='accountinputtitle'>Accounts:</label>
+                    <label id='accountinputtitle'><?php echo $text['accounts']; ?>:</label>
                     <div class="optBtn">
-                      <button class="button" type="button" id='removebutton'/>-</button>
-                      <button class="button" type="button" id='addmore' onclick="createFunction(this.value)">+</button>
+                      <button class="button" type="button" id='removebutton'/><?php echo $text['minus']; ?></button>
+                      <button class="button" type="button" id='addmore' onclick="createFunction(this.value)"><?php echo $text['plus']; ?></button>
                     </div>
 
 
@@ -215,7 +216,7 @@
                     x.setAttribute("name", "accountinput" + value);
                     x.setAttribute("class", "accountInput");
                     var count = value+1;
-                    x.setAttribute("placeholder", "Add Account " + count);
+                    x.setAttribute("placeholder", "<?php echo $text['add-account']; ?> " + count);
                     // y.setAttribute("type", "button");
                     // y.setAttribute("id", "removebutton");
                     // y.setAttribute("name", "removebutton");
@@ -260,8 +261,8 @@
 
               <div class="regform-button">
                 <button  class="button" type="submit" name="Login"/>Submit</button>
-                <label>Already have an account?</label>
-                <a href="index.php">Log in here</a>
+                <label><?php echo $text['yes-account']; ?></label>
+                <a href="index.php"><?php echo $text['login-here']; ?></a>
               </div>
 
 
@@ -278,7 +279,7 @@
           </div>
           <!-- end of container -->
           <div id="freepik">
-              <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+              <a href="https://stories.freepik.com/work"><?php echo $text['freepik']; ?></a>
           </div>
 
       </div>
@@ -287,9 +288,9 @@
 
 
 
-        <footer>
-             <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
-        </footer>
+      <footer>
+          <h4><?php echo $text['footer']; ?></h4>
+      </footer>
 
 </body>
 </html>
