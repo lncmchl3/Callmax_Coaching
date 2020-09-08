@@ -68,12 +68,12 @@
 
 
                           <div class="login-grid-box2">
-                              <img src="img/user.png">
+                              <!-- <img src="img/user.png"> -->
                               <input type="text" name="uname" value="" placeholder="Username" required />
                           </div>
 
                           <div class="login-grid-box3">
-                              <img src="img/pass.png" >
+                              <!-- <img src="img/pass.png" > -->
                               <input type="password" name="pass" value="" placeholder="Password" required />
                           </div>
 
