@@ -152,8 +152,8 @@
               <!-- statement for checking the issue -->
               <div class="selectedIssue-box">
                 <form class="selectedIssue" method="post" action="processReport.php">
-                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
-                    <input type="hidden" name="account" value="<?php echo $account; ?>">
+                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
+                    <input type="hidden" name="account" value="<?php echo $account; ?>" required>
 
                   <?php
                       if (@$_GET['kash'] == "Knowledge") {

@@ -6,7 +6,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
-        <link rel="icon" href="searchicon.png">
         <title>Coaching System - Agents</title>
     </head>
     <body>
@@ -43,7 +42,7 @@
     <div class="container">
       <div class="ackBox">
           <h2>Copy the Link below:</h2>
-          <input type="text" value="localhost/Backup/Callmax_Coaching/agentSearch/acknowledgementlink.php?TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt=<?php echo $id; ?>&s=<?php echo $sessionUser ?>" id="myInput" readonly>
+          <input type="text" value="localhost/Callmax_Coaching/agentSearch/acknowledgementlink.php?TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt=<?php echo $id; ?>&s=<?php echo $sessionUser ?>" id="myInput" readonly>
           <div class="tooltip">
             <button class="button" onclick="myFunction()">
               <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Copy link</button>

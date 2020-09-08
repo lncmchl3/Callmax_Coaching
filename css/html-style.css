@@ -1046,6 +1046,16 @@ article p {
   opacity: 1;
 }
 
+/* acknowledgement link */
+.ack-linkbox {
+  min-height: calc(99.2vh - 85.19px - 89.88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
 /* footer */
 footer {
   padding-bottom: 20px;
