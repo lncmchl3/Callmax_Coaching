@@ -12,7 +12,7 @@
 
         <?php
 
-            $sessionUser = isset($_GET["s"]);
+            // $sessionUser = isset($_GET["s"]);
             $id = isset($_GET["TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt"]);
             $text = "";
 
@@ -39,7 +39,7 @@
         <div class="container">
           <div class="ack-linkbox">
             <h2>
-                This is to Certify that I acknowledge the coaching of Team Leader <?php echo $sessionUser; ?> for my report.
+                This is to Certify that I acknowledge the coaching of Team Leader <?php echo $_GET['s']; ?> for my report.
             </h2>
             <form action="done.php" method="POST">
                 <input  type="hidden" name="n" value="<?php echo $id; ?>">
