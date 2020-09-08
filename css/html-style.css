@@ -1054,6 +1054,7 @@ article p {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* footer */
