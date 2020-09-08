@@ -171,6 +171,7 @@
 
                   <div class="issueBtn">
                     <input type="hidden" value="TL" name="submittedby">
+                <input type="hidden" name="s" value="<?php echo $_SESSION['name']; ?>">
                     <button class="button" type="submit" name="submit">Submit</button>
                   </div>
 
