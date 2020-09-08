@@ -1,8 +1,6 @@
 
 <!DOCTYPE html>
-<?php
-include ('../text/text.php');
-?>
+<?php include ('../text/text.php');?>
 <html>
 <head>
     <title><?php echo $text['dashboard-title']; ?></title>

@@ -40,9 +40,9 @@ include ('../text/text.php');
 
             <nav>
                 <ul>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
-                  <li class="current"><a href='sendReport.php'>Send Report</a></li>
-                  <li ><a href='AgentSearch.php'>Dashboard</a></li>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+                  <li class="current"><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                  <li ><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
                   <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
                 </ul>
             </nav>
@@ -61,14 +61,14 @@ include ('../text/text.php');
 
                 <form class"sendReportform">
                   <div>
-                    <h1>Coaching Form</h1>
+                    <h1><?php echo $text['coaching-form']; ?></h1>
                   </div>
 
                   <div class="agentName">
-                      <label>Agent's Name:</label>
+                      <label><?php echo $text['agentname']; ?>:</label>
                     <select name="agentname"  class="select" required>
                         <?php if ($agentname == "" || $agentname == null) { ?>
-                      <option value="">Select Name</option>
+                      <option value=""><?php echo $text['select-name']; ?></option>
                         <?php } else { ?>
                       <option value=""><?php echo $agentname; ?></option>
                         <?php } ?>
@@ -88,10 +88,10 @@ include ('../text/text.php');
 
 
                   <div class="accountSelect">
-                    <label>Account:</label>
+                    <label><?php echo $text['account']; ?>:</label>
                       <select name="account" required  >
                           <?php if ($account == "" || $account == null) { ?>
-                        <option value="" disabled selected hidden>Select Account</option>
+                        <option value="" disabled selected hidden><?php echo $text['select-account']; ?></option>
                           <?php } else { ?>
                         <option value=""><?php echo strtoupper($account); ?></option>
                           <?php } ?>
@@ -109,18 +109,18 @@ include ('../text/text.php');
 
 
 
-                      <label>Issue:</label>
+                      <label><?php echo $text['issue']; ?>:</label>
 
 
                           <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>">
                           <input type="hidden" name="account" value="<?php echo $account; ?>"> -->
 
                         <select id="issueSel"name="kash" onchange="this.form.submit()" required>
-                            <option value="" disabled selected hidden>Choose Issue</option>
-                            <option value="Knowledge">Knowledge</option>
-                            <option value="Attitude">Attitude</option>
-                            <option value="Skill">Skill</option>
-                            <option value="Habit">Habit</option>
+                            <option value="" disabled selected hidden><?php echo $text['choose-issue']; ?></option>
+                            <option value="Knowledge"><?php echo $text['knowledge']; ?></option>
+                            <option value="Attitude"><?php echo $text['attitude']; ?></option>
+                            <option value="Skill"><?php echo $text['skill']; ?></option>
+                            <option value="Habit"><?php echo $text['habit']; ?></option>
                         </select>
                         <script type="text/javascript">
                           document.getElementById('issueSel').value = "<?php echo $_GET['kash'];?>";
@@ -176,7 +176,7 @@ include ('../text/text.php');
 
                   <div class="issueBtn">
                     <input type="hidden" value="TL" name="submittedby">
-                    <button class="button" type="submit" name="submit">Submit</button>
+                    <button class="button" type="submit" name="submit"><?php echo $text['submit']; ?></button>
                   </div>
 
               </form>
@@ -206,7 +206,7 @@ include ('../text/text.php');
     }
 ?>
 <footer>
-    <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+    <h4><?php echo $text['footer']; ?></h4>
 </footer>
 </body>
 </html>

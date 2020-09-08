@@ -7,6 +7,8 @@ $text['login'] = 'Login';
 $text['send-report'] = 'Send Report';
 $text['logout'] = 'log out';
 $text['dashboard'] = 'dashboard';
+$text['info'] = 'Info';
+$text['ack-link'] = 'Acknowledgement Link';
 
 
 
@@ -63,17 +65,55 @@ $text['date-issued'] = 'Date Issued';
 
 // sendReport.php
 $text['sendreport-title'] = 'Callmax Solutions Coaching System | Send Report';
+$text['coaching-form'] = 'Coaching Form';
+$text['select-name'] = 'Select Name';
+$text['select-account'] = 'Select Account';
+$text['choose-issue'] = 'Choose Issue';
+$text['issue'] = 'Issue';
+$text['knowledge'] = 'Knowledge';
+$text['attitude'] = 'Attitude';
+$text['skill'] = 'Skill';
+$text['habit'] = 'Habit';
+$text['submit'] = 'Submit';
+
+// info.php
+$text['info-title'] = 'Callmax Solutions Coaching System | Info';
+$text['agent-info'] = 'Agent Information';
+$text['qan-result'] = 'QA Non-Voice Result';
+$text['potential-cause'] = 'Potential Cause of Failures';
+$text['severity'] = 'Severity';
+$text['occurence'] = 'Occurrence';
+$text['detection'] = 'Detection';
+$text['rpn'] = 'RPN';
+$text['qa-score'] = 'QA Score';
+$text['recommended'] = 'Recommended Action';
+$text['root-cause'] = 'Root Cause';
+$text['action-plan'] = 'Action Plan';
+$text['click-ack-link'] = 'Click here for the Acknowledgement Link';
+
+
+// Acknowledgement.php
+$text['ack-title'] = 'Callmax Solutions Coaching System | Acknowledgement Link';
+$text['copy-link'] = 'Copy the link below';
+$text['link'] = 'localhost/Callmax_Coaching/agentSearch/acknowledgementlink.php?TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt=';
+$text['copy-to-clipboard'] = 'Copy to clipboard';
+$text['copy-link-btn'] = 'Copy link';
+$text['copied'] = 'Copied!';
+
+// acknowledgement link
+$text['ack-report-title'] = 'Callmax Solutions Coaching System | Acknowledgement Report';
+$text['ackgt-report'] = 'Acknowledgement Report';
+$text['certify'] = 'This is to certify that i acknowledge the coaching of team leader';
+$text['ack'] = 'Acknowledge';
+$text['ty'] = 'Thank You!';
 $text[''] = '';
-$text[''] = '';
-$text[''] = '';
-$text[''] = '';
-$text[''] = '';
-$text[''] = '';
-$text[''] = '';
+
 
 
 
 
 // footer
 $text['footer'] = 'Callmax Solutions Coaching System, Copyright &copy; 2020';
-?>
+
+
+// if (!defined('IN_SCRIPT')) die('PHP syntax OK!');

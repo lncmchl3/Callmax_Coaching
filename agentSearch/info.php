@@ -1,8 +1,9 @@
+<?php include ('../text/text.php'); ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
-        <title>Callmax Solutions Coaching System | Info </title>
+        <title><?php echo $text['info-title']; ?></title>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
     </head>
     <body>
@@ -26,14 +27,14 @@
 
             <div id="branding">
 
-                <h1><img src="../img/favicon.png" alt="logo" />Callmax Solutions Coaching System</h1>
+                <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
             <nav>
                 <ul>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
-                  <li><a href='sendReport.php'>Send Report</a></li>
-                  <li class="current"><a href="">Info</a></li>
-                  <li><a href='AgentSearch.php'>Dashboard</a></li>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+                  <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                  <li class="current"><a href=""><?php echo $text['info']; ?></a></li>
+                  <li><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
                 </ul>
             </nav>
@@ -54,7 +55,7 @@
         <table class="agentInfo">
           <thead>
             <tr>
-              <th colspan="2">Agent Information</th>
+              <th colspan="2"><?php echo $text['agent-info']; ?></th>
             </tr>
           </thead>
           <tbody>
@@ -66,11 +67,11 @@
               while ( $row = mysqli_fetch_assoc($result1)) {
                 ?>
                 <tr>
-                  <th>Name: </th>
+                  <th><?php echo $text['name']; ?>: </th>
                   <td><?php echo $row['agent']; ?></td>
                 </tr>
                 <tr>
-                  <th>Account: </th>
+                  <th><?php echo $text['account']; ?>: </th>
                   <td><?php echo $row['account']; ?></td>
                 </tr>
                 <?php
@@ -87,7 +88,7 @@
 
     <div class="subcontainer">
     <div class="resultBox">
-      <h2>QA Non-Voice Result</h2>
+      <h2><?php echo $text['qan-result']; ?></h2>
       <table class="resultTable">
 
                 <?php
@@ -97,13 +98,13 @@
 
                 <thead>
                   <tr>
-                      <th>Potential Cause of Failures</th>
-                      <th>Severity</th>
-                      <th>Occurrence</th>
-                      <th>Detection</th>
-                      <th>RPN</th>
-                      <th>QA Score</th>
-                      <th>Recommended Action</th>
+                      <th><?php echo $text['potential-cause']; ?></th>
+                      <th><?php echo $text['severity']; ?></th>
+                      <th><?php echo $text['occurence']; ?></th>
+                      <th><?php echo $text['detection']; ?></th>
+                      <th><?php echo $text['rpn']; ?></th>
+                      <th><?php echo $text['qa-score']; ?></th>
+                      <th><?php echo $text['recommended']; ?></th>
                   </tr>
                 </thead>
 
@@ -142,17 +143,17 @@
             <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
 
             <div class="root-cause">
-              <label>Root Cause</label>
+              <label><?php echo $text['root-cause']; ?></label>
               <textarea id="rootCause" name="rootCause" placeholder='Type Root Cause here' required></textarea>
             </div>
 
             <div class="action-plan">
-              <label>Action Plan</label>
+              <label><?php echo $text['action-plan']; ?></label>
               <textarea id="actionPlan" name="actionPlan" placeholder='Type Action Plan here' required></textarea>
             </div>
 
             <div class="rootBtn">
-              <button class="button" type="submit" onclick="return confirm('Are you sure you want to Submit?')">Submit</button>
+              <button class="button" type="submit" onclick="return confirm('Are you sure you want to Submit?')"><?php echo $text['submit']; ?></button>
             </div>
 
           </form>
@@ -169,7 +170,7 @@
                   <table class="agentInfo">
                     <thead>
                       <tr>
-                        <th colspan="2">Agent Information</th>
+                        <th colspan="2"><?php echo $text['agent-info']; ?></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -181,11 +182,11 @@
                         while ( $row = mysqli_fetch_assoc($result1)) {
                           ?>
                           <tr>
-                            <th>Name: </th>
+                            <th><?php echo $text['name']; ?>: </th>
                             <td><?php echo $row['agent']; ?></td>
                           </tr>
                           <tr>
-                            <th>Account: </th>
+                            <th><?php echo $text['account']; ?>: </th>
                             <td><?php echo $row['account']; ?></td>
                           </tr>
                           <?php
@@ -203,7 +204,7 @@
                   <table class="actionplan">
                       <thead>
                           <tr>
-                            <th>Action Plan</th>
+                            <th><?php echo $text['action-plan']; ?></th>
                           </tr>
                       </thead>
                       <tbody>
@@ -238,7 +239,7 @@
                       } ?>
                       </tbody>
                   </table>
-                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>">Click here for the Acknowledgement Link</a>
+                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>"><?php echo $text['click-ack-link']; ?></a>
               </div>
 
           <?php } ?>

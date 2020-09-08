@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-
+<?php include ('../text/text.php');?>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
-        <title>Callmax Solutions Coaching System | Acknowledgement Link</title>
+        <title><?php echo $text['ack-title']; ?></title>
     </head>
     <body>
 
@@ -26,14 +26,14 @@
 
             <div id="branding">
 
-                <h1><img src="../img/favicon.png" alt="logo" />Callmax Solutions Coaching System</h1>
+                <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
             <nav>
                 <ul>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
-                  <li><a href='sendReport.php'>Send Report</a></li>
-                  <li><a href='AgentSearch.php'>Dashboard</a></li>
-                  <li class="current"><a href=''>Acknowledgement Link</a></li>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+                  <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                  <li><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
+                  <li class="current"><a href=''><?php echo $text['ack-link']; ?></a></li>
                 </ul>
             </nav>
         </div>
@@ -42,11 +42,11 @@
 
     <div class="container">
       <div class="ackBox">
-          <h2>Copy the Link below:</h2>
-          <input type="text" value="localhost/Callmax_Coaching/agentSearch/acknowledgementlink.php?TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt=<?php echo $id; ?>&s=<?php echo $sessionUser ?>" id="myInput" readonly>
+          <h2><?php echo $text['copy-link']; ?>:</h2>
+          <input type="text" value="<?php echo $text['link']; ?><?php echo $id; ?>&s=<?php echo $sessionUser ?>" id="myInput" readonly>
           <div class="tooltip">
             <button class="button" onclick="myFunction()">
-              <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>Copy link</button>
+              <span class="tooltiptext" id="myTooltip"><?php echo $text['copy-to-clipboard']; ?></span><?php echo $text['copy-link-btn']; ?></button>
             <script>
             function myFunction() {
               var copyText = document.getElementById("myInput");
@@ -55,7 +55,7 @@
               document.execCommand("copy");
               // alert("Link Copied to clipboard");
               var tooltip = document.getElementById("myTooltip");
-              tooltip.innerHTML = "Copied!";
+              tooltip.innerHTML = "<?php echo $text['copied']; ?>!";
             }
             </script>
           </div>
@@ -70,7 +70,7 @@
 
 
     <footer>
-        <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+        <h4><?php echo $text['footer']; ?></h4>
     </footer>
 </body>
 </html>

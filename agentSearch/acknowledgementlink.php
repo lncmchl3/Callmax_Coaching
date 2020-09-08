@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-
+<?php include ('../text/text.php'); ?>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
-        <title>Callmax Solutions Coaching System | Acknowledgement Report</title>
+        <title><?php echo $text['ack-title']; ?></title>
     </head>
     <body>
 
@@ -14,7 +14,7 @@
 
             // $sessionUser = isset($_GET["s"]);
             $id = isset($_GET["TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt"]);
-            $text = "";
+            // $text = "";
 
         ?>
 
@@ -23,11 +23,11 @@
 
                 <div id="branding">
 
-                    <h1><img src="../img/favicon.png" alt="logo" />Callmax Solutions Coaching System</h1>
+                    <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
                 </div>
                 <nav>
                     <ul>
-                      <li class="current"><a href=''>Acknowledgement Report</a></li>
+                      <li class="current"><a href=''><?php echo $text['ackgt-report']; ?></a></li>
                     </ul>
                 </nav>
             </div>
@@ -39,11 +39,11 @@
         <div class="container">
           <div class="ack-linkbox">
             <h2>
-                This is to Certify that I acknowledge the coaching of Team Leader <?php echo $_GET['s']; ?> for my report.
+                <?php echo $text['certify']; ?> <?php echo $_GET['s']; ?> for my report.
             </h2>
             <form action="done.php" method="POST">
                 <input  type="hidden" name="n" value="<?php echo $id; ?>">
-                <button class="button" type="submit" onclick="return confirm('Acknowledge the coaching?')">Acknowledge</button>
+                <button class="button" type="submit" onclick="return confirm('Acknowledge the coaching?')"><?php echo $text['ack']; ?></button>
             </form>
           </div>
 
@@ -53,12 +53,12 @@
         <?php } else { ?>
           <div class="ack-linkbox">
             <h1>
-                Thank You!
+                <?php echo $text['ty']; ?>
             </h1>
           </div>
 
         <?php
-                $text = "thankyou";
+                // $text = "thankyou";
             }
 //            } catch (Exception e) {
 //
@@ -66,7 +66,7 @@
 
   </div>
     <footer>
-        <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+        <h4><?php echo $text['footer']; ?></h4>
     </footer>
 </body>
 </html>
