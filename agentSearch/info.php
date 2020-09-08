@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="searchicon.png">
+        <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
         <title>Callmax Solutions Coaching System | Info </title>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
     </head>
@@ -26,7 +26,7 @@
 
             <div id="branding">
 
-                <h1>Callmax Solutions Coaching System</h1>
+                <h1><img src="../img/favicon.png" alt="logo" />Callmax Solutions Coaching System</h1>
             </div>
             <nav>
                 <ul>

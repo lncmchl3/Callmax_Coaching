@@ -1,7 +1,12 @@
+
+<?php
+include ('../text/text.php');
+?>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="searchicon.png">
+        <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -11,7 +16,7 @@
                   '<td>adsdsdsd</td>');
             $('table> tbody:last').append($row);
         </script> -->
-        <title>Callmax Solutions Coaching System | Send Report</title>
+        <title><?php echo $text['sendreport-title'] ?></title>
 
     </head>
     <body  onload="disableBackButton()" onunload="disableBackButton()">
@@ -30,7 +35,7 @@
         <div class="container">
 
             <div id="branding">
-                <h1>Callmax Solutions Coaching System</h1>
+                  <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
             </div>
 
             <nav>

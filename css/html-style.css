@@ -151,6 +151,10 @@ header #branding {
   float: left;
 }
 
+header #branding h1 img {
+  width: 4%;
+}
+
 header a {
   color: #fff;
   text-decoration: none;

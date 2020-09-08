@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
+        <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Callmax Solutions Coaching System | About Us</title>
     </head>
@@ -13,7 +14,7 @@
 
                 <div id="branding">
 
-                    <h1>Callmax Solutions Coaching System</h1>
+                    <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
                 </div>
                 <nav>
                     <ul>

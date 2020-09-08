@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-
+<?php
+include ('text/text.php');
+?>
 <html>
     <head>
+
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Callmax Solutions Coaching System | Welcome</title>
+        <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
+        <title><?php echo $text['welcome-title'];?></title>
     </head>
 
+
+
+
     <body>
+
         <header>
             <div class="container">
 
                 <div id="branding">
-
-                    <h1>Callmax Solutions Coaching System</h1>
+                    <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
                 </div>
                 <nav>
                     <ul>
                         <!-- <li><a href="about.php">About Us</a></li> -->
-                        <li><a href="reg.php">Sign up</a></li>
-                        <li class="current"><a href="index.php">Login</a></li>
+
+                        <li><a href="reg.php"><?php echo $text['signup'];?></a></li>
+                        <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li>
 
                     </ul>
                 </nav>
@@ -41,7 +49,7 @@
 
                       <div class="login-grid-box1">
                         <div class="login-header">
-                            <h1>Welcome!</h1>
+                            <h1><?php echo $text['login-welcome'];?></h1>
                         </div>
 
 
@@ -69,26 +77,26 @@
 
                           <div class="login-grid-box2">
                               <!-- <img src="img/user.png"> -->
-                              <input type="text" name="uname" value="" placeholder="Username" required />
+                              <input type="text" name="uname" value="" placeholder="<?php echo $text['username'];?>" required />
                           </div>
 
                           <div class="login-grid-box3">
                               <!-- <img src="img/pass.png" > -->
-                              <input type="password" name="pass" value="" placeholder="Password" required />
+                              <input type="password" name="pass" value="" placeholder="<?php echo $text['password'];?>" required />
                           </div>
 
                           <div class="btn">
-                            <button class="button" type="submit" name="Login"/>Login</button>
+                            <button class="button" type="submit" name="Login"/><?php echo $text['login'];?></button>
                           </div>
 
 
                           <div>
-                              <a href="#">Forgot password?</a>
+                              <a href="#"><?php echo $text['forgot-password'];?></a>
                           </div>
 
                           <div>
-                              <label>Don't have an account?</label>
-                              <a href="reg.php">Sign up</a>
+                              <label><?php echo $text['no-account']; ?></label>
+                              <a href="reg.php"><?php echo $text['signup']; ?></a>
                           </div>
 
               </form>
@@ -98,7 +106,7 @@
 
 
           <div id="freepik">
-              <a href="https://stories.freepik.com/work">Designed by Freepik</a>
+              <a href="https://stories.freepik.com/work"><?php echo $text['freepik']; ?></a>
           </div>
       </div>
       <!-- end of login-container -->
@@ -108,7 +116,7 @@
 
 
     <footer>
-        <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+        <h4><?php echo $text['footer']; ?></h4>
     </footer>
 
 

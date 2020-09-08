@@ -1,8 +1,12 @@
 
 <!DOCTYPE html>
+<?php
+include ('../text/text.php');
+?>
 <html>
 <head>
-    <title>Callmax Solutions Coaching System | Dashboard</title>
+    <title><?php echo $text['dashboard-title']; ?></title>
+    <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
     <link rel="stylesheet" type="text/css" href="../css/html-style.css">
 
 </head>
@@ -30,14 +34,13 @@
     <div class="container">
 
         <div id="branding">
-
-            <h1>Callmax Solutions Coaching System</h1>
+            <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
         </div>
         <nav>
             <ul>
-              <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')">Log out</a></li>
-              <li><a href='sendReport.php'>Send Report</a></li>
-              <li class="current"><a href='AgentSearch.php'>Dashboard</a></li>
+              <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+              <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+              <li class="current"><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
               <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
             </ul>
         </nav>
@@ -58,15 +61,15 @@
 
                 <label>Fiter By:</label>
                 <select name="item">
-                    <option value="" disabled selected hidden>Choose Position</option>
-                    <option value="agent">Name</option>
-                    <option value="account">Account</option>
-                    <option value="status">Status</option>
+                    <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
+                    <option value="agent"><?php echo $text['name']; ?></option>
+                    <option value="account"><?php echo $text['account']; ?></option>
+                    <option value="status"><?php echo $text['status']; ?></option>
                 </select>
 
-                <input type="text" name="search" placeholder="Search" >
+                <input type="text" name="search" placeholder="<?php echo $text['search']; ?>" >
                 <input type="date" name="date">
-                <button class="button" type="submit" name="searchForm">Search</button>
+                <button class="button" type="submit" name="searchForm"><?php echo $text['search']; ?></button>
                 <?php
                 //set initital value of POST iten to be true to laod the initial table
                 $choices = isset($_POST['item']) ? $_POST['item'] : 1;
@@ -110,10 +113,10 @@
             <table class="dashboard-table">
               <thead>
                 <tr>
-                  <th>Agent Name</th>
-                  <th>Type of Report</th>
-                  <th>Date Issued</th>
-                  <th>Status</th>
+                  <th><?php echo $text['agentname']; ?></th>
+                  <th><?php echo $text['report-type']; ?></th>
+                  <th><?php echo $text['date-issued']; ?></th>
+                  <th><?php echo $text['status']; ?></th>
                 </tr>
               </thead>
 
@@ -179,7 +182,7 @@
 
 
 <footer>
-    <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+    <h4><?php echo $text['footer']; ?></h4>
 </footer>
 
 
