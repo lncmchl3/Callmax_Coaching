@@ -3,6 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
+        <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Callmax Solutions Coaching System | About Us</title>
     </head>

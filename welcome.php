@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
-        <link rel="icon" href="searchicon.png">
+        <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <title>Callmax Solutions Coaching System</title>
     </head>
     <body  onload="disableBackButton()" onunload="disableBackButton()">

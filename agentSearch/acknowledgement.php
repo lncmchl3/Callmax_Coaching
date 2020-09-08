@@ -6,7 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
-        <title>Coaching System - Agents</title>
+        <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
+        <title>Callmax Solutions Coaching System | Acknowledgement Link</title>
     </head>
     <body>
 
