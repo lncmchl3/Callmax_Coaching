@@ -3,6 +3,7 @@
 <?php include ('../text/text.php');?>
 <html>
 <head>
+    
     <title><?php echo $text['dashboard-title']; ?></title>
     <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
     <link rel="stylesheet" type="text/css" href="../css/html-style.css">

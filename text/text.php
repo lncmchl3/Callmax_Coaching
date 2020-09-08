@@ -1,7 +1,7 @@
 <?php
 
 //header
-$text['header'] = 'Callmax Solutions Coaching System';
+$text['header'] = 'Callmax CRS';
 $text['signup'] = 'Sign up';
 $text['login'] = 'Login';
 $text['send-report'] = 'Send Report';
@@ -13,7 +13,7 @@ $text['ack-link'] = 'Acknowledgement Link';
 
 
 // index.php
-$text['welcome-title'] = 'Callmax Solutions Coaching System | Welcome';
+$text['welcome-title'] = ''.$text['header'].' | Welcome';
 $text['login-welcome'] = 'Welcome!';
 $text['username'] = 'Username';
 $text['password'] = 'Password';
@@ -22,7 +22,7 @@ $text['no-account'] = 'Don\'t have an account?';
 $text['freepik'] = 'Designed by Freepik';
 
 //reg.php
-$text['reg-title'] = 'Callmax Solutions Coaching System | Sign Up';
+$text['reg-title'] = ''.$text['header'].' | Sign Up';
 $text['register-head'] = 'Registration';
 $text['firstname'] = 'First Name';
 $text['lastname'] = 'Last Name';
@@ -54,7 +54,7 @@ $text['click-here'] = 'Click here';
 $text['reg-again'] = 'Click here to register again';
 
 // agentSeach.php
-$text['dashboard-title'] = 'Callmax Solutions Coaching System | Dashboard';
+$text['dashboard-title'] = ''.$text['header'].' | Dashboard';
 $text['name'] = 'Name';
 $text['account'] = 'Account';
 $text['status'] = 'status';
@@ -64,7 +64,7 @@ $text['report-type'] = 'Type of Report';
 $text['date-issued'] = 'Date Issued';
 
 // sendReport.php
-$text['sendreport-title'] = 'Callmax Solutions Coaching System | Send Report';
+$text['sendreport-title'] = ''.$text['header'].' | Send Report';
 $text['coaching-form'] = 'Coaching Form';
 $text['select-name'] = 'Select Name';
 $text['select-account'] = 'Select Account';
@@ -77,7 +77,7 @@ $text['habit'] = 'Habit';
 $text['submit'] = 'Submit';
 
 // info.php
-$text['info-title'] = 'Callmax Solutions Coaching System | Info';
+$text['info-title'] = ''.$text['header'].' | Info';
 $text['agent-info'] = 'Agent Information';
 $text['qan-result'] = 'QA Non-Voice Result';
 $text['potential-cause'] = 'Potential Cause of Failures';
@@ -93,7 +93,7 @@ $text['click-ack-link'] = 'Click here for the Acknowledgement Link';
 
 
 // Acknowledgement.php
-$text['ack-title'] = 'Callmax Solutions Coaching System | Acknowledgement Link';
+$text['ack-title'] = ''.$text['header'].' | Acknowledgement Link';
 $text['copy-link'] = 'Copy the link below';
 $text['link'] = 'localhost/Callmax_Coaching/agentSearch/acknowledgementlink.php?TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt=';
 $text['copy-to-clipboard'] = 'Copy to clipboard';
@@ -101,19 +101,19 @@ $text['copy-link-btn'] = 'Copy link';
 $text['copied'] = 'Copied!';
 
 // acknowledgement link
-$text['ack-report-title'] = 'Callmax Solutions Coaching System | Acknowledgement Report';
+$text['ack-report-title'] = ''.$text['header'].' | Acknowledgement Report';
 $text['ackgt-report'] = 'Acknowledgement Report';
 $text['certify'] = 'This is to certify that i acknowledge the coaching of team leader';
 $text['ack'] = 'Acknowledge';
 $text['ty'] = 'Thank You!';
-$text[''] = '';
+// $text[''] = '';
 
 
 
 
 
 // footer
-$text['footer'] = 'Callmax Solutions Coaching System, Copyright &copy; 2020';
+$text['footer'] = ''.$text['header'].', Copyright &copy; 2020';
 
 
 // if (!defined('IN_SCRIPT')) die('PHP syntax OK!');

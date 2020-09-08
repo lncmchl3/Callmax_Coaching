@@ -147,12 +147,12 @@ header {
 }
 
 header #branding {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   float: left;
 }
 
 header #branding h1 img {
-  width: 4%;
+  width: 10%;
 }
 
 header a {

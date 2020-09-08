@@ -1,3 +1,4 @@
+
 <?php include ('../text/text.php'); ?>
 <html>
     <head>
