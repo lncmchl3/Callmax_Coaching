@@ -239,7 +239,7 @@
                       } ?>
                       </tbody>
                   </table>
-                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>"><?php echo $text['click-ack-link']; ?></a>
+                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>&statement=<?php echo $statement; ?>"><?php echo $text['click-ack-link']; ?></a>
               </div>
 
           <?php } ?>

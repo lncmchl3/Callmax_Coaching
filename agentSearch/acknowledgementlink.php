@@ -42,7 +42,7 @@
                 <?php echo $text['certify']; ?> <?php echo $_GET['s']; ?> for my report.
             </h2>
             <form action="done.php" method="POST">
-                <input  type="hidden" name="n" value="<?php echo $id; ?>">
+                <input  type="hidden" name="n" value="<?php echo $_GET["TeAeltAhnToeskvLoinegeeTohWgGeonwpIknsraTBdTRhilTicliehtt"]; ?>">
                 <button class="button" type="submit" onclick="return confirm('Acknowledge the coaching?')"><?php echo $text['ack']; ?></button>
             </form>
           </div>

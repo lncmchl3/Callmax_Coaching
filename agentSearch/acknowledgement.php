@@ -12,9 +12,12 @@
     <body>
 
         <?php
-
+        require('../connection.php');
             $sessionUser = $_GET["s"];
             $id = $_GET["n"];
+            $statement = $_GET['statement'];
+            $query = "UPDATE agent_reports SET action_plan = '".$statement."', coaching_date = NOW() WHERE id =".$id;
+            mysqli_query($connection, $query);
 
 
         ?>
@@ -25,7 +28,6 @@
         <div class="container">
 
             <div id="branding">
-
                 <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
             <nav>
