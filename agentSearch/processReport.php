@@ -1,12 +1,13 @@
 <?php
     require('../connection.php');
     if (isset($_POST['submit'])) {
+        $sessionUser = $_POST['s'];
         $agentname = $_POST['agentname'];
         $account = $_POST['account'];
         echo $agentname."<br/>";
         echo $account."<br/>";
 
-        $query1 = "INSERT into agent_reports(agent, account, report_type, date_issued, status) VALUES ('" .$agentname."', '".$account."', 'TL Report', NOW(), 'Submitted')";
+        $query1 = "INSERT into agent_reports(agent, account, report_type, date_issued, status, team_leader) VALUES ('" .$agentname."', '".$account."', 'TL Report', NOW(), 'Submitted', '".$sessionUser."')";
         mysqli_query($connection,$query1);
         $last_id = mysqli_insert_id($connection);
 

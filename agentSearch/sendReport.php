@@ -176,7 +176,12 @@ include ('../text/text.php');
 
                   <div class="issueBtn">
                     <input type="hidden" value="TL" name="submittedby">
+<<<<<<< HEAD
                     <button class="button" type="submit" name="submit"><?php echo $text['submit']; ?></button>
+=======
+                <input type="hidden" name="s" value="<?php echo $_SESSION['name']; ?>">
+                    <button class="button" type="submit" name="submit">Submit</button>
+>>>>>>> 56c62646da147c00987d66f514c5d5cc766b71ec
                   </div>
 
               </form>
