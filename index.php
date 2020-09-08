@@ -19,6 +19,7 @@
                 <nav>
                     <ul>
                         <!-- <li><a href="about.php">About Us</a></li> -->
+                        
                         <li><a href="reg.php">Sign up</a></li>
                         <li class="current"><a href="index.php">Login</a></li>
 
