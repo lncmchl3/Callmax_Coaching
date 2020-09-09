@@ -423,7 +423,7 @@ article p {
 
 .regform-content {
   display: grid;
-  grid-template-row: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 /* select:invalid {
@@ -891,8 +891,6 @@ article p {
   align-content: stretch;
   flex-flow: column wrap;
 } */
-.root-action-form {
-}
 
 .root-action-box .root-action-form {
   padding: 10px;
