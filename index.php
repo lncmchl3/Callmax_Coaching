@@ -31,8 +31,6 @@ include ('text/text.php');
                     </ul>
                 </nav>
               </div>
-
-
             </div>
         </header>
 
