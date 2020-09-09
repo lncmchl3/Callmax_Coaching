@@ -69,7 +69,7 @@ a:hover {
 }
 
 .login-container {
-  width: 100%;
+  /* width: 100%; */
   margin: auto;
   overflow: hidden;
   background: url(../img/bg.png) no-repeat center;
@@ -153,7 +153,7 @@ header {
   /* box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5); */
 }
 
-header #branding {
+.heading #branding {
   /* text-transform: uppercase; */
   /* float: left; */
   position: absolute;
@@ -161,28 +161,26 @@ header #branding {
   left: 0;
 }
 
-header #branding h1 img {
+.heading #branding h1 img {
   width: 10%;
   /* padding: 0 10px; */
 }
 
-header a {
+.heading a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 17px;
 }
 
-header nav {
+.heading nav {
   position: absolute;
   top: 0;
   right: 0;
   padding: 15px 10px;
 }
 
-nav ul {}
-
-header li {
+.heading li {
   /* float: right; */
   display: inline;
   padding: 0 10px;
@@ -190,12 +188,12 @@ header li {
   margin-top: 25px; */
 }
 
-header .current a {
+.heading .current a {
   color: var(--primary-color);
   font-weight: bold;
 }
 
-header a:hover {
+.heading a:hover {
   color: var(--primary-color);
   /* font-weight: bold; */
 }
@@ -207,7 +205,7 @@ header a:hover {
 /* Login form */
 .loginbox {
   height: 78.1vh;
-  width: 100%;
+  width: 50%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -253,15 +251,20 @@ header a:hover {
   background: #f3f3f3;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 350px;
+  /* margin: auto; */
   border-radius: 10px;
-  padding: 25px 8px 35px 8px;
+  padding: 25px 20px 35px 20px;
   border-bottom: var(--primary-color) solid 7px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   /* display: grid;
   grid-template-rows: 1fr 2fr 2fr;
   justify-content: center;
   align-items: center; */
+}
+
+.loginform .btn button {
+  width: 70%;
 }
 
 .login-grid-box2, .login-grid-box3 {
@@ -278,7 +281,7 @@ header a:hover {
 }
 
 .loginform input[type="text"], .loginform input[type="password"] {
-  width: 250px;
+  width: 70%;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
   /* border: #333 solid 1px; */
@@ -1108,5 +1111,53 @@ footer {
 
   .regbox select {
     width: 100%;
+  }
+
+  .loginbox {
+    width: 100%;
+  }
+}
+
+@media(max-width:1000px) {
+  header .container {
+    width: 100%;
+  }
+
+  .heading #branding {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .heading nav {
+    /* display: none; */
+    width: 100%;
+    top: 35%;
+    right: 50%;
+    transform: translate(50%);
+    text-align: center;
+  }
+}
+
+@media(max-width:768px) {
+  nav ul li:first-child {
+    display: none;
+  }
+
+  .dashboard-table td:first-child {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .dashboard-table th:first-child {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .main-container .container {
+    width: 90%;
   }
 }
