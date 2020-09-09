@@ -174,7 +174,7 @@
             header("location:../error/error.php");
         }
     }else{
-        header("location:index.php?e=Please Log in");
+        header("location:../index.php?e=Please Log in");
     }
 ?>
 

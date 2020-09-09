@@ -10,9 +10,14 @@
         <title><?php echo $text['ack-title']; ?></title>
     </head>
     <body>
+    <?php
+    require('../connection.php');
 
+    session_start();
+    if (isset($_SESSION['name'])) {
+        if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {
+    ?>
         <?php
-        require('../connection.php');
             $sessionUser = $_GET["s"];
             $id = $_GET["n"];
             $statement = $_GET['statement'];
@@ -68,10 +73,14 @@
     </div>
     <!-- end of container -->
 
-
-
-
-
+    <?php
+        }else{
+            header("location:../error/error.php");
+        }
+    }else{
+        header("location:../index.php?e=Please Log in");
+    }
+?>
     <footer>
         <h4><?php echo $text['footer']; ?></h4>
     </footer>
