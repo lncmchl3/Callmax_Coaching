@@ -137,6 +137,13 @@ a:hover {
 }
 
 /* header */
+.heading {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding: 42.5px 0;
+}
+
 header {
   position: sticky;
   top: 0px;
@@ -148,11 +155,15 @@ header {
 
 header #branding {
   /* text-transform: uppercase; */
-  float: left;
+  /* float: left; */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header #branding h1 img {
   width: 10%;
+  /* padding: 0 10px; */
 }
 
 header a {
@@ -162,16 +173,21 @@ header a {
   font-size: 17px;
 }
 
-header ul {
-  margin: 0;
-  padding: 0;
+header nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 10px;
 }
 
+nav ul {}
+
 header li {
-  float: right;
+  /* float: right; */
   display: inline;
-  padding: 0 20px 0 20px;
-  margin-top: 25px;
+  padding: 0 10px;
+  /* padding: 0 20px 0 20px;
+  margin-top: 25px; */
 }
 
 header .current a {
@@ -774,7 +790,7 @@ article p {
 .selectedIssue-box {
   /* border: black 1px solid; */
   width: 100%;
-  min-height: 37.6vh;
+  min-height: 39.3vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1071,26 +1087,6 @@ footer {
 }
 
 @media(max-width: 1205px) {
-  header #branding {
-    text-transform: uppercase;
-    float: none;
-    text-align: center;
-    font-size: 12px;
-  }
-
-  header li {
-    float: none;
-    display: inline;
-    padding: 0 20px 0 20px;
-  }
-
-  header nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-  }
-
   .loginbox {
     /* height: 78.1vh; */
     min-height: calc(96.7vh - 85.19px - 89.88px);

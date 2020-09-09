@@ -1,11 +1,11 @@
-
+<!DOCTYPE html>
 <?php
 include ('../text/text.php');
 ?>
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
@@ -33,20 +33,20 @@ include ('../text/text.php');
 
     <header>
         <div class="container">
-
+          <div class="heading">
             <div id="branding">
                   <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
             </div>
 
             <nav>
                 <ul>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
-                  <li class="current"><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
-                  <li ><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
                   <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
+                  <li ><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
+                  <li class="current"><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
                 </ul>
             </nav>
-
+          </div>
         </div>
     </header>
 

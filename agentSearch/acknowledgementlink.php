@@ -20,9 +20,8 @@
 
         <header>
             <div class="container">
-
+              <div class="heading">
                 <div id="branding">
-
                     <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
                 </div>
                 <nav>
@@ -30,6 +29,7 @@
                       <li class="current"><a href=''><?php echo $text['ackgt-report']; ?></a></li>
                     </ul>
                 </nav>
+              </div>
             </div>
         </header>
 

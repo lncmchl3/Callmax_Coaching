@@ -13,19 +13,20 @@ include ('text/text.php');
         <title><?php $text['header']; ?></title>
     </head>
     <body  onload="disableBackButton()" onunload="disableBackButton()">
+
       <header>
           <div class="container">
-
+            <div class="heading">
               <div id="branding">
                   <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
               </div>
 
               <nav>
                   <ul>
-                    <!-- <li class="current"><a href='sendReport.php'>Send Report</a></li> -->
+                    <li><a href="index.php"><?php echo $text['login']; ?></a></li>
                   </ul>
               </nav>
-
+            </div>
           </div>
       </header>
 

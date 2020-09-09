@@ -25,20 +25,21 @@
 
     <header>
         <div class="container">
-
+          <div class="heading">
             <div id="branding">
 
                 <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
             <nav>
                 <ul>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
-                  <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
-                  <li class="current"><a href=""><?php echo $text['info']; ?></a></li>
-                  <li><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
+                  <li><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
+                  <li class="current"><a href=""><?php echo $text['info']; ?></a></li>
+                  <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
                 </ul>
             </nav>
+          </div>
         </div>
     </header>
 
