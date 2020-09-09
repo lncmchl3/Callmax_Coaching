@@ -18,19 +18,18 @@ include ('text/text.php');
 
         <header>
             <div class="container">
-              <div class="heading">
-                <div id="branding">
-                    <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
-                </div>
-                <nav>
-                    <ul>
+                <div class="heading">
+                    <div id="branding">
+                        <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
+                    </div>
+                    <nav>
+                        <ul>
                         <!-- <li><a href="about.php">About Us</a></li> -->
                         <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li>
                         <li><a href="reg.php"><?php echo $text['signup'];?></a></li>
-
-                    </ul>
-                </nav>
-              </div>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
 
@@ -40,76 +39,76 @@ include ('text/text.php');
             if (@is_null($_SESSION['demerits'])) {
         ?>
 
-      <div class="login-container">
+    <div class="login-container">
 
 
 
-          <div class="loginbox">
-              <form class="loginform" method="post" action="login.php" autocomplete="off">
+        <div class="loginbox">
+            <form class="loginform" method="post" action="login.php" autocomplete="off">
 
-                      <div class="login-grid-box1">
-                        <div class="login-header">
-                            <h1><?php echo $text['login-welcome'];?></h1>
+                    <div class="login-grid-box1">
+                    <div class="login-header">
+                        <h1><?php echo $text['login-welcome'];?></h1>
+                    </div>
+
+
+                        <?php
+                                if(@$_GET['e']==true){
+                        ?>
+
+                            <h3 class="error"><?php echo $_GET['e'] ?></h3>
+
+                        <?php
+                                }else if (@$_GET['i']==true) {
+                        ?>
+                            <h3 class="error"><?php echo $_GET['i'] ?></h3>
+
+                        <?php
+                        }
+                                else{
+                        ?>
+                        <?php
+                        }
+                        ?>
+
+                    </div>
+
+
+                        <div class="login-grid-box2">
+                            <!-- <img src="img/user.png"> -->
+                            <input type="text" name="uname" value="" placeholder="<?php echo $text['username'];?>" required />
+                        </div>
+
+                        <div class="login-grid-box3">
+                            <!-- <img src="img/pass.png" > -->
+                            <input type="password" name="pass" value="" placeholder="<?php echo $text['password'];?>" required />
+                        </div>
+
+                        <div class="btn">
+                        <button class="button" type="submit" name="Login"/><?php echo $text['login'];?></button>
                         </div>
 
 
-                          <?php
-                                 if(@$_GET['e']==true){
-                          ?>
+                        <div>
+                            <a href="#"><?php echo $text['forgot-password'];?></a>
+                        </div>
 
-                                <h3 class="error"><?php echo $_GET['e'] ?></h3>
+                        <div>
+                            <label><?php echo $text['no-account']; ?></label>
+                            <a href="reg.php"><?php echo $text['signup']; ?></a>
+                        </div>
 
-                          <?php
-                                 }else if (@$_GET['i']==true) {
-                          ?>
-                                <h3 class="error"><?php echo $_GET['i'] ?></h3>
+            </form>
 
-                          <?php
-                          }
-                                 else{
-                          ?>
-                          <?php
-                          }
-                          ?>
-
-                      </div>
-
-
-                          <div class="login-grid-box2">
-                              <!-- <img src="img/user.png"> -->
-                              <input type="text" name="uname" value="" placeholder="<?php echo $text['username'];?>" required />
-                          </div>
-
-                          <div class="login-grid-box3">
-                              <!-- <img src="img/pass.png" > -->
-                              <input type="password" name="pass" value="" placeholder="<?php echo $text['password'];?>" required />
-                          </div>
-
-                          <div class="btn">
-                            <button class="button" type="submit" name="Login"/><?php echo $text['login'];?></button>
-                          </div>
-
-
-                          <div>
-                              <a href="#"><?php echo $text['forgot-password'];?></a>
-                          </div>
-
-                          <div>
-                              <label><?php echo $text['no-account']; ?></label>
-                              <a href="reg.php"><?php echo $text['signup']; ?></a>
-                          </div>
-
-              </form>
-
-            </div>
+        </div>
             <!-- end of loginbox -->
 
 
-          <div id="freepik">
-              <a href="https://stories.freepik.com/work"><?php echo $text['freepik']; ?></a>
-          </div>
-      </div>
-      <!-- end of login-container -->
+        <div id="freepik">
+            <a href="https://stories.freepik.com/work"><?php echo $text['freepik']; ?></a>
+        </div>
+    </div>
+    <!-- end of login-container -->
 
 
 
