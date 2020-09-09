@@ -108,7 +108,9 @@ $text['ack'] = 'Acknowledge';
 $text['ty'] = 'Thank You!';
 // $text[''] = '';
 
+// QA
 
+$text['qa'] = 'QA';
 
 
 
