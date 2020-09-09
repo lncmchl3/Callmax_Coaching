@@ -267,11 +267,13 @@ header {
   width: 70%;
 }
 
-.login-grid-box2, .login-grid-box3 {
+.login-grid-box2,
+.login-grid-box3 {
   position: relative;
 }
 
-.login-grid-box2 img, .login-grid-box3 img {
+.login-grid-box2 img,
+.login-grid-box3 img {
   position: absolute;
   top: 40%;
   left: 12%;
@@ -280,7 +282,8 @@ header {
   transform: translate(-50%, -50%);
 }
 
-.loginform input[type="text"], .loginform input[type="password"] {
+.loginform input[type="text"],
+.loginform input[type="password"] {
   width: 70%;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
@@ -378,7 +381,10 @@ article p {
   text-transform: capitalize;
 }
 
-.regform input[type="text"], .regform input[type="password"], .regform input[type="email"], .regform select {
+.regform input[type="text"],
+.regform input[type="password"],
+.regform input[type="email"],
+.regform select {
   width: 95%;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
@@ -417,7 +423,7 @@ article p {
 
 .regform-content {
   display: grid;
-  grid-template-row: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 /* select:invalid {
@@ -474,7 +480,9 @@ article p {
 /* .posOption input[type="text"] {
   display: block;
 } */
-.grid-box1, .grid-box2, .grid-box3 {
+.grid-box1,
+.grid-box2,
+.grid-box3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 50px;
@@ -501,7 +509,9 @@ article p {
   padding-top: 10px;
 }
 
-.searchForm select, .searchForm input[type="date"], .searchForm input[type="text"] {
+.searchForm select,
+.searchForm input[type="date"],
+.searchForm input[type="text"] {
   padding-right: 15px;
   margin-right: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -524,7 +534,9 @@ article p {
   overflow: hidden;
 }
 
-.searchForm input[type="date"], .searchForm input[type="text"], .searchForm select {
+.searchForm input[type="date"],
+.searchForm input[type="text"],
+.searchForm select {
   width: 20%;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
@@ -583,7 +595,8 @@ article p {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.dashboard-table th, .dashboard-table td {
+.dashboard-table th,
+.dashboard-table td {
   padding: 12px 15px;
   text-align: center;
 }
@@ -654,7 +667,8 @@ article p {
   overflow: hidden;
 }
 
-.agentInfo th, .agentInfo td {
+.agentInfo th,
+.agentInfo td {
   padding: 12px 15px;
   text-align: center;
 }
@@ -877,7 +891,6 @@ article p {
   align-content: stretch;
   flex-flow: column wrap;
 } */
-.root-action-form {}
 
 .root-action-box .root-action-form {
   padding: 10px;
@@ -1089,14 +1102,14 @@ footer {
   color: #fff;
 }
 
-@media(max-width: 1205px) {
+@media (max-width: 1205px) {
   .loginbox {
     /* height: 78.1vh; */
     min-height: calc(96.7vh - 85.19px - 89.88px);
   }
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 1080px) {
   .grid-box1 {
     grid-template-columns: 1fr;
   }
@@ -1118,7 +1131,7 @@ footer {
   }
 }
 
-@media(max-width:1000px) {
+@media (max-width: 1000px) {
   header .container {
     width: 100%;
   }
@@ -1142,7 +1155,7 @@ footer {
   }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   nav ul li:first-child {
     display: none;
   }
