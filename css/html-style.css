@@ -124,6 +124,11 @@ a:hover {
   /* font-weight: bold; */
   /* background-color: #115584; */
   opacity: 0.9;
+  transition: all 250ms ease;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .button:focus {
