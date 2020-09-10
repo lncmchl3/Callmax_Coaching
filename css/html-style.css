@@ -787,16 +787,34 @@ article p {
 }
 
 /* send report */
+.sendReportform {
+  width: 85%;
+  margin: auto;
+  display: absolute;
+  top: 0;
+  left: 50%;
+  /* display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: left;
+  flex-direction: column; */
+}
+
 .sendReport-box {
-  padding: 10px 20px 10px 20px;
-  width: 35%;
-  margin-left: auto;
-  margin-right: auto;
+  display: relative;
+  width: 80%;
+  margin: auto;
   margin-top: 20px;
+  /*
+  width: 35%;
+  margin: auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: start;
+  */
+  padding: 20px 10px;
   border-radius: 5px;
   border-top: none;
   border-left: none;

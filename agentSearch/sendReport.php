@@ -55,11 +55,11 @@ include ('../text/text.php');
 
 
           <div class="container">
-            <div class="subcontainer">
+
               <div class="sendReport-box">
 
 
-                <form class"sendReportform">
+                <form class=  "sendReportform">
                   <div>
                     <h1><?php echo $text['coaching-form']; ?></h1>
                   </div>
@@ -147,7 +147,7 @@ include ('../text/text.php');
               </div>
               <!-- end of sendReport-box -->
 
-            </div>
+
 
 
 
