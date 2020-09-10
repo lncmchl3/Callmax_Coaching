@@ -17,6 +17,11 @@ body {
 a {
   text-decoration: none;
   color: var(--primary-color);
+  transition: all 250ms ease;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 a:hover {
@@ -50,7 +55,7 @@ a:hover {
   height: 100vh;
   font: 15px/1.5 Arial, Helvetica, sans-serif;
   overflow: hidden;
-  background: url(../img/error404.png) no-repeat center top;
+  background: url("../img/error404.png") no-repeat center top;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,21 +70,21 @@ a:hover {
   /* min-height: calc(10vh - 85.19px - 89.88px); */
   margin: auto;
   overflow: hidden;
-  background: url(../img/adduser.png) no-repeat center;
+  background: url("../img/adduser.png") no-repeat center;
 }
 
 .login-container {
   /* width: 100%; */
   margin: auto;
   overflow: hidden;
-  background: url(../img/bg.png) no-repeat center;
+  background: url("../img/bg.png") no-repeat center;
 }
 
 .about-container {
   width: 100%;
   margin: auto;
   overflow: hidden;
-  background: url(../img/aboutus.png) no-repeat center;
+  background: url("../img/aboutus.png") no-repeat center;
 }
 
 .greetBox {
@@ -88,7 +93,7 @@ a:hover {
   height: 80.5vh;
   margin: auto;
   overflow: hidden;
-  background: url(../img/welcome.png) no-repeat center;
+  background: url("../img/welcome.png") no-repeat center;
 }
 
 .sentreportcontainer {
@@ -106,6 +111,11 @@ a:hover {
   border-radius: 5px;
   text-transform: uppercase;
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+  transition: all 250ms ease;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .button:hover {
@@ -114,6 +124,11 @@ a:hover {
   /* font-weight: bold; */
   /* background-color: #115584; */
   opacity: 0.9;
+  transition: all 250ms ease;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .button:focus {
@@ -204,14 +219,14 @@ header {
 
 /* Login form */
 .loginbox {
-  height: 78.1vh;
+  min-height: calc(96.8vh - 85.19px - 89.88px);
   width: 50%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url(../img/bg.png) no-repeat center;
+  background: url("../img/bg.png") no-repeat center;
 }
 
 .login-header {
@@ -611,10 +626,22 @@ article p {
   padding-left: 130px;
 }
 
+/* .dashboard-table tbody td:not(:first-child) {
+  border-left: 1px solid #D0D0D0;
+}
+
+.dashboard-table thead th:not(:first-child) {
+  border-left: 1px solid #D0D0D0;
+} */
 .dashboard-table tbody tr {
   border-bottom: #dddddd 1px solid;
   background: #f3f3f3;
   cursor: pointer;
+  transition: all 250ms ease;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .dashboard-table tbody tr:hover {
@@ -891,7 +918,6 @@ article p {
   align-content: stretch;
   flex-flow: column wrap;
 } */
-
 .root-action-box .root-action-form {
   padding: 10px;
   margin-top: 10px;

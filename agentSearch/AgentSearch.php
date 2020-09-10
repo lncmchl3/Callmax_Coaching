@@ -27,7 +27,6 @@
 
 
 
-
 <!-- code for content here -->
 <header>
     <div class="container">

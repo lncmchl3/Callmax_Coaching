@@ -32,7 +32,6 @@
             <nav>
                 <ul>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
-                  <li><a href='report.php'><?php echo $text['dashboard']; ?></a></li>
                   <li class="current"><a href=""><?php echo $text['info']; ?></a></li>
                   <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
                   <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
@@ -66,7 +65,7 @@
                         while ( $row = mysqli_fetch_assoc($result1)) {
                           ?>
                           <tr>
-                            <th><?php echo $text['name']; ?>: </th>
+                            <th><?php echo $text['name']; ?>:</th>
                             <td><?php echo $row['agent']; ?></td>
                           </tr>
                           <tr>
@@ -105,12 +104,12 @@
                         array_push($array, $row['Questions']);
                                 }
                           } else{
-                               ?>
+                              ?>
                           <tr>
                             <?php include 'kash/logic.php'; ?>
                           </tr>
                           <?php }
-                           }
+                          }
                       } ?>
                       <?php if (!empty($array)) {
                         ?>
@@ -147,7 +146,7 @@
 
 
 <footer>
-     <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+     <h4><?php echo $text['footer']; ?></h4>
 </footer>
 </body>
 </html>
