@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php include ('text/text.php'); ?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
@@ -94,7 +94,7 @@
 
 <!-- <div class="foot-margin_2"> -->
     <footer>
-         <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+         <h4><?php echo $text['footer']; ?>/h4>
     </footer>
 <!-- </div> -->
 
