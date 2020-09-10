@@ -38,7 +38,7 @@
         <nav>
             <ul>
               <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
-              <li class="current"><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
+              <li class="current"><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
               <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
               <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
             </ul>
