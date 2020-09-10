@@ -50,7 +50,7 @@ a:hover {
   height: 100vh;
   font: 15px/1.5 Arial, Helvetica, sans-serif;
   overflow: hidden;
-  background: url(../img/error404.png) no-repeat center top;
+  background: url("../img/error404.png") no-repeat center top;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,21 +65,21 @@ a:hover {
   /* min-height: calc(10vh - 85.19px - 89.88px); */
   margin: auto;
   overflow: hidden;
-  background: url(../img/adduser.png) no-repeat center;
+  background: url("../img/adduser.png") no-repeat center;
 }
 
 .login-container {
   /* width: 100%; */
   margin: auto;
   overflow: hidden;
-  background: url(../img/bg.png) no-repeat center;
+  background: url("../img/bg.png") no-repeat center;
 }
 
 .about-container {
   width: 100%;
   margin: auto;
   overflow: hidden;
-  background: url(../img/aboutus.png) no-repeat center;
+  background: url("../img/aboutus.png") no-repeat center;
 }
 
 .greetBox {
@@ -88,7 +88,7 @@ a:hover {
   height: 80.5vh;
   margin: auto;
   overflow: hidden;
-  background: url(../img/welcome.png) no-repeat center;
+  background: url("../img/welcome.png") no-repeat center;
 }
 
 .sentreportcontainer {
@@ -204,14 +204,14 @@ header {
 
 /* Login form */
 .loginbox {
-  height: 78.1vh;
+  min-height: calc(96.8vh - 85.19px - 89.88px);
   width: 50%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url(../img/bg.png) no-repeat center;
+  background: url("../img/bg.png") no-repeat center;
 }
 
 .login-header {
