@@ -3,10 +3,10 @@
 <div class="subcontainer">
     <div class="qaDiv">
         <div class="qa-gridbox1">
-            <?php if ($row['error'] =="Minor") {?>
+            <?php if ($row['error']=="Minor") {?>
                 <p style="background-color: #a6f6ff;"><?php echo $row['error']; ?></p>
             <?php } ?>
-            <?php if ($row['error'] =="Major") {?>
+            <?php if ($row['error']=="Major") {?>
                 <p style="background-color: #ffcd8f;"><?php echo $row['error']; ?></p>
             <?php } ?>
         </div>
