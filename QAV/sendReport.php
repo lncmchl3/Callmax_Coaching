@@ -123,9 +123,10 @@ include ('../text/text.php');
 
               <!-- statement for checking the issue -->
               <div class="selectedIssue-box">
-                <form class="selectedIssue" method="post" action="processReport.php">
+                <form class="selectedIssue" method="post" action="processQAReport.php">
                     <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
                     <input type="hidden" name="account" value="<?php echo $account; ?>" required>
+                    <input type="hidden" value="<?php $_SESSION['name']; ?>" name="submittedby">
                   <?php
                   if($account != "" || $account != null){
                     
@@ -143,7 +144,6 @@ include ('../text/text.php');
                     ?>
 
                   <div class="issueBtn">
-                    <input type="hidden" value="TL" name="submittedby">
 
                     <button class="button" type="submit" name="submit"><?php echo $text['submit']; ?></button>
 
