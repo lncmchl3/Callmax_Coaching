@@ -160,8 +160,8 @@ a:hover {
 }
 
 header {
-  position: sticky;
-  top: 0px;
+  /* position: sticky;
+  top: 0px; */
   background-color: var(--dark-grey);
   color: #fff;
   border-bottom: var(--primary-color) solid 8px;
@@ -1174,7 +1174,7 @@ article p {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 90%;
+  width: 95%;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #f4f4f4;
@@ -1197,6 +1197,24 @@ article p {
 
 .qaDiv .qa-gridbox2 {
   border-left: #c2c2c2 1px solid;
+}
+
+.qaDiv .qa-gridbox1 {
+  padding-right: 10px;
+}
+
+.qa-gridbox1 .major {
+  background-color: #ffcd8f;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.qa-gridbox1 .minor {
+  background-color: #a6f6ff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .qaDiv select:hover {

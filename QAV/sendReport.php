@@ -90,7 +90,7 @@ include ('../text/text.php');
                   </div>
                   <!-- end of agentName -->
 
-                  
+
                   <div class="accountSelect">
                     <label><?php echo $text['account']; ?>:</label>
                       <select id="accountSel" name="account" onchange="this.form.submit()" required>
@@ -113,7 +113,7 @@ include ('../text/text.php');
                       <script type="text/javascript">
                           document.getElementById('accountSel').value = "<?php echo $_GET['account'];?>";
                     </script>
-                   
+
                   </div>
                   <!-- end of accountSelect -->
                 </div>
@@ -131,7 +131,7 @@ include ('../text/text.php');
                     <input type="hidden" value="<?php echo $_SESSION['name']; ?>" name="submittedby">
                   <?php
                   if($account != "" || $account != null){
-                    
+
                   $query = "SELECT * FROM qa_form  WHERE account = '".$account."'";
                        $result = mysqli_query($connection, $query);
                        if (mysqli_num_rows($result) > 0) {
@@ -162,9 +162,6 @@ include ('../text/text.php');
             <!-- end selectedIssue-box -->
           </div>
           <!-- end of container -->
-
-
-
 
 
     <?php
