@@ -1146,6 +1146,12 @@ footer {
   color: #fff;
 }
 
+@media (max-width: 480px) {
+  nav ul {
+    display: none;
+  }
+}
+
 @media (max-width: 1205px) {
   .loginbox {
     /* height: 78.1vh; */
