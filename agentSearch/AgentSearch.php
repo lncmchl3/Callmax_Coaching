@@ -133,11 +133,11 @@
                 <?php
                 if($row1['status']=="Pending"){
                   ?>
-                  <td class="tableStatusOrange"><?php echo $row1['status']; ?></td>
+                  <td><?php echo $row1['status']; ?></td>
                 <?php }else if($row1['status']=="Submitted"){ ?>
-                  <td class="tableStatusYellow"><?php echo $row1['status']; ?></td>
+                  <td ><label class="statusYellow"><?php echo $row1['status']; ?></label></td>
                 <?php }else{ ?>
-                  <td class="tableStatusGreen"><?php echo $row1['status']; ?></td>
+                  <td><label class="statusGreen"><?php echo $row1['status']; ?></label></td>
                   <?php
                 }
               }
