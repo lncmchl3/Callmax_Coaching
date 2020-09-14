@@ -1,27 +1,17 @@
 <link rel="stylesheet" type="text/css" href="../css/html-style.css">
 
 <div class="subcontainer">
-
-  <div class="kashphp">
-
-    <div class="kash-top-box">
-        <?php echo $row['item']; ?>
-</div>
-<!-- end of rateDiv -->
-
-</div>
-<!-- end of kashphp -->
-
-</div>
-<!-- end of subcontainer -->
-
-
-<input type="hidden" name="wrongAnswer[]" value="<?php echo $row['answer']; ?>">
-<input type="hidden" name="error[]" value="<?php echo $row['error']; ?>">
-<div class="kashphp">
-        <select name="answer[]">
-        <option value="N/A">N/A</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+    <div class="qaDiv">
+      <div class="qa-gridbox1">
+        <p><?php echo $row['item']; ?></p>
+      </div>
+      <div class="qa-gridbox2">
+        <input type="hidden" name="wrongAnswer[]" value="<?php echo $row['answer']; ?>">
+          <select name="answer[]">
+          <option value="N/A">N/A</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+          </select>
+      </div>
+    </div>
 </div>

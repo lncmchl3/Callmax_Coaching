@@ -1137,6 +1137,41 @@ article p {
   text-align: center;
 }
 
+.qaDiv {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+  padding: 10px 10px 15px 10px;
+  border-radius: 5px;
+  text-align: center;
+  border-bottom: var(--primary-color) solid 7px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-size: 17px;
+}
+
+.qaDiv select {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.qaDiv .qa-gridbox2 {
+  border-left: #c2c2c2 1px solid;
+}
+
+.qaDiv select:hover {
+  cursor: pointer;
+}
+
 /* footer */
 footer {
   padding-bottom: 20px;
