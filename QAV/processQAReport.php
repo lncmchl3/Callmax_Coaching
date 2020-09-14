@@ -1,28 +1,30 @@
 <?php
     require('../connection.php');
-
     if (isset($_POST['submit'])) {
+        $agent = $_GET['agentname'];
+        $qa = $_GET['submittedby'];
+        $account = $_GET['account'];
         $wrongAnswer = $_REQUEST['wrongAnswer'];
         $error = $_REQUEST['error'];
         $answer = $_REQUEST['answer'];
-        $minor = 0;
-        $major = 0;
-        $TotalDeduction = 0;
-
+        $minor=0;
+        $major=0;
+        $TotalDeduction=0;
         for ($i=0; $i < count($wrongAnswer); $i++) { 
-            if ($wrongAnswer == $answer) {
-                if ($error == 'Minor') {
+            if ($wrongAnswer[$i] == $answer[$i]) {
+                if ($error[$i] == "Minor") {
                     $minor++;
                     $TotalDeduction++;
                 }
-                if ($error == 'Major') {
+                if ($error[$i] == "Major") {
                     $major++;
-                    $TotalDeduction+5;
+                    $TotalDeduction = $TotalDeduction+5;
                 }
             }
         }
-        echo $minor."<br/>";
-        echo $major."<br/>";
-        echo $TotalDeduction."<br/>";
+        $query = "INSERT INTO qa_record(agent, account, minor, major, total_deduction, qa, date) 
+        VALUES('".$agent."', '".$account."', ".$minor.", ".$major.", '".$TotalDeduction."', '".$qa."', NOW());";
+        mysqli_query($connection, $query);
     }
+    header('location:reports.php');
 ?>
