@@ -122,7 +122,6 @@
               ?>
 
               <tr onclick="window.location='info.php?n=<?php echo $row1['id']; ?>'" class="only">
-
                 <td><?php echo $row1['name']; ?></td>
                 <td class="tableData"> <?php echo $row1['account']; ?></td>
                 <td class="tableData"> <?php echo $row1['qa']; ?></td>
