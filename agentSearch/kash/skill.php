@@ -29,15 +29,20 @@
     </script>
 
 
-    <div class="rateDiv">
+    <div class="aDiv">
 
-      <h3><?php echo $row['kash_requirement']; ?></h3>
+      <div class="a-gridbox1">
+        <h3><?php echo $row['kash_requirement']; ?></h3>
+      </div>
 
       <input type="hidden"  name="SkillsQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
       <input type="hidden"  name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
-      <label for="SkillsAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label>
 
-      <input type="number" min="1" max="<?php echo $row['kash_standard_score'] ?>" name="SkillsAnswer[]" oninput="maxLengthCheck(this)" maxlength="1" required>
+      <div class="a-gridbox2">
+        <label for="SkillsAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label>
+
+        <input type="number" min="1" max="<?php echo $row['kash_standard_score'] ?>" name="SkillsAnswer[]" oninput="maxLengthCheck(this)" maxlength="1" required>
+      </div>
       <?php
         }
     }

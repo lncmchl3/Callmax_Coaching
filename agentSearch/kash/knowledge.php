@@ -34,15 +34,22 @@ echo "<label><span>5</span> (".$picard['fifth_knowledge'].")</label>";
 
 
 
-<div class="rateDiv">
-<h3><?php echo $row['kash_requirement']; ?></h3>
+<div class="aDiv">
+
+  <div class="a-gridbox1">
+    <h3><?php echo $row['kash_requirement']; ?></h3>
+  </div>
 
 <input type="hidden"  name="KnowledgeQuestions[]" value="<?php echo $row['kash_requirement']; ?>">
 <input type="hidden"  name="kash_standard_score[]" value="<?php echo $row['kash_standard_score']; ?>">
 
-<label for="KnowledgeAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label>
+  <div class="a-gridbox2">
+    <label for="KnowledgeAnswer">Rate from 1 - <?php echo $row['kash_standard_score']; ?> : </label>
 
-<input type="number" min="1" max="<?php echo $row['kash_standard_score']; ?>" name="KnowledgeAnswer[]"  maxlength="1" required>
+    <input type="number" min="1" max="<?php echo $row['kash_standard_score']; ?>" name="KnowledgeAnswer[]"  maxlength="1" required>
+  </div>
+
+
 
 <!-- <?php
  for ($i=1; $i <= $row['kash_standard_score'] ; $i++) {
