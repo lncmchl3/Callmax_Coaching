@@ -2,7 +2,10 @@
 
 <div class="subcontainer">
     <div class="qaDiv">
-      <div class="qa-gridbox1">
+    <div class="qa-gridbox1">
+        <p><?php echo $row['error']; ?></p>
+      </div>
+      <div class="qa-gridbox2">
         <p><?php echo $row['item']; ?></p>
       </div>
       <div class="qa-gridbox2">

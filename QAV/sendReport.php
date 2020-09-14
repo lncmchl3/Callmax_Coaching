@@ -60,6 +60,7 @@ include ('../text/text.php');
 
 
                 <div class="sendReportform">
+                <form>
                   <div>
                     <h1><?php echo $text['coaching-form']; ?></h1>
                   </div>
@@ -89,7 +90,7 @@ include ('../text/text.php');
                   </div>
                   <!-- end of agentName -->
 
-                  <form>
+                  
                   <div class="accountSelect">
                     <label><?php echo $text['account']; ?>:</label>
                       <select id="accountSel" name="account" onchange="this.form.submit()" required>
@@ -112,10 +113,11 @@ include ('../text/text.php');
                       <script type="text/javascript">
                           document.getElementById('accountSel').value = "<?php echo $_GET['account'];?>";
                     </script>
-                    </form>
+                   
                   </div>
                   <!-- end of accountSelect -->
                 </div>
+                </form>
                 <!-- end of sendReportform -->
               </div>
               <!-- end of sendReport-box -->
@@ -126,7 +128,7 @@ include ('../text/text.php');
                 <form class="selectedIssue" method="post" action="processQAReport.php">
                     <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
                     <input type="hidden" name="account" value="<?php echo $account; ?>" required>
-                    <input type="hidden" value="<?php $_SESSION['name']; ?>" name="submittedby">
+                    <input type="hidden" value="<?php echo $_SESSION['name']; ?>" name="submittedby">
                   <?php
                   if($account != "" || $account != null){
                     
@@ -158,11 +160,6 @@ include ('../text/text.php');
             <!-- <button name="add" style="float: right">+</button>   -->
             </div>
             <!-- end selectedIssue-box -->
-
-
-
-
-
           </div>
           <!-- end of container -->
 

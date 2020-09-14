@@ -1,9 +1,9 @@
 <?php
     require('../connection.php');
     if (isset($_POST['submit'])) {
-        $agent = $_GET['agentname'];
-        $qa = $_GET['submittedby'];
-        $account = $_GET['account'];
+        $agent = $_POST['agentname'];
+        $qa = $_POST['submittedby'];
+        $account = $_POST['account'];
         $wrongAnswer = $_REQUEST['wrongAnswer'];
         $error = $_REQUEST['error'];
         $answer = $_REQUEST['answer'];
