@@ -127,7 +127,9 @@ include ('../text/text.php');
                     <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
                     <input type="hidden" name="account" value="<?php echo $account; ?>" required>
                   <?php
-                  $query = "SELECT * FROM qa_form";
+                  if($account != "" || $account != null){
+                    
+                  $query = "SELECT * FROM qa_form  WHERE account = '".$account."'";
                        $result = mysqli_query($connection, $query);
                        if (mysqli_num_rows($result) > 0) {
                            while ($row = mysqli_fetch_assoc($result)) {
@@ -136,6 +138,8 @@ include ('../text/text.php');
                                <?php
                            } 
                           }
+                        }
+
                     ?>
 
                   <div class="issueBtn">
