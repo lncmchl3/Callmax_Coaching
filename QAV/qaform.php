@@ -17,6 +17,7 @@
 
 
 <input type="hidden" name="wrongAnswer[]" value="<?php echo $row['answer']; ?>">
+<input type="hidden" name="error[]" value="<?php echo $row['error']; ?>">
 <div class="kashphp">
         <select name="answer[]">
         <option value="N/A">N/A</option>
