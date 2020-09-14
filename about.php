@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-
+<?php include ('text/text.php'); ?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
         <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Callmax Solutions Coaching System | About Us</title>
     </head>
 
@@ -94,7 +95,7 @@
 
 <!-- <div class="foot-margin_2"> -->
     <footer>
-         <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+         <h4><?php echo $text['footer']; ?>/h4>
     </footer>
 <!-- </div> -->
 

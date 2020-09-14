@@ -90,6 +90,7 @@ include ('text/text.php');
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='icon' href='img/favicon.png' type='image/x-icon'/ >
         <link rel="stylesheet" type="text/css" href="css/html-style.css">
         <title><?php echo $text['reg-title']; ?></title>

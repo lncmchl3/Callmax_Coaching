@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
         <title><?php echo $text['info-title']; ?></title>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
@@ -32,6 +33,7 @@
             <nav>
                 <ul>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
+                  <li><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
                   <li class="current"><a href=""><?php echo $text['info']; ?></a></li>
                   <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
                   <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>

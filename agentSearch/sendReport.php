@@ -5,7 +5,8 @@ include ('../text/text.php');
 
 <html>
     <head>
-        <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel='icon' href='../img/favicon.png' type='image/x-icon'/>
         <link rel="stylesheet" type="text/css" href="../css/html-style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.16.0/d3.min.js"></script>
@@ -55,11 +56,11 @@ include ('../text/text.php');
 
 
           <div class="container">
-            <div class="subcontainer">
+
               <div class="sendReport-box">
 
 
-                <form class"sendReportform">
+                <form class=  "sendReportform">
                   <div>
                     <h1><?php echo $text['coaching-form']; ?></h1>
                   </div>
@@ -147,7 +148,7 @@ include ('../text/text.php');
               </div>
               <!-- end of sendReport-box -->
 
-            </div>
+
 
 
 
