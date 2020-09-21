@@ -58,18 +58,27 @@
         <!-- <div class="search-formbox"> -->
               <form class="searchForm" name="searchForm" method="post" autocomplete="off">
 
+                <div class="search-gridbox1">
+                  <!-- <label>Fiter By:</label> -->
+                  <select name="item">
+                      <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
+                      <option value="agent"><?php echo $text['name']; ?></option>
+                      <option value="account"><?php echo $text['account']; ?></option>
+                      <option value="status"><?php echo $text['status']; ?></option>
+                  </select>
+                </div>
 
-                <label>Fiter By:</label>
-                <select name="item">
-                    <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
-                    <option value="agent"><?php echo $text['name']; ?></option>
-                    <option value="account"><?php echo $text['account']; ?></option>
-                    <option value="status"><?php echo $text['status']; ?></option>
-                </select>
+                <div class="search-gridbox2">
+                  <input type="text" name="search" placeholder="<?php echo $text['search']; ?>" >
+                </div>
 
-                <input type="text" name="search" placeholder="<?php echo $text['search']; ?>" >
-                <input type="date" name="date">
-                <button class="button" type="submit" name="searchForm"><?php echo $text['search']; ?></button>
+                <div class="search-gridbox3">
+                  <input type="date" name="date">
+                </div>
+
+                <div class="search-gridbox4">
+                  <button class="button" type="submit" name="searchForm"><?php echo $text['search']; ?></button>
+                </div>
                 <?php
                 //set initital value of POST iten to be true to laod the initial table
                 $choices = isset($_POST['item']) ? $_POST['item'] : 1;
@@ -88,7 +97,7 @@
 
       <!-- start of table -->
       <div class="subcontainer">
-        <div class="tablebox">
+        <!-- <div class="tablebox"> -->
         <?php include('search.php'); ?>
         <?php
         if ($choices == null) {
@@ -153,7 +162,7 @@
 ?>
 <?php } ?>
 
-        </div>
+        <!-- </div> -->
         <!-- end of tablebox -->
 
     </div>
@@ -186,7 +195,9 @@
 </footer>
 
 
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

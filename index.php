@@ -56,13 +56,17 @@ include ('text/text.php');
                         <?php
                                 if(@$_GET['e']==true){
                         ?>
+                        <div class="errorbox">
+                          <h3 class="error"><?php echo $_GET['e'] ?></h3>
+                        </div>
 
-                            <h3 class="error"><?php echo $_GET['e'] ?></h3>
 
                         <?php
                                 }else if (@$_GET['i']==true) {
                         ?>
-                            <h3 class="error"><?php echo $_GET['i'] ?></h3>
+                        <div class="errorbox">
+                          <h3 class="error"><?php echo $_GET['i'] ?></h3>
+                        </div>
 
                         <?php
                         }
