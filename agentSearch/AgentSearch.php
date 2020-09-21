@@ -33,16 +33,25 @@
     <div class="container">
       <div class="heading">
         <div id="branding">
-            <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
+          <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+          <label for="toggled">&#9776;</label>
+          <input type="checkbox" id="toggled" onClick="show()">
+
         </div>
-        <nav>
-            <ul>
-              <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
-              <li class="current"><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
-              <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
-              <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
-            </ul>
-        </nav>
+
+
+
+        <div class="menu">
+          <nav>
+              <ul>
+                <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
+                <li class="current"><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
+                <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+              </ul>
+          </nav>
+        </div>
+
       </div>
     </div>
 </header>
@@ -199,5 +208,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/html-style.js"></script>
 </body>
 </html>
