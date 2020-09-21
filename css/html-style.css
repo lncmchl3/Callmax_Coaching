@@ -153,31 +153,43 @@ a:hover {
 
 /* header */
 .heading {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   margin: auto;
-  padding: 42.5px 0;
+  /* padding: 42.5px 0; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 header {
   /* position: sticky;
   top: 0px; */
+  width: 100%;
   background-color: var(--dark-grey);
   color: #fff;
   border-bottom: var(--primary-color) solid 8px;
   /* box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5); */
 }
 
+/*
+header.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
 .heading #branding {
   /* text-transform: uppercase; */
   /* float: left; */
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  white-space: nowrap;
 }
 
-.heading #branding h1 img {
-  width: 10%;
+.heading #branding img {
+  width: 70px;
   /* padding: 0 10px; */
 }
 
@@ -189,18 +201,39 @@ header {
 }
 
 .heading nav {
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   right: 0;
   padding: 15px 10px;
+}
+
+.heading #branding label,
+#toggled {
+  font-size: 30px;
+  cursor: pointer;
+  float: right;
+  display: none;
+}
+
+.heading #branding label:hover {
+  color: var(--primary-color);
+  transition: all 250ms ease;
 }
 
 .heading li {
   /* float: right; */
   display: inline;
-  padding: 0 10px;
+  padding: 10px 10px;
   /* padding: 0 20px 0 20px;
   margin-top: 25px; */
+  white-space: nowrap;
+  transition: all 250ms ease;
+}
+
+.heading ul {
+  /* display: flex; */
+  text-align: right;
+  white-space: nowrap;
 }
 
 .heading .current a {
@@ -211,6 +244,10 @@ header {
 .heading a:hover {
   color: var(--primary-color);
   /* font-weight: bold; */
+}
+
+.heading .menu {
+  transition: all 250ms ease;
 }
 
 #freepik a {
@@ -571,7 +608,10 @@ article p {
   /* margin-right: 10px; */
 }
 
-.searchForm .search-gridbox1, .search-gridbox2, .search-gridbox3, .search-gridbox4 {
+.searchForm .search-gridbox1,
+.search-gridbox2,
+.search-gridbox3,
+.search-gridbox4 {
   width: 100%;
   margin: auto;
   padding: 0 5px;
@@ -599,7 +639,7 @@ article p {
 
 /* dashboard table */
 .dashboard-table {
-  width: 80%;
+  width: 90%;
   /* text-align: left; */
   border-collapse: collapse;
   margin: auto;
@@ -613,8 +653,8 @@ article p {
 }
 
 .dashboard-table thead {
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
   background-color: var(--primary-color);
   color: #fff;
   /* text-align: center; */
@@ -1194,7 +1234,7 @@ article p {
 
 .qaDiv {
   display: grid;
-  grid-template-columns: .5fr 2fr 1fr;
+  grid-template-columns: 0.5fr 2fr 1fr;
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -1286,10 +1326,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-  nav ul {
-    display: none;
-  }
-
   .searchForm {
     width: 80%;
     display: flex;
@@ -1318,17 +1354,21 @@ footer {
     width: 96%;
   }
 
-  .search-gridbox1, .search-gridbox2, .search-gridbox3, .search-gridbox4 {
+  .search-gridbox1,
+  .search-gridbox2,
+  .search-gridbox3,
+  .search-gridbox4 {
     padding: 0 !important;
   }
 
   .dashboard-table {
     /* display: none; */
     width: 50% !important;
-    font-size: 12px;
+    font-size: 12px !important;
   }
 
-  .dashboard-table td:first-child, .dashboard-table th:first-child {
+  .dashboard-table td:first-child,
+  .dashboard-table th:first-child {
     text-align: left;
     padding: 0;
   }
@@ -1374,34 +1414,48 @@ footer {
 }
 
 @media (max-width: 1000px) {
-  header .container {
-    width: 100%;
+  .heading {
+    grid-template-columns: 1fr;
   }
 
   .heading #branding {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: center;
+    position: relative;
   }
 
-  .heading nav {
-    /* display: none; */
-    width: 100%;
-    top: 35%;
-    right: 50%;
-    transform: translate(50%);
+  .heading #branding label {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 50%);
+  }
+
+  .heading li {
+    white-space: normal;
     text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all 250ms ease;
+    /* display: none; */
+  }
+
+  .heading ul {
+    padding-left: 0px;
+  }
+
+  .heading .menu {
+    display: none;
+    transition: all 250ms ease;
   }
 }
 
 @media (max-width: 768px) {
-  nav ul li:first-child {
-    display: none;
-  }
 
+  /* nav ul li:first-child {
+    display: none;
+  } */
   .dashboard-table td:first-child {
     text-align: left;
     padding-left: 20px;
