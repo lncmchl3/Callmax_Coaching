@@ -101,7 +101,7 @@
         <?php
           include('../connection.php');
 
-            $query1 = "SELECT * FROM qav_data WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND date_issued LIKE '".$date."%' ORDER BY id DESC,date_issued ASC limit 50";
+            $query1 = "SELECT * FROM qa_record WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND date LIKE '".$date."%' ORDER BY id DESC,date ASC limit 50";
             $result1 = mysqli_query($connection, $query1);
             if (mysqli_num_rows($result1) > 0) {
         ?>
@@ -122,11 +122,11 @@
                 while ($row1 = mysqli_fetch_assoc($result1)) {
               ?>
 
-              <tr onclick="window.location='info.php?n=<?php echo $row1['id']; ?>'" class="only">
-                <td><?php echo $row1['name']; ?></td>
+              <tr onclick="window.location='info.php?n=<?php echo $row1['report_id']; ?>'" class="only">
+                <td><?php echo $row1['agent']; ?></td>
                 <td class="tableData"> <?php echo $row1['account']; ?></td>
                 <td class="tableData"> <?php echo $row1['qa']; ?></td>
-                <td class="tableData"> <?php echo $row1['date_issued']; ?></td>
+                <td class="tableData"> <?php echo $row1['date']; ?></td>
             <?php
               }
               ?>

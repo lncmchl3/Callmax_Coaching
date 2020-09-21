@@ -15,6 +15,7 @@
       </div>
 
       <div class="qa-gridbox2">
+        <input type="hidden" name="item[]" value="<?php echo $row['item']; ?>">
         <input type="hidden" name="wrongAnswer[]" value="<?php echo $row['answer']; ?>">
         <input type="hidden" name="error[]" value="<?php echo $row['error']; ?>">
           <select name="answer[]">

@@ -61,7 +61,7 @@
                     <tbody>
 
                       <?php
-                      $query1 = "SELECT * FROM agent_reports WHERE report_id=".$n;
+                      $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
                       $result1 = mysqli_query($connection, $query1);
                       if (mysqli_num_rows($result1) > 0) {
                         while ( $row = mysqli_fetch_assoc($result1)) {
@@ -96,21 +96,17 @@
 
                   <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n ?>">
                   <?php
-                      $query = "SELECT * FROM picard_dump WHERE report_id = ".$n;
+                      $query = "SELECT * FROM qa_record WHERE report_id = ".$n;
                               $result = mysqli_query($connection, $query);
                               $array = array();
                           if (mysqli_num_rows($result) > 0) {
                               while ( $row = mysqli_fetch_assoc($result)) {
-                                if ($row['kash_requirement'] == 'Attitude') {
-                                  if ($row['scores'] < $row['standard_score']) {
-                        array_push($array, $row['Questions']);
-                                }
-                          } else{
-                              ?>
-                          <tr>
-                            <?php include 'kash/logic.php'; ?>
-                          </tr>
-                          <?php }
+                                ?>
+                              <td style=" height: 100px; text-align: center;">
+                                    Here is the missed audit on the agent's call, please see below of the details.<br/><br/>
+                                    <?php echo str_replace(",","<br/>",$row['error_items']); ?>
+                              </td>
+                          <?php 
                           }
                       } ?>
                       <?php if (!empty($array)) {
@@ -124,7 +120,7 @@
                       } ?>
                       </tbody>
                   </table>
-                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>&statement=<?php echo $statement; ?>"><?php echo $text['click-ack-link']; ?></a>
+                  
               </div>
 
     </div>
