@@ -17,22 +17,33 @@ include ('text/text.php');
 
     <body>
 
-        <header>
-            <div class="container">
-                <div class="heading">
-                    <div id="branding">
-                        <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
-                    </div>
-                    <nav>
-                        <ul>
-                        <!-- <li><a href="about.php">About Us</a></li> -->
-                        <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li>
-                        <li><a href="reg.php"><?php echo $text['signup'];?></a></li>
-                        </ul>
-                    </nav>
-                </div>
+      <header>
+          <div class="container">
+            <div class="heading">
+              <div id="branding">
+                <img src="img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+                <label for="toggled">&#9776;</label>
+                <input type="checkbox" id="toggled" onClick="show()">
+
+              </div>
+
+
+
+              <div class="menu">
+                <nav>
+                  <ul>
+                  <!-- <li><a href="about.php">About Us</a></li> -->
+                  <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li>
+                  <li><a href="reg.php"><?php echo $text['signup'];?></a></li>
+                  </ul>
+                </nav>
+              </div>
+
             </div>
-        </header>
+          </div>
+      </header>
+
+
 
 
         <?php
@@ -144,5 +155,6 @@ include ('text/text.php');
                     header("location:ADMIN/admin.php");
                 }
         ?>
+            <script src="js/html-style.js"></script>
     </body>
 </html>
