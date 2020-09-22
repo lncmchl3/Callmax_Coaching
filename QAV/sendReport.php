@@ -31,24 +31,32 @@ include ('../text/text.php');
             $agentname = @$_GET['agentname']; ?>
 
 
-    <header>
-        <div class="container">
-          <div class="heading">
-            <div id="branding">
-                  <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
-            </div>
+            <header>
+                <div class="container">
+                  <div class="heading">
+                    <div id="branding">
+                      <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+                      <label for="toggled">&#9776;</label>
+                      <input type="checkbox" id="toggled" onClick="show()">
 
-            <nav>
-                <ul>
-                  <li><a href="#"><?php echo $_SESSION['name']; ?> </a></li>
-                  <li ><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
-                  <li class="current"><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
-                  <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
-                </ul>
-            </nav>
-          </div>
-        </div>
-    </header>
+                    </div>
+
+
+
+                    <div class="menu">
+                      <nav>
+                          <ul>
+                            <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
+                            <li><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
+                            <li class="current"><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                            <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+                          </ul>
+                      </nav>
+                    </div>
+
+                  </div>
+                </div>
+            </header>
 
 
 
@@ -180,5 +188,8 @@ include ('../text/text.php');
 <footer>
     <h4><?php echo $text['footer']; ?></h4>
 </footer>
+
+
+    <script src="../js/html-style.js"></script>
 </body>
 </html>

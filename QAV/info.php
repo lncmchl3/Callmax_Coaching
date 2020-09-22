@@ -22,15 +22,20 @@
     ?>
 
 
-
     <header>
         <div class="container">
           <div class="heading">
             <div id="branding">
+              <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+              <label for="toggled">&#9776;</label>
+              <input type="checkbox" id="toggled" onClick="show()">
 
-                <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
-            <nav>
+
+
+
+            <div class="menu">
+              <nav>
                 <ul>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
                   <li><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
@@ -38,10 +43,14 @@
                   <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
                   <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
                 </ul>
-            </nav>
+              </nav>
+            </div>
+
           </div>
         </div>
     </header>
+
+
 
 
   <!-- <form  method="post" action="AgentSearch.php" autocomplete="off" class="active">
@@ -106,7 +115,7 @@
                                     Here is the missed audit on the agent's call, please see below of the details.<br/><br/>
                                     <?php echo str_replace(",","<br/>",$row['error_items']); ?>
                               </td>
-                          <?php 
+                          <?php
                           }
                       } ?>
                       <?php if (!empty($array)) {
@@ -120,7 +129,7 @@
                       } ?>
                       </tbody>
                   </table>
-                  
+
               </div>
 
     </div>
@@ -146,5 +155,7 @@
 <footer>
      <h4><?php echo $text['footer']; ?></h4>
 </footer>
+<script src="../js/html-style.js"></script>
+
 </body>
 </html>

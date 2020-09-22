@@ -34,16 +34,25 @@
     <div class="container">
       <div class="heading">
         <div id="branding">
-            <h1><img src="../img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
+          <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+          <label for="toggled">&#9776;</label>
+          <input type="checkbox" id="toggled" onClick="show()">
+
         </div>
-        <nav>
-            <ul>
-              <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
-              <li class="current"><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
-              <li><a href="sendReport.php"><?php echo $text['send-report']; ?></a></li>
-              <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
-            </ul>
-        </nav>
+
+
+
+        <div class="menu">
+          <nav>
+              <ul>
+                <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
+                <li class="current"><a href='reports.php'><?php echo $text['dashboard']; ?></a></li>
+                <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
+                <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
+              </ul>
+          </nav>
+        </div>
+
       </div>
     </div>
 </header>
@@ -59,18 +68,27 @@
         <!-- <div class="search-formbox"> -->
               <form class="searchForm" name="searchForm" method="post" autocomplete="off">
 
+                <div class="search-gridbox1">
+                  <!-- <label>Fiter By:</label> -->
+                  <select name="item">
+                      <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
+                      <option value="agent"><?php echo $text['name']; ?></option>
+                      <option value="account"><?php echo $text['account']; ?></option>
+                      <option value="status"><?php echo $text['status']; ?></option>
+                  </select>
+                </div>
 
-                <label>Fiter By:</label>
-                <select name="item">
-                    <option value="" disabled selected hidden><?php echo $text['choose-pos']; ?></option>
-                    <option value="agent"><?php echo $text['name']; ?></option>
-                    <option value="account"><?php echo $text['account']; ?></option>
-                    <option value="status"><?php echo $text['status']; ?></option>
-                </select>
+                <div class="search-gridbox2">
+                  <input type="text" name="search" placeholder="<?php echo $text['search']; ?>" >
+                </div>
 
-                <input type="text" name="search" placeholder="<?php echo $text['search']; ?>" >
-                <input type="date" name="date">
-                <button class="button" type="submit" name="searchForm"><?php echo $text['search']; ?></button>
+                <div class="search-gridbox3">
+                  <input type="date" name="date">
+                </div>
+
+                <div class="search-gridbox4">
+                  <button class="button" type="submit" name="searchForm"><?php echo $text['search']; ?></button>
+                </div>
                 <?php
                 //set initital value of POST iten to be true to laod the initial table
                 $choices = isset($_POST['item']) ? $_POST['item'] : 1;
@@ -80,9 +98,6 @@
 
           <!-- </div> -->
           <!-- end of search-formbox -->
-
-
-
       </div>
       <!-- end of subcontainer of search-formbox -->
 
@@ -173,7 +188,7 @@
 </footer>
 
 
-
+    <script src="../js/html-style.js"></script>
 
 </body>
 </html>

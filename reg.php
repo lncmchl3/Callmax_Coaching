@@ -1,92 +1,8 @@
 
 <!DOCTYPE html>
 <?php
-include ('text/text.php');
-?>
-<script type="text/javascript">
-    var value = 0;
-    $(document).ready(function () {
-        $('#uname').blur(function () {
-            var username = $this.val();
-            $.ajax({
-                url: "check.jsp",
-                method: "POST",
-                data: {username: username},
-                dataType: "text",
-                success: function (html) {
-                    $('#availability').html(html);
-                }
-            });
-        });
-    });
+include ('text/text.php'); ?>
 
-    function CheckPos(val) {
-//        var accountinput = document.getElementById('accountinput');
-        var accountinputtitle = document.getElementById('accountinputtitle');
-        var addmore = document.getElementById('addmore');
-        var r = document.getElementById('removebutton');
-        var s = document.getElementById("accountinput");
-
-
-        if (val === 'TL' || val === 'AM') {
-
-            if (value === 0) {
-              // add input box if value if zero
-              createFunction();
-              }
-            else if (value > 1) {
-              // deletes input boxes if value is greater than one until one input box left
-              $(document).ready(function () {
-                while (value !== 1) {
-                  $("input").remove("#accountinput" + (value - 1));
-                  value--;
-                  document.getElementById("accountCounts").value = value;
-                  }
-              });
-            }
-
-            r.style.display = 'inline';
-            accountinputtitle.style.display = 'block';
-            addmore.style.display = 'inline';
-          }
-
-        else {
-//           accountinput.style.display = 'none';
-          $(document).ready(function () {
-              while (value !== 0) {
-                $("input").remove("#accountinput" + (value - 1));
-                  value--;
-                  document.getElementById("accountCounts").value = value;
-              }
-          });
-            accountinputtitle.style.display = 'none';
-            addmore.style.display = 'none';
-            r.style.display = 'none';
-            s.style.visibility = 'none';
-        }
-
-
-    }
-
-    function confirmPass() {
-        var pass1 = document.getElementById("password").value;
-        var pass2 = document.getElementById("password2").value;
-        var ok = true;
-        if (pass1 !== pass2) {
-            //alert("Passwords Do not match");
-            document.getElementById("password").style.borderColor = "#E34234";
-            document.getElementById("password2").style.borderColor = "#E34234";
-            return false;
-        }
-        return ok;
-    }
-    function changeback() {
-        document.getElementById("password").style.borderColor = "";
-        document.getElementById("password2").style.borderColor = "";
-    }
-
-
-</script>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -98,24 +14,35 @@ include ('text/text.php');
 
 <body>
 
+  <header>
+      <div class="container">
+        <div class="heading">
+          <div id="branding">
+            <img src="img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+            <label for="toggled">&#9776;</label>
+            <input type="checkbox" id="toggled" onClick="show()">
 
-        <header>
-            <div class="container">
-              <div class="heading">
-                <div id="branding">
-                  <h1><img src="img/favicon.png" alt="logo" /> <?php echo $text['header'];?></h1>
-                </div>
-                <nav>
-                    <ul>
-                        <!-- <li><a href="about.php">About Us</a></li> -->
-                        <li><a href="index.php"><?php echo $text['login']; ?></a></li>
-                        <li class="current"><a href="reg.php"><?php echo $text['signup']; ?></a></li>
+          </div>
 
-                    </ul>
-                </nav>
-              </div>
-            </div>
-        </header>
+
+
+          <div class="menu">
+            <nav>
+              <ul>
+                  <!-- <li><a href="about.php">About Us</a></li> -->
+                  <li><a href="index.php"><?php echo $text['login']; ?></a></li>
+                  <li class="current"><a href="reg.php"><?php echo $text['signup']; ?></a></li>
+
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+  </header>
+
+
+
 
       <div class="reg-container">
         <div class="container">
@@ -203,59 +130,12 @@ include ('text/text.php');
 
 
 
-                  <!-- Script -->
-                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                  <script>
-
-                  var a = document.getElementById("accountCounts").value;
-
-                  function createFunction() {
-                    var x = document.createElement("INPUT");
-                    var y = document.createElement("input");
-                    var z = document.createElement("br");
-                    x.setAttribute("type", "text");
-                    x.setAttribute("id", "accountinput" + value);
-                    x.setAttribute("name", "accountinput" + value);
-                    x.setAttribute("class", "accountInput");
-                    var count = value+1;
-                    x.setAttribute("placeholder", "<?php echo $text['add-account']; ?> " + count);
-                    // y.setAttribute("type", "button");
-                    // y.setAttribute("id", "removebutton");
-                    // y.setAttribute("name", "removebutton");
-                    // y.setAttribute("value", "remove");
-                    // y.setAttribute("onClick", "removeFunction()");
-                    // document.getElementById("postd").appendChild(x);
-                    // document.getElementById("postd").appendChild(z);
-
-                    document.getElementById("addmore").parentNode.insertBefore(x, document.getElementById("removebutton"));
-                    // document.getElementById("addmore").parentNode.insertBefore(y, document.getElementById("addmore"));
-                    // document.getElementById("addmore").parentNode.insertBefore(z, document.getElementById("removebutton"));
-                    value++;
-                    document.getElementById("accountCounts").value = value;
-                  }
-
-                  // function removeFunction() {
-                  //   // Removes an element from the document
-                  //   var element = document.getElementById(removebutton);
-                  //   element.parentNode.removeChild(element);
-                  // }
-
-                  $(document).ready(function () {
-                    $("#removebutton").click(function () {
-                      if (value !== 0) {
-                        $("input").remove("#accountinput" + (value - 1));
-                          value--;
-                          document.getElementById("accountCounts").value = value;
-                      }
-                    });
-                  });
-
-                </script>
 
 
 
 
-                <!-- End of script -->
+
+
               </div>
               <!-- end of posOption -->
 
@@ -293,6 +173,9 @@ include ('text/text.php');
       <footer>
           <h4><?php echo $text['footer']; ?></h4>
       </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="js/html-style.js"></script>
+
 
 </body>
 </html>
