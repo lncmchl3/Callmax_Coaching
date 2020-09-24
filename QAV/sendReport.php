@@ -133,7 +133,7 @@ include ('../text/text.php');
 
               <!-- statement for checking the issue -->
               <div class="selectedIssue-box">
-                <form class="selectedIssue" method="post" action="processQAReport.php">
+                <form class="selectedIssue" method="post" action="processQAReport.php" enctype="multipart/form-data">
                     <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
                     <input type="hidden" name="account" value="<?php echo $account; ?>" required>
                     <input type="hidden" value="<?php echo $_SESSION['name']; ?>" name="submittedby">
@@ -149,6 +149,11 @@ include ('../text/text.php');
                                <?php
                            }
                           }
+
+                          ?>
+                            <textarea name="suggestion" placeholder="Recommendations here.."></textarea><br/>
+                            <input type="file" name="myfile">
+                          <?php
                         }
 
                     ?>
