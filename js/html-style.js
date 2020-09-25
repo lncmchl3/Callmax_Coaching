@@ -8,7 +8,7 @@ const mediaQ = (width) => width.matches ? show() : menu.style.display = "block";
 mediaQ(width); // Call listener function at run time
 width.addListener(mediaQ); // Attach listener function on state changes
 
-// --------------------------------------------------------------
+// -------------------------------------------------------------------------------
 
 var value = 0;
 $(document).ready(function () {
@@ -95,45 +95,45 @@ function changeback() {
 
 
 
-                  var a = document.getElementById("accountCounts").value;
+  var a = document.getElementById("accountCounts").value;
 
-                  function createFunction() {
-                    var x = document.createElement("INPUT");
-                    var y = document.createElement("input");
-                    var z = document.createElement("br");
-                    x.setAttribute("type", "text");
-                    x.setAttribute("id", "accountinput" + value);
-                    x.setAttribute("name", "accountinput" + value);
-                    x.setAttribute("class", "accountInput");
-                    var count = value+1;
-                    x.setAttribute("placeholder", "Add Account " + count);
-                    // y.setAttribute("type", "button");
-                    // y.setAttribute("id", "removebutton");
-                    // y.setAttribute("name", "removebutton");
-                    // y.setAttribute("value", "remove");
-                    // y.setAttribute("onClick", "removeFunction()");
-                    // document.getElementById("postd").appendChild(x);
-                    // document.getElementById("postd").appendChild(z);
+  function createFunction() {
+    var x = document.createElement("INPUT");
+    var y = document.createElement("input");
+    var z = document.createElement("br");
+    x.setAttribute("type", "text");
+    x.setAttribute("id", "accountinput" + value);
+    x.setAttribute("name", "accountinput" + value);
+    x.setAttribute("class", "accountInput");
+    var count = value+1;
+    x.setAttribute("placeholder", "Add Account " + count);
+    // y.setAttribute("type", "button");
+    // y.setAttribute("id", "removebutton");
+    // y.setAttribute("name", "removebutton");
+    // y.setAttribute("value", "remove");
+    // y.setAttribute("onClick", "removeFunction()");
+    // document.getElementById("postd").appendChild(x);
+    // document.getElementById("postd").appendChild(z);
 
-                    document.getElementById("addmore").parentNode.insertBefore(x, document.getElementById("removebutton"));
-                    // document.getElementById("addmore").parentNode.insertBefore(y, document.getElementById("addmore"));
-                    // document.getElementById("addmore").parentNode.insertBefore(z, document.getElementById("removebutton"));
-                    value++;
-                    document.getElementById("accountCounts").value = value;
-                  }
+    document.getElementById("addmore").parentNode.insertBefore(x, document.getElementById("removebutton"));
+    // document.getElementById("addmore").parentNode.insertBefore(y, document.getElementById("addmore"));
+    // document.getElementById("addmore").parentNode.insertBefore(z, document.getElementById("removebutton"));
+    value++;
+    document.getElementById("accountCounts").value = value;
+  }
 
-                  // function removeFunction() {
-                  //   // Removes an element from the document
-                  //   var element = document.getElementById(removebutton);
-                  //   element.parentNode.removeChild(element);
-                  // }
+  // function removeFunction() {
+  //   // Removes an element from the document
+  //   var element = document.getElementById(removebutton);
+  //   element.parentNode.removeChild(element);
+  // }
 
-                  $(document).ready(function () {
-                    $("#removebutton").click(function () {
-                      if (value !== 0) {
-                        $("input").remove("#accountinput" + (value - 1));
-                          value--;
-                          document.getElementById("accountCounts").value = value;
-                      }
-                    });
-                  });
+  $(document).ready(function () {
+    $("#removebutton").click(function () {
+      if (value !== 0) {
+        $("input").remove("#accountinput" + (value - 1));
+          value--;
+          document.getElementById("accountCounts").value = value;
+      }
+    });
+  });
