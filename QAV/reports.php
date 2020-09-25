@@ -34,7 +34,8 @@
     <div class="container">
       <div class="heading">
         <div id="branding">
-          <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+          <img src="../img/header.png" alt="logo" />
+          <!-- <h1> <?php echo $text['header'];?></h1> -->
           <label for="toggled">&#9776;</label>
           <input type="checkbox" id="toggled" onClick="show()">
 

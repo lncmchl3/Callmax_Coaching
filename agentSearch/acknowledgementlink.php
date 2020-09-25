@@ -19,20 +19,31 @@
 
         ?>
 
+
         <header>
             <div class="container">
               <div class="heading">
                 <div id="branding">
-                    <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
+                  <img src="../img/header.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+                  <label for="toggled">&#9776;</label>
+                  <input type="checkbox" id="toggled" onClick="show()">
+
                 </div>
-                <nav>
+
+
+
+                <div class="menu">
+                  <nav>
                     <ul>
                       <li class="current"><a href=''><?php echo $text['ackgt-report']; ?></a></li>
                     </ul>
-                </nav>
+                  </nav>
+                </div>
+
               </div>
             </div>
         </header>
+
 
         <?php //try {
             if ($id != "") {
@@ -69,5 +80,7 @@
     <footer>
         <h4><?php echo $text['footer']; ?></h4>
     </footer>
+    <script src="../js/html-style.js"></script>
+
 </body>
 </html>

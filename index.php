@@ -21,7 +21,8 @@ include ('text/text.php');
           <div class="container">
             <div class="heading">
               <div id="branding">
-                <img src="img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+                <img src="img/header.png" alt="logo" />
+                <!-- <h1> <?php echo $text['header'];?></h1> -->
                 <label for="toggled">&#9776;</label>
                 <input type="checkbox" id="toggled" onClick="show()">
 
@@ -33,8 +34,8 @@ include ('text/text.php');
                 <nav>
                   <ul>
                   <!-- <li><a href="about.php">About Us</a></li> -->
-                  <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li>
-                  <li><a href="reg.php"><?php echo $text['signup'];?></a></li>
+                  <!-- <li class="current"><a href="index.php"><?php echo $text['login'];?></a></li> -->
+                  <!-- <li><a href="reg.php"><?php echo $text['signup'];?></a></li> -->
                   </ul>
                 </nav>
               </div>

@@ -192,7 +192,8 @@ header.container {
 }
 
 .heading #branding img {
-  width: 70px;
+  width: 200px;
+  padding: 20px 0;
   /* padding: 0 10px; */
 }
 
@@ -1500,6 +1501,12 @@ footer {
   .heading .menu {
     display: none;
     transition: all 250ms ease;
+  }
+
+  .heading #branding img {
+    width: 200px;
+    padding: 30px;
+    /* padding: 0 10px; */
   }
 }
 
