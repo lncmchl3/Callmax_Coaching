@@ -2,7 +2,7 @@
     include '../connection.php';
         // if(isset($_POST['submit'])){
         $account = $_POST['account'];
-        $category = $_POST['category'];
+        $category = str_replace("'","\'",$_POST['category']);
         $item = str_replace("'","\'",$_POST['item']);
         $answer = $_POST['answer'];
         $error = $_POST['error'];
