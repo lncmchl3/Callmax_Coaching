@@ -149,7 +149,7 @@
                 <?php
                 if($row1['status']=="Pending"){
                   ?>
-                  <td><?php echo $row1['status']; ?></td>
+                  <td><label class="statusOrange"><?php echo $row1['status']; ?></label></td>
                 <?php }else if($row1['status']=="Submitted"){ ?>
                   <td ><label class="statusYellow"><?php echo $row1['status']; ?></label></td>
                 <?php }else{ ?>

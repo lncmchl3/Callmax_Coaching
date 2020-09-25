@@ -706,7 +706,7 @@ article p {
 .statusOrange {
   background: var(--orange);
   border-radius: 5px;
-  padding: 2px 20px;
+  padding: 2px 50px;
   color: #fff;
   font-weight: bold;
   /* font-size: 17px; */
