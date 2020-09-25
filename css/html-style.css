@@ -964,7 +964,7 @@ article p {
   /* border: black 1px solid; */
   width: 80%;
   margin: auto;
-  min-height: 39.3vh;
+  min-height: calc(61.9vh - 85.19px - 89.88px);
   display: flex;
   justify-content: center;
   align-items: center;
