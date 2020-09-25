@@ -1054,8 +1054,8 @@ article p {
   width: 60%;
   border-radius: 10px;
   border-bottom: #115584 solid 7px;
-  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
-  box-shadow: var(--shadow-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  /* box-shadow: var(--shadow-color); */
 }
 
 .root-action-box .root-action-form label {
@@ -1065,6 +1065,15 @@ article p {
   padding-left: 7px;
   font-weight: bold;
   font-size: 18px;
+}
+
+.actionplanbox button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.root-action-form input[type="submit"] {
+  margin-top: 10px;
 }
 
 .root-action-form div {
@@ -1082,6 +1091,7 @@ article p {
   font-size: 16px;
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */
   box-shadow: var(--shadow-color);
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
 }
 
 .root-action-form textarea:focus {

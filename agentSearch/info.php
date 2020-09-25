@@ -22,16 +22,20 @@
         	$n = $_GET['n'];
     ?>
 
-
-
     <header>
         <div class="container">
           <div class="heading">
             <div id="branding">
+              <img src="../img/favicon.png" alt="logo" />  <h1> <?php echo $text['header'];?></h1>
+              <label for="toggled">&#9776;</label>
+              <input type="checkbox" id="toggled" onClick="show()">
 
-                <h1><img src="../img/favicon.png" alt="logo" /><?php echo $text['header']; ?></h1>
             </div>
-            <nav>
+
+
+
+            <div class="menu">
+              <nav>
                 <ul>
                   <li><a href=""><?php echo $_SESSION['name']; ?> </a></li>
                   <li><a href='AgentSearch.php'><?php echo $text['dashboard']; ?></a></li>
@@ -39,10 +43,13 @@
                   <li><a href='sendReport.php'><?php echo $text['send-report']; ?></a></li>
                   <li><a href='../logout.php?logout' onclick="return confirm('Are you sure you want to logout?')"><?php echo $text['logout']; ?></a></li>
                 </ul>
-            </nav>
+              </nav>
+            </div>
+
           </div>
         </div>
     </header>
+
 
 
   <!-- <form  method="post" action="AgentSearch.php" autocomplete="off" class="active">
@@ -323,7 +330,7 @@
                         <td style='text-align: center; height: 50px;'><?php echo $row['major']; ?></td>
                         <td style='text-align: center; height: 50px;'><?php echo $row['total_deduction']; ?></td>
                         <?php }
-                    } ?>  
+                    } ?>
                     </tr>
                 </tbody>
             </table>
@@ -339,10 +346,10 @@
 
         <div class="root-action-box">
           <form class="root-action-form" method="post" action="coachingAdding.php" autocomplete="off">
-                
+
             <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
             <input type="hidden" name="tl" id="tl" value="<?php echo $sessionUser ?>">
-            
+
             <?php
             $query = "SELECT * FROM qa_record where report_id = ".$n;
             $result = mysqli_query($connection, $query);
@@ -474,7 +481,7 @@
                                 </tr>
                                 </tbody>
                                 </table>
-                          <?php 
+                          <?php
                            }
                       } ?>
                   <form action="acknowledgement.php" method="post">
@@ -505,6 +512,7 @@
         header("location:../index.php?e=Please Log in");
     }
 ?>
+<script src="../js/html-style.js"></script>
 
 
 
