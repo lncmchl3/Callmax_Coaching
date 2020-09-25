@@ -52,6 +52,7 @@
   <div class="container">
     <div class="infoContainer">
       <?php
+      if($report_type == "TL Report"){
           if ($status == "Pending") {
       ?>
       <div class="agentInfobox">
@@ -242,10 +243,250 @@
                       } ?>
                       </tbody>
                   </table>
-                  <a class ="button" href="acknowledgement.php?n=<?php echo $n; ?>&s=<?php echo $sessionUser; ?>&statement=<?php echo $statement; ?>"><?php echo $text['click-ack-link']; ?></a>
+                  <form action="acknowledgement.php" method="post">
+                  <input type="hidden" value="<?php echo $n; ?>" name="n">
+                  <input type="hidden" value="<?php echo $sessionUser; ?>" name="s">
+                  <input type="hidden" value="<?php echo $statement; ?>" name="statement">
+                  <button class="button" type="submit" name="submit"><?php echo $text['click-ack-link']; ?></button>
+                  </form>
+                </div>
+
+          <?php }
+          } ?>
+
+          <!-- QA REPORT -->
+          <?php
+      if($report_type == "QA Report"){
+          if ($status == "Pending") {
+      ?>
+      <div class="agentInfobox">
+        <table class="agentInfo">
+          <thead>
+            <tr>
+              <th colspan="2"><?php echo $text['agent-info']; ?></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <?php
+            $query1 = "SELECT * FROM agent_reports WHERE id=".$n;
+            $result1 = mysqli_query($connection, $query1);
+            if (mysqli_num_rows($result1) > 0) {
+              while ( $row = mysqli_fetch_assoc($result1)) {
+                ?>
+                <tr>
+                  <th><?php echo $text['name']; ?>: </th>
+                  <td><?php echo $row['agent']; ?></td>
+                </tr>
+                <tr>
+                  <th><?php echo $text['account']; ?>: </th>
+                  <td><?php echo $row['account']; ?></td>
+                </tr>
+                <?php
+              }
+            }
+            ?>
+          </tbody>
+        </table>
+        <!-- end of agentInfo -->
+      </div>
+      <!-- end of agentinfobox -->
+
+
+
+    <div class="subcontainer">
+    <div class="resultBox">
+      <h2><?php echo $text['qan-result']; ?></h2>
+      <table class="resultTable">
+
+                <?php
+                    $query = "SELECT * FROM qa_record where report_id = ".$n;
+                    $result = mysqli_query($connection, $query);
+                ?>
+
+                <thead>
+                  <tr>
+                      <th><?php echo $text['minor']; ?></th>
+                      <th><?php echo $text['major']; ?></th>
+                      <th><?php echo $text['deduction']; ?></th>
+                  </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr>
+                        <?php
+                        if (mysqli_num_rows($result) > 0) {
+                          while ( $row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <td style='text-align: center; height: 50px;'><?php echo $row['minor']; ?></td>
+                        <td style='text-align: center; height: 50px;'><?php echo $row['major']; ?></td>
+                        <td style='text-align: center; height: 50px;'><?php echo $row['total_deduction']; ?></td>
+                        <?php }
+                    } ?>  
+                    </tr>
+                </tbody>
+            </table>
+
+    </div>
+    <!-- end of resultBox -->
+
+    </div>
+    <!-- end of subcontainer -->
+
+
+      <div class="subcontainer">
+
+        <div class="root-action-box">
+          <form class="root-action-form" method="post" action="coachingAdding.php" autocomplete="off">
+                
+            <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n; ?>">
+            <input type="hidden" name="tl" id="tl" value="<?php echo $sessionUser ?>">
+            
+            <?php
+            $query = "SELECT * FROM qa_record where report_id = ".$n;
+            $result = mysqli_query($connection, $query);
+            if (mysqli_num_rows($result) > 0) {
+              while ( $row = mysqli_fetch_assoc($result)) {
+            ?>
+
+            <div class="action-plan">
+            <label>Error Items</label>
+            <span><?php echo "Here is the missed audit on the agent's call, please see below of the details.<br/><br/>".$row['error_items']; ?></span>
+            </div>
+            <audio controls>
+              <source src="../uploads/<?php echo $row['filename'];?>" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <div class="action-plan">
+            <label>Suggested Coaching</label>
+            <span><?php echo $row['suggestion']; ?></span>
+            </div>
+              <?php }
+              }?>
+            <div class="action-plan">
+              <label><?php echo $text['action-plan']; ?></label>
+              <textarea id="actionPlan" name="actionPlan" placeholder='Type Action Plan here' required></textarea>
+            </div>
+
+            <div class="rootBtn">
+              <button class="button" type="submit" onclick="return confirm('Are you sure you want to Submit?')"><?php echo $text['submit']; ?></button>
+            </div>
+
+          </form>
+        </div>
+
+
+      </div>
+
+
+
+        <?php } else { ?>
+
+                <div class="agentInfobox">
+                  <table class="agentInfo">
+                    <thead>
+                      <tr>
+                        <th colspan="2"><?php echo $text['agent-info']; ?></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <?php
+                      $query1 = "SELECT * FROM qa_record WHERE report_id=".$n;
+                      $result1 = mysqli_query($connection, $query1);
+                      if (mysqli_num_rows($result1) > 0) {
+                        while ( $row = mysqli_fetch_assoc($result1)) {
+                          ?>
+                          <tr>
+                            <th><?php echo $text['name']; ?>: </th>
+                            <td><?php echo $row['agent']; ?></td>
+                          </tr>
+                          <tr>
+                            <th><?php echo $text['account']; ?>: </th>
+                            <td><?php echo $row['account']; ?></td>
+                          </tr>
+                          <?php
+                        }
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                  <!-- end of t -->
+                </div>
+                <!-- end of agentinfobox -->
+
+                <div class="actionplanbox">
+                  <!-- action plan table -->
+
+                  <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n ?>">
+                  <?php
+                      $query = "SELECT * FROM qa_record WHERE report_id = ".$n;
+                              $result = mysqli_query($connection, $query);
+                          if (mysqli_num_rows($result) > 0) {
+                              while ( $row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                <table class="actionplan">
+                                <thead>
+                                    <tr>
+                                      <th><?php echo $text['error-items']; ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                <td style=" height: 100px; text-align: center;">
+                                <span><?php echo "Here is the missed audit on the agent's call, please see below of the details.<br/><br/>".$row['error_items']; ?></span>
+                                <br/><br/>
+                                <audio controls>
+                                  <source src="../uploads/<?php echo $row['filename'];?>" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                                </audio>
+
+                                </td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <table class="actionplan">
+                                <thead>
+                                    <tr>
+                                      <th><?php echo $text['suggestion']; ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                <td style=" height: 100px; text-align: center;">
+                                <span><?php echo $row['suggestion']; ?></span>
+                                </td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <table class="actionplan">
+                                <thead>
+                                    <tr>
+                                      <th><?php echo $text['action-plan']; ?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                <td style=" height: 100px; text-align: center;">
+                                <span><?php echo $row['action_plan']; ?></span>
+                                </td>
+                                </tr>
+                                </tbody>
+                                </table>
+                          <?php 
+                           }
+                      } ?>
+                  <form action="acknowledgement.php" method="post">
+                  <input type="hidden" value="<?php echo $n; ?>" name="n">
+                  <input type="hidden" value="<?php echo $sessionUser; ?>" name="s">
+                  <input type="hidden" value="<?php echo $statement; ?>" name="statement">
+                  <button class="button" type="submit" name="submit"><?php echo $text['click-ack-link']; ?></button>
+                  </form>
               </div>
 
-          <?php } ?>
+          <?php }
+          } ?>
 
     </div>
     <!-- end of infoContainer -->

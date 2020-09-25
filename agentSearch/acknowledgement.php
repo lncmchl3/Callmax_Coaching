@@ -19,13 +19,11 @@
         if ($_SESSION['demerits']=='TL' || $_SESSION['demerits']=='SUPERADMIN') {
     ?>
         <?php
-            $sessionUser = $_GET["s"];
-            $id = $_GET["n"];
-            $statement = $_GET['statement'];
+            $sessionUser = $_POST["s"];
+            $id = $_POST["n"];
+            $statement = $_POST['statement'];
             $query = "UPDATE agent_reports SET action_plan = '".$statement."', coaching_date = NOW() WHERE id =".$id;
             mysqli_query($connection, $query);
-
-
         ?>
 
 

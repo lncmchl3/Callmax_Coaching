@@ -151,7 +151,7 @@ include ('../text/text.php');
                           }
 
                           ?>
-                            <textarea name="suggestion" placeholder="Recommendations here.."></textarea><br/>
+                            <textarea name="suggestion" placeholder="Recommendations here.." cols='70' rows="10"></textarea><br/>
                             <input type="file" name="myfile">
                           <?php
                         }

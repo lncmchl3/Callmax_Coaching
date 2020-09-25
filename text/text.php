@@ -79,7 +79,7 @@ $text['submit'] = 'Submit';
 // info.php
 $text['info-title'] = ''.$text['header'].' | Info';
 $text['agent-info'] = 'Agent Information';
-$text['qan-result'] = 'QA Non-Voice Result';
+$text['qan-result'] = 'QA Result';
 $text['potential-cause'] = 'Potential Cause of Failures';
 $text['severity'] = 'Severity';
 $text['occurence'] = 'Occurrence';
@@ -89,6 +89,11 @@ $text['qa-score'] = 'QA Score';
 $text['recommended'] = 'Recommended Action';
 $text['root-cause'] = 'Root Cause';
 $text['action-plan'] = 'Action Plan';
+$text['minor'] = 'Minor Error';
+$text['major'] = 'Major Error';
+$text['deduction'] = 'Total Deduction';
+$text['error-items'] = 'Error Items';
+$text['suggestion'] = 'Suggestion for Coaching';
 $text['click-ack-link'] = 'Click here for the Acknowledgement Link';
 
 

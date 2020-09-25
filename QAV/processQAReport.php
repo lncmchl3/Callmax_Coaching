@@ -28,14 +28,14 @@
         $major=0;
         $TotalDeduction=0;
         $items = array(); 
-    if (!in_array($extension, ['wav', 'txt', 'text', 'mp4', 'mp3', 'zip', 'xlsx', 'docx'])) {
+    if (!in_array($extension, ['mp3', 'mpeg3'])) {
         echo " You file extension must be .zip, .pdf, .txt, .mp4, .mp3, .xlsx or .docx";
     } elseif ($_FILES['myfile']['size'] > 25000000) { // file shouldn't be larger than 25Megabyte
         echo "File too large!";
-    } else {
+    }
         // move the uploaded (temporary) file to the specified destination
-        if (move_uploaded_file($file, $destination)) {
-            
+        move_uploaded_file($file, $destination);
+
             for ($i=0; $i < count($wrongAnswer); $i++) { 
                 if ($wrongAnswer[$i] == $answer[$i]) {
                     if ($error[$i] == "Minor") {
@@ -51,16 +51,13 @@
                 }
             }
             // echo implode("\n", $items);
-            $query1 = "INSERT INTO agent_reports(agent, account, report_type, date_issued, status, team_leader) VALUES ('" .$agent."', '".$account."', 'QA Report', NOW(), 'Submitted', '".$sessionUser."')";
+            $query1 = "INSERT INTO agent_reports(agent, account, report_type, date_issued, status, team_leader) VALUES ('" .$agent."', '".$account."', 'QA Report', NOW(), 'Pending', '".$sessionUser."')";
             mysqli_query($connection, $query1);
             $last_id = mysqli_insert_id($connection);
     
-            $query = "INSERT INTO qa_record(report_id, agent, account, minor, major, total_deduction, qa, date, error_items, suggestion, filename, filesize, downloads) 
-            VALUES(".$last_id.", '".$agent."', '".$account."', ".$minor.", ".$major.", '".$TotalDeduction."', '".$qa."', NOW(), '".implode(',\n',$items)."', '".$suggestion."', '".$filename."','".$size."', 0);";
+            $query = "INSERT INTO qa_record(report_id, agent, account, minor, major, total_deduction, qa, date, error_items, suggestion, filename, filesize, downloads, status) 
+            VALUES(".$last_id.", '".$agent."', '".$account."', ".$minor.", ".$major.", '".$TotalDeduction."', '".$qa."', NOW(), '".implode(',\n',$items)."', '".$suggestion."', '".$filename."','".$size."', 0, 'Pending');";
             mysqli_query($connection, $query);
-
-        }
-    }
     }
     header('location:reports.php');
 ?>
