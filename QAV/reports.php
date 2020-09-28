@@ -130,6 +130,8 @@
                   <th><?php echo $text['account']; ?></th>
                   <th><?php echo $text['qa']; ?></th>
                   <th><?php echo $text['date-issued']; ?></th>
+                  <th><?php echo $text['coaching-date']?></th>
+                  <th><?php echo $text['status']?></th>
                 </tr>
               </thead>
 
@@ -143,8 +145,16 @@
                 <td class="tableData"> <?php echo $row1['account']; ?></td>
                 <td class="tableData"> <?php echo $row1['qa']; ?></td>
                 <td class="tableData"> <?php echo $row1['date']; ?></td>
+                <td class="tableData"> <?php echo $row1['coaching_date']; ?></td>
+                  <?php if($row1['status'] == 'Submitted'){ ?>
+                <td class="tableData" style="background-color: #ffc530; color: white; font-weight: bold;"> <?php echo $row1['status']; ?></td>
+                  <?php } elseif($row1['status'] == 'Acknowledged'){ ?>
+                <td class="tableData" style="background-color: #00aa00; color: white; font-weight: bold;"> <?php echo $row1['status']; ?></td>
+                  <?php } elseif($row1['status'] == null){ ?>
+                    <td class="tableData" style="background-color: #f56101; color: white; font-weight: bold;">Pending</td>
             <?php
               }
+            }
               ?>
             </tr>
           </tbody>

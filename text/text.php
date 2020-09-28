@@ -95,6 +95,8 @@ $text['deduction'] = 'Total Deduction';
 $text['error-items'] = 'Error Items';
 $text['suggestion'] = 'Suggestion for Coaching';
 $text['click-ack-link'] = 'Click here for the Acknowledgement Link';
+$text['status'] = 'Status';
+$text['coaching-date'] = 'Coaching Date';
 
 
 // Acknowledgement.php
