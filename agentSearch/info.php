@@ -518,7 +518,7 @@
 
 
 <footer>
-     <h4>Callmax Solutions Coaching System, Copyright &copy; 2020</h4>
+    <h4><?php echo $text['footer']; ?></h4>
 </footer>
 </body>
 </html>
