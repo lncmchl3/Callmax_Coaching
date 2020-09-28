@@ -150,7 +150,7 @@
                 <td class="tableData" style="background-color: #ffc530; color: white; font-weight: bold;"> <?php echo $row1['status']; ?></td>
                   <?php } elseif($row1['status'] == 'Acknowledged'){ ?>
                 <td class="tableData" style="background-color: #00aa00; color: white; font-weight: bold;"> <?php echo $row1['status']; ?></td>
-                  <?php } elseif($row1['status'] == null){ ?>
+                  <?php } elseif($row1['status'] == null || $row1['status'] == 'Pending'){ ?>
                     <td class="tableData" style="background-color: #f56101; color: white; font-weight: bold;">Pending</td>
             <?php
               }
