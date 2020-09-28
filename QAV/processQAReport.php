@@ -1,16 +1,22 @@
 <?php
     require('../connection.php');
 
-    if (isset($_POST['submit'])) {
-
-        $query2 = "SELECT * FROM tl_accounts WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND UPPER(account) LIKE UPPER('".$data[$i]."') AND date_issued LIKE '".$date."%' ORDER BY id DESC,date_issued ASC limit 50";
-            $result2 = mysqli_query($connection, $query2);
-            if (mysqli_num_rows($result2) > 0) {
-                
-            }
-
-
-    
+        
+    $agent = $_POST['agentname'];
+    $qa = $_POST['submittedby'];
+    $account = $_POST['account'];
+    $suggestion = $_POST['suggestion'];
+    // $recording = $_POST['recording'];
+    $wrongAnswer = $_REQUEST['wrongAnswer'];
+    $error = $_REQUEST['error'];
+    $answer = $_REQUEST['answer'];
+    $item = $_REQUEST['item'];
+    $minor=0;
+    $major=0;
+    $TotalDeduction=0;
+    $items = array(); 
+    $emailoftl = null;
+    $nameoftl = null;
     // inclue required php mailer files
     require '../phpmailer/includes/PHPMailer.php';
     require '../phpmailer/includes/SMTP.php';
@@ -19,6 +25,18 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
+
+    if (isset($_POST['submit'])) {
+
+        $query2 = "SELECT * FROM tl_accounts WHERE account LIKE UPPER('".$account."')";
+            $result2 = mysqli_query($connection, $query2);
+            if (mysqli_num_rows($result2) > 0) {
+                while ($row2 = mysqli_fetch_assoc($result2)) {
+                    $emailoftl = $row2['email'];
+                    $nameoftl = $row2['employee_name'];
+                }
+            }
+
     // create instance
     $mail = new PHPMailer();
     // Set mailer to use smtp
@@ -39,10 +57,11 @@
     // email account/sender/recipient config
     $mail->Username = "helpdesk.callmax@gmail.com";
     $mail->Password = "Callmaxsolutions";
-    $mail->addAddress("helpdesk.callmax@gmail.com");
-    $mail->Subject = "Test subject";
-    $mail->Body = "Hi";
-    $mail->setFrom("helpdesk.callmax@gmail.com", "Callmax CRS"); 
+    $mail->addAddress($emailoftl);
+    $mail->Subject = $account.": Agent error report";
+    $mail->Body = "Hi ".$nameoftl.". You have recieved report from QA.\n\nName of agent: "
+    .$agent." \nPlease proceed to link for more details:\n callmaxcrs.callmaxsolutions.com";
+    $mail->setFrom("helpdesk.callmax@gmail.com", "Callmax CRS");
     if($mail->Send()){
         echo "Email sent";
     }else{
@@ -63,20 +82,6 @@
     // the physical file on a temporary uploads directory on the server
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
-        
-        $agent = $_POST['agentname'];
-        $qa = $_POST['submittedby'];
-        $account = $_POST['account'];
-        $suggestion = $_POST['suggestion'];
-        // $recording = $_POST['recording'];
-        $wrongAnswer = $_REQUEST['wrongAnswer'];
-        $error = $_REQUEST['error'];
-        $answer = $_REQUEST['answer'];
-        $item = $_REQUEST['item'];
-        $minor=0;
-        $major=0;
-        $TotalDeduction=0;
-        $items = array(); 
     if (!in_array($extension, ['mp3', 'mpeg3'])) {
         echo " You file extension must be .zip, .pdf, .txt, .mp4, .mp3, .xlsx or .docx";
     } elseif ($_FILES['myfile']['size'] > 25000000) { // file shouldn't be larger than 25Megabyte
@@ -107,6 +112,7 @@
             $query = "INSERT INTO qa_record(report_id, agent, account, minor, major, total_deduction, qa, date, error_items, suggestion, filename, filesize, downloads, status) 
             VALUES(".$last_id.", '".$agent."', '".$account."', ".$minor.", ".$major.", '".$TotalDeduction."', '".$qa."', NOW(), '".implode(',\n',$items)."', '".$suggestion."', '".$filename."','".$size."', 0, 'Pending');";
             mysqli_query($connection, $query);
+    // echo $emailoftl;
     }
-    // header('location:reports.php');
+    header('location:reports.php');
 ?>

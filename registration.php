@@ -34,14 +34,14 @@
             if(isset($_POST['position']) || $position == "TL"){
             for($i = 0; $i < $accountCounts; $i++){
                 $accountinput = $_POST['accountinput'.$i];
-                $query = "INSERT into tl_accounts(employee_name, account) VALUES ('".$fullname."', '".$accountinput."')";
+                $query = "INSERT into tl_accounts(employee_name, account, email) VALUES ('".$fullname."', '".$accountinput."', '".$email."')";
                 mysqli_query($connection, $query);
             }
             }
             if(isset($_POST['position']) || $position == "AM"){
             for($i = 0; $i < $accountCounts; $i++){
                 $accountinput = $_POST['accountinput'.$i];
-                $query = "INSERT into tl_accounts(employee_name, account) VALUES ('".$fullname."', '".$accountinput."')";
+                $query = "INSERT into tl_accounts(employee_name, account, email) VALUES ('".$fullname."', '".$accountinput."', '".$email."')";
                 mysqli_query($connection, $query);
             }
             }
