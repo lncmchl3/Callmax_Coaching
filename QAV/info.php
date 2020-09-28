@@ -126,7 +126,7 @@
                           <th><?php echo $text['action-plan']; ?></th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody> 
                             <tr>
                               <td style=" height: 100px; text-align: center;">
                                     <?php echo str_replace(",","<br/>",$row['action_plan']); ?>
@@ -139,7 +139,6 @@
                       } ?>
                   </table>
               </div>
-
     </div>
     <!-- end of infoContainer -->
   </div>
