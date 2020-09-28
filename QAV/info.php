@@ -97,12 +97,7 @@
                 <div class="actionplanbox">
                   <!-- action plan table -->
                   <table class="actionplan">
-                      <thead>
-                          <tr>
-                            <th><?php echo $text['action-plan']; ?></th>
-                          </tr>
-                      </thead>
-                      <tbody>
+                      
 
                   <input type="hidden" name="agent_report_id" id="agent_report_id" value="<?php echo $n ?>">
                   <?php
@@ -112,25 +107,37 @@
                           if (mysqli_num_rows($result) > 0) {
                               while ( $row = mysqli_fetch_assoc($result)) {
                                 ?>
+                      <thead>
+                        <tr>
+                          <th><?php echo $text['error-items']; ?></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                            <tr>
                               <td style=" height: 100px; text-align: center;">
                                     Here is the missed audit on the agent's call, please see below of the details.<br/><br/>
                                     <?php echo str_replace(",","<br/>",$row['error_items']); ?>
                               </td>
+                            </tr>
+                      </tbody>
+                        <?php if($row['action_plan'] != null) { ?>
+                      <thead>
+                        <tr>
+                          <th><?php echo $text['action-plan']; ?></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                            <tr>
+                              <td style=" height: 100px; text-align: center;">
+                                    <?php echo str_replace(",","<br/>",$row['action_plan']); ?>
+                              </td>
+                            </tr>
+                      </tbody>
                           <?php
                           }
+                        }
                       } ?>
-                      <?php if (!empty($array)) {
-                        ?>
-                          <tr>
-                            <td>
-                              Agent recognizes the importance of being <?php echo implode(", ", $array); ?>. However, TL should be able to impart the importance of being <?php echo implode(", ", $array); ?> to both the agent and the TL, through coaching and mentoring sessions.
-                          </td>
-                          </tr>
-                        <?php
-                      } ?>
-                      </tbody>
                   </table>
-
               </div>
 
     </div>
