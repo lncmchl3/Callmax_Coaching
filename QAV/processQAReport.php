@@ -1,6 +1,55 @@
 <?php
     require('../connection.php');
+
     if (isset($_POST['submit'])) {
+
+        $query2 = "SELECT * FROM tl_accounts WHERE UPPER(" .$choices. ") LIKE UPPER('%" .$search. "%') AND UPPER(account) LIKE UPPER('".$data[$i]."') AND date_issued LIKE '".$date."%' ORDER BY id DESC,date_issued ASC limit 50";
+            $result2 = mysqli_query($connection, $query2);
+            if (mysqli_num_rows($result2) > 0) {
+                
+            }
+
+
+    
+    // inclue required php mailer files
+    require '../phpmailer/includes/PHPMailer.php';
+    require '../phpmailer/includes/SMTP.php';
+    require '../phpmailer/includes/Exception.php';
+    // define namespaces
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+    // create instance
+    $mail = new PHPMailer();
+    // Set mailer to use smtp
+    $mail->isSMTP();
+    // define smtp host
+    $mail->Host = "smtp.gmail.com";
+    // enable smtp authentication
+    $mail->SMTPAuth = "true";
+    $mail->SMTPSecure = "tls";
+    $mail->Port = "587";
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+        )
+        );
+    // email account/sender/recipient config
+    $mail->Username = "helpdesk.callmax@gmail.com";
+    $mail->Password = "Callmaxsolutions";
+    $mail->addAddress("helpdesk.callmax@gmail.com");
+    $mail->Subject = "Test subject";
+    $mail->Body = "Hi";
+    $mail->setFrom("helpdesk.callmax@gmail.com", "Callmax CRS"); 
+    if($mail->Send()){
+        echo "Email sent";
+    }else{
+        echo "Error Sending email <br/>email Sender:".$mail->Username."<br/>Password: ".$mail->Password."<br/>setFrom: ".$mail->setFrom("helpdesk.callmax@gmail.com")."<br/>";
+    }
+    // close smtp connection
+    $mail->smtpClose();
 
         // file upload
     $filename = $_FILES['myfile']['name'];
@@ -59,5 +108,5 @@
             VALUES(".$last_id.", '".$agent."', '".$account."', ".$minor.", ".$major.", '".$TotalDeduction."', '".$qa."', NOW(), '".implode(',\n',$items)."', '".$suggestion."', '".$filename."','".$size."', 0, 'Pending');";
             mysqli_query($connection, $query);
     }
-    header('location:reports.php');
+    // header('location:reports.php');
 ?>
