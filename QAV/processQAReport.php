@@ -45,8 +45,8 @@
     $mail->Host = "smtp.gmail.com";
     // enable smtp authentication
     $mail->SMTPAuth = "true";
-    $mail->SMTPSecure = "tls";
-    $mail->Port = "587";
+    $mail->SMTPSecure = "ssl";
+    $mail->Port = "465";
     $mail->SMTPOptions = array(
         'ssl' => array(
         'verify_peer' => false,

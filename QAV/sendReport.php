@@ -69,37 +69,11 @@ include ('../text/text.php');
 
 
                 <div class="sendReportform">
-                <form>
+                
                   <div>
                     <h1><?php echo $text['coaching-form']; ?></h1>
                   </div>
-
-                  <div class="agentName">
-                      <label><?php echo $text['agentname']; ?>:</label>
-                    <select id="nameSel" name="agentname" class="select" required>
-                        <?php if ($agentname == "" || $agentname == null) { ?>
-                      <option value=""><?php echo $text['select-name']; ?></option>
-                        <?php } else { ?>
-                      <option value=""><?php echo $agentname; ?></option>
-                        <?php } ?>
-                        <?php
-                          $query = "SELECT * FROM agents";
-                  $result = mysqli_query($connection, $query);
-                  if (mysqli_num_rows($result) > 0) {
-                      while ($row = mysqli_fetch_assoc($result)) {
-                          ?>
-                      <option value='<?php echo $row['fullname']; ?>'><?php echo $row['fullname']; ?></option>
-                        <?php
-                      }
-                  } ?>
-                    </select>
-                    <script type="text/javascript">
-                          document.getElementById('nameSel').value = "<?php echo $_GET['agentname'];?>";
-                    </script>
-                  </div>
-                  <!-- end of agentName -->
-
-
+                  <form>
                   <div class="accountSelect">
                     <label><?php echo $text['account']; ?>:</label>
                       <select id="accountSel" name="account" onchange="this.form.submit()" required>
@@ -122,11 +96,37 @@ include ('../text/text.php');
                       <script type="text/javascript">
                           document.getElementById('accountSel').value = "<?php echo $_GET['account'];?>";
                     </script>
-
+                </form>
+                  
                   </div>
                   <!-- end of accountSelect -->
+                <form class="selectedIssue" method="post" action="processQAReport.php" enctype="multipart/form-data">
+                  <div class="agentName">
+                      <label><?php echo $text['agentname']; ?>:</label>
+                    <select id="nameSel" name="agentname" class="select" required>
+                        <?php if ($agentname == "" || $agentname == null) { ?>
+                      <option value=""><?php echo $text['select-name']; ?></option>
+                        <?php } else { ?>
+                      <option value=""><?php echo $agentname; ?></option>
+                        <?php } ?>
+                        <?php
+                          $query = "SELECT * FROM agents WHERE account LIKE UPPER('%".$account."%')";
+                  $result = mysqli_query($connection, $query);
+                  if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                          ?>
+                      <option value='<?php echo $row['fullname']; ?>'><?php echo $row['fullname']; ?></option>
+                        <?php
+                      }
+                  } ?>
+                    </select>
+                    <script type="text/javascript">
+                          document.getElementById('nameSel').value = "<?php echo $_GET['agentname'];?>";
+                    </script>
+                  </div>
+                  <!-- end of agentName -->
+
                 </div>
-                </form>
                 <!-- end of sendReportform -->
               </div>
               <!-- end of sendReport-box -->
@@ -134,8 +134,7 @@ include ('../text/text.php');
 
               <!-- statement for checking the issue -->
               <div class="selectedIssue-box">
-                <form class="selectedIssue" method="post" action="processQAReport.php" enctype="multipart/form-data">
-                    <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required>
+                    <!-- <input type="hidden" name="agentname" value="<?php echo $agentname; ?>" required> -->
                     <input type="hidden" name="account" value="<?php echo $account; ?>" required>
                     <input type="hidden" value="<?php echo $_SESSION['name']; ?>" name="submittedby">
                   <?php
